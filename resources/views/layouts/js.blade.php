@@ -219,4 +219,51 @@ console.log("reload");
     });   
 });
 
+
+setInterval(function () {
+    var d = new Date(); //get current time
+    var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
+    var fiveMin = 60 * 5; //five minutes is 300 seconds!
+    var timeleft = fiveMin - seconds % fiveMin; // let's say now is 01:30, then current seconds is 60+30 = 90. And 90%300 = 90, finally 300-90 = 210. That's the time left!
+    var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
+    var timedown = `00:0${result}`;
+    document.getElementById('countingdown').innerHTML = timedown;
+
+}, 500) //calling it every 0.5 second to do a count down
+
+$( ".nameShop" ).click(function() {
+ let text = $(this).text();
+ document.getElementById('nameshop-1').value = text.trim();
+});
+
+$( "#buy-shop" ).click(function() {
+        var money =  document.getElementById('money-user').innerHTML;
+        var name = document.getElementById('nameshop-1').value;
+        let size =  document.getElementById('size').value;
+        let price =  document.getElementById('price').value;
+        console.log(money,name,size,price);
+        if (Number(money) >= Number(price)) {
+            jQuery.ajax({
+                url: "/buy-shop",
+                method: 'post',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    },
+                success: function(result){
+                    console.log("result",result);
+                    document.getElementById('error-price').innerHTML = result; 
+                            
+                    },
+                error: function(result){
+                    console.log(result);
+                }      
+            });   
+        }else{
+            document.getElementById('error-price').innerHTML = "ยอด เงินของคุณไม่พอ กรุณาเติมเงิน";
+        } 
+
+});
+
+
+
 </script>
