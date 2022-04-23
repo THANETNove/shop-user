@@ -1,6 +1,6 @@
 <div class=py-12>
     <div class="container">
-        <div class="row head-center text-offcanvas ">
+        <div class="row head-center text-offcanvas font-size15 ">
             <div class="col-4 col-sm-4 col-md-4">
             <br>
             <br>
@@ -22,7 +22,7 @@
     </div>
 </div>
 <div class="border-th ">
-    <p  class="text span">[202204230462] กำหนดเวลาการจับคู่คำสั่งชื้อ<span>00:00:13</span></p>
+    <p  class="font-size span">[202204230462] กำหนดเวลาการจับคู่คำสั่งชื้อ<span>00:00:13</span></p>
 </div>
 <div class=py-12>
     <div class="container">
@@ -97,11 +97,35 @@
   <br>  
   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasBottomLabel">Offcanvas bottom</h5>
+      <h5 class="offcanvas-title" id="offcanvasBottomLabel"></h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body small">
-        <button type="button" class="btn btn-solid-primary btn--l rvHxix" aria-disabled="false">ซื้อสินค้า</button>
+        <div class=py-12>
+            <div class="container">
+                <div class="row head-center text-offcanvas down12 ">
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4">
+                        <button type="button" class="btn btn-danger">ซื้อสินค้า</button>
+                    </div>
+                </div>
+            </div>
+        </div>     
     </div>
   </div>
   
