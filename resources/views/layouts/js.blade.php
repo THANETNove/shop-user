@@ -241,13 +241,18 @@ $( "#buy-shop" ).click(function() {
         var name = document.getElementById('nameshop-1').value;
         let size =  document.getElementById('size').value;
         let price =  document.getElementById('price').value;
-        console.log(money,name,size,price);
-        if (Number(money) >= Number(price)) {
+  
+
+        if (true) {
+            console.log('ชื้อได้');
             jQuery.ajax({
                 url: "/buy-shop",
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
+                    name: name,
+                    size: size,
+                    price: price,
                     },
                 success: function(result){
                     console.log("result",result);

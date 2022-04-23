@@ -92,7 +92,7 @@ Route::get('/remove/{id}', [App\Http\Controllers\outMoneyUsersController::class,
 Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);
 Route::post('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);
-
+Route::post('/buy-shop', [App\Http\Controllers\BuyOutController::class ,'store'] );
 /* admin */
 
 Route::group(['middleware'=>'check'],function () {
