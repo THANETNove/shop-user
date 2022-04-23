@@ -201,8 +201,12 @@ if (currentLocation === '/set-up') {
 
 $( "#reload").click(function() {
 
-console.log("reload");
-  jQuery.ajax({
+    reloadMoney();
+  
+});
+
+function reloadMoney() {
+    jQuery.ajax({
         url: "/reload-money",
         method: 'post',
         data: {
@@ -211,13 +215,16 @@ console.log("reload");
         success: function(result){
             console.log("result",result);
             document.getElementById('modeyUser').innerHTML = result; 
+            let money = `จำนวนเงินคงเหลือ  ${result} ฿`
+            document.getElementById('money-shop').innerHTML = money;
                     
             },
         error: function(result){
             console.log(result);
         }      
     });   
-});
+    
+}
 
 
 setInterval(function () {
@@ -237,14 +244,13 @@ $( ".nameShop" ).click(function() {
 });
 
 $( "#buy-shop" ).click(function() {
-        var money =  document.getElementById('money-user').innerHTML;
+        var money =  document.getElementById('money-user').innerHTML ;
         var name = document.getElementById('nameshop-1').value;
         let size =  document.getElementById('size').value;
         let price =  document.getElementById('price').value;
-  
 
-        if (true) {
-            console.log('ชื้อได้');
+        let money2 =   Number(money.replace(/,/g,'')); 
+        if (money2 >= Number(price)) {
             jQuery.ajax({
                 url: "/buy-shop",
                 method: 'post',
@@ -252,11 +258,12 @@ $( "#buy-shop" ).click(function() {
                     "_token": "{{ csrf_token() }}",
                     name: name,
                     size: size,
-                    price: price,
+                    price: price
                     },
                 success: function(result){
                     console.log("result",result);
                     document.getElementById('error-price').innerHTML = result; 
+                    reloadMoney();
                             
                     },
                 error: function(result){
@@ -265,7 +272,7 @@ $( "#buy-shop" ).click(function() {
             });   
         }else{
             document.getElementById('error-price').innerHTML = "ยอด เงินของคุณไม่พอ กรุณาเติมเงิน";
-        } 
+        }   
 
 });
 

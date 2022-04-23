@@ -84,7 +84,7 @@
      <p  id="money-user" style="display:none;"> {{ $money}}</p>
   <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title font-size">จำนวนเงินคงเหลือ  {{ $money}} ฿</h5>
+      <h5 class="offcanvas-title font-size" id="money-shop">จำนวนเงินคงเหลือ  {{ $money}} ฿</h5>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body small">
