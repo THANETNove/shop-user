@@ -36,6 +36,7 @@ class Withdraw_moneyController extends Controller
 
         return view('main.withdraw_money',['withdraw' => $withdraw ,'accounts' => $accounts ,  'accounts' =>$accounts, 'BankAccounts' =>  $BankAccounts]);
     }
+
     public function reloadMoney()
     {
 
@@ -46,6 +47,22 @@ class Withdraw_moneyController extends Controller
       $money = $withdraw[0]->money;
       $moneyBant = number_format( $money , 2 );
             return response()->json($moneyBant);
+    }
+
+    public function getNumber()
+    {
+        $idUser =  Auth::user()->id;
+
+        $conut = DB::table('buy_outs')
+                     ->where('userId',$idUser)  
+                    ->count();
+
+        $withdraw = DB::table('buy_outs')
+                     ->where('userId',$idUser)
+                     ->where('id',$conut)  
+                    ->get();
+           $numberShop =     $withdraw[0]->numberCount;
+           return response()->json($numberShop);
     }
 
     /**

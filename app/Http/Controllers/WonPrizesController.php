@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
+use DB;
+use App\Models\WonPrize;
+
 
 class WonPrizesController extends Controller
 {
@@ -37,7 +41,15 @@ class WonPrizesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id =  Auth::user()->id;
+        $data = new WonPrize;
+        $data->userId = $id;
+        $data->won_prize = $request->won_prize;
+
+        $data->save();
+        $numberShop =    "บันทึก ที่ถูกรางวันเเล้ว";
+        return response()->json($numberShop);
+
     }
 
     /**

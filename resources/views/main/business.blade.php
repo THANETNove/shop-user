@@ -4,7 +4,7 @@
             <div class="col-4 col-sm-4 col-md-4">
             <br>
             <br>
-             <p>[202204230461]</p>
+             <p id="numberShopUser">ยังไม่สั่งซื้อ...</p>
              <p>ผลการจับคู่คำสั่งชื้อ</p>
             </div>
             <div class="col-4 col-sm-4 col-md-4">
@@ -20,10 +20,14 @@
             </div>
 
         </div>
+        <div class="col-12 col-sm-12 col-md-12 head-center">
+            <p id="won-prize" class="text-offcanvas"></p>
+        </div>
     </div>
 </div>
-<div class="border-th ">
-    <p  class="font-size span">[202204230462] กำหนดเวลาการจับคู่คำสั่งชื้อ<span id="countingdown"></span></p>
+<div class="border-th span">
+    <p  class="font-size span" id="re-number">รอ...</p>
+    <p id="countingdown" class="font-size forgot">กำหนดเวลาการจับคู่คำสั่งชื้อ</p>
 </div>
 <table class="table table-bordered down12">
     <tbody>

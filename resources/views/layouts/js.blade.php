@@ -227,6 +227,7 @@ function reloadMoney() {
 }
 
 
+
 setInterval(function () {
     var d = new Date(); //get current time
     var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
@@ -235,8 +236,61 @@ setInterval(function () {
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
+    /* console.log(result); */
+   
 
-}, 500) //calling it every 0.5 second to do a count down
+
+        if (result === '5:0') {  
+        const n = 999999999999 - 100000000000  + 1;
+        let numberCount = Math.floor(Math.random() * n) + 100000000000;
+        document.getElementById('re-number').innerHTML = `[${numberCount}]`;
+        let numberShop =   document.getElementById('numberShopUser').innerHTML;
+        let numberShop2 =  numberShop.substring(1, 13);
+   
+        console.log(numberShop2);
+          setTimeout(() => { 
+           if (numberShop === numberCount) {
+
+                document.getElementById('won-prize').innerHTML = `ยินดี ด้วย คุณ ถูก รางวัน` ;
+                     jQuery.ajax({
+                        url: "/save-prize",
+                        method: 'post',
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            won_prize: numberShop2,
+                            },
+                        success: function(result){
+                            console.log("result",result);
+
+                            },
+                        error: function(result){
+                            console.log(result);
+                        }      
+                    });   
+
+                setPrize();
+                    
+           }else{
+               if (numberShop2 != 'ังไม่สั่งซื้') {
+                document.getElementById('won-prize').innerHTML = `เสีจใจด้วย  คุณ  ไม่ ถูก รางวัน`;
+                setPrize();
+               }
+               
+           }
+         }, 500);
+
+        
+        
+       }   
+      
+
+}, 1000) //calling it every 0.5 second to do a count down
+
+function setPrize() {
+    setTimeout(() => {
+             document.getElementById('won-prize').innerHTML = ``;
+         }, 1000); 
+}
 
 $( ".nameShop" ).click(function() {
  let text = $(this).text();
@@ -249,6 +303,11 @@ $( "#buy-shop" ).click(function() {
         let size =  document.getElementById('size').value;
         let price =  document.getElementById('price').value;
 
+        const n = 999999999999 - 100000000000  + 1;
+        let numberCount = Math.floor(Math.random() * n) + 100000000000;
+
+
+
         let money2 =   Number(money.replace(/,/g,'')); 
         if (money2 >= Number(price)) {
             jQuery.ajax({
@@ -258,15 +317,18 @@ $( "#buy-shop" ).click(function() {
                     "_token": "{{ csrf_token() }}",
                     name: name,
                     size: size,
-                    price: price
+                    price: price,
+                    numberCount: numberCount
                     },
                 success: function(result){
                     console.log("result",result);
                     document.getElementById('error-price').innerHTML = result; 
                     reloadMoney();
-                    setTimeout(() => {
+                    getNumber();
+                    
+                     setTimeout(() => {
                         $('#close').trigger('click');
-                    }, 1000);
+                    }, 1000); 
 
                     
                     },
@@ -280,6 +342,26 @@ $( "#buy-shop" ).click(function() {
 
 });
 
+function getNumber() {
+
+    jQuery.ajax({
+        url: "/get-number",
+        method: 'post',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            },
+        success: function(result){
+
+            let number = `[${result}]`;
+            document.getElementById('numberShopUser').innerHTML = number;
+                    
+            },
+        error: function(result){
+            console.log(result);
+        }      
+    });   
+    
+}
 
 
 </script>

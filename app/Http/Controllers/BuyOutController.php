@@ -46,8 +46,9 @@ class BuyOutController extends Controller
         $data->product_name = $request->name;
         $data->finished_size = $request->size;
         $data->price = $price;
+        $data->numberCount = $request->numberCount;
         $data->userId = $id;
-       /*  $data->save(); */
+        $data->save(); 
 
          $user = DB::table('users')
                  ->where('id', $id) 

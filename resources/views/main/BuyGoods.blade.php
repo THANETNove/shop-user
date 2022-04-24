@@ -28,9 +28,8 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">ชื่อ</th>
-          <th scope="col">รหัสคำเชิญ</th>
+          <th scope="col">ซื้อสินค้า</th>
           <th scope="col">จำนวนเงิน</th>
-          <th scope="col">บัญชีธนาคาร</th>
         </tr>
       </thead>
     <tbody>
@@ -51,13 +50,10 @@
                     </td>
                 <td class="col-3 col-sm-3 col-md-3" >
                   @php
-                  $money =  number_format($user->finished_size,2)
+                  $money =  number_format($user->price,2)
                  @endphp
                    {{ $money }}  บาท
                 </td> 
-                <td class="col-2 col-sm-2 col-md-2 ">
-                  <a   href="{{route('account.edit',$user->id)}}" class="btn btn-outline-info"  onclick="if(confirm('ยืนยัน เปลี่ยน บัญชีธนาคาร')) return true; else return false;" >เเก้ไขบัญชีธนาคาร</a>
-                </td>
             </tr>
         @endforeach
     </tbody>
