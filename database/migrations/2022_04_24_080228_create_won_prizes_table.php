@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('won_prizes', function (Blueprint $table) {
             $table->id();
-            $table->string('userId');
+            $table->string('time_number');
             $table->string('won_prize');
             $table->timestamps();
         });

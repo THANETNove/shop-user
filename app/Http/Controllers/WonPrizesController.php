@@ -18,6 +18,7 @@ class WonPrizesController extends Controller
      */
     public function index()
     {
+    
         $user = DB::table('won_prizes') 
         ->get(); 
         return view('main.won-prize',['user'=> $user]);
@@ -30,7 +31,8 @@ class WonPrizesController extends Controller
      */
     public function create()
     {
-        //
+
+                return view('main.challenge');
     }
 
     /**
@@ -41,16 +43,17 @@ class WonPrizesController extends Controller
      */
     public function store(Request $request)
     {
+
         $id =  Auth::user()->id;
         $data = new WonPrize;
-        $data->userId = $id;
-        $data->won_prize = $request->won_prize;
+        $data->time_number = $request->challenge;
+        $data->won_prize = $request->size;
 
         $data->save();
-        $numberShop =    "บันทึก ที่ถูกรางวันเเล้ว";
-        return response()->json($numberShop);
 
-    }
+        return Redirect()->back()->with('status',"เพิ่มสำเร็จเเล้ว");
+
+    }     
 
     /**
      * Display the specified resource.

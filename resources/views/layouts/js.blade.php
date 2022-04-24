@@ -1,3 +1,4 @@
+<script src="{{ asset('/js/number.js') }}"></script>
 <script type="text/JavaScript">
 $(document).ready(function(){
    
@@ -107,7 +108,8 @@ $( "#flexSwitchCheckChecked" ).click(function() {
 
 function functionDestroy(e) {
     jQuery.ajax({
-        url: '/Hm-7UQjf9.r18Z/public/gatAjax',
+       /*  url: '/Hm-7UQjf9.r18Z/public/gatAjax', */
+       url: '/gatAjax',
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -134,7 +136,8 @@ $( "#destroyId" ).click(function() {
     if(confirm()){
      let id =  document.getElementById('destroyId').value;
      jQuery.ajax({
-        url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`,
+      /*   url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, */
+      url: `/gatDestroy/${id}`,
         method: 'get',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -155,7 +158,8 @@ var locationLogin = window.location.pathname;
 console.log('locationLogin',locationLogin); 
 
  window.onload = (event) => {
-            if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {
+           /*  if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') { */
+            if (currentLocation === '/login') {
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -175,7 +179,8 @@ $( function() {
   });
 
 var currentLocation = window.location.pathname;
-if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {
+/* if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') { */
+    if (currentLocation === '/user') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -188,7 +193,8 @@ if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {
 
 var currentLocation = window.location.pathname;
     console.log(currentLocation);
-if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {
+/* if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') { */
+if (currentLocation === '/set-up') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -208,7 +214,8 @@ $( "#reload").click(function() {
 
 function reloadMoney() {
     jQuery.ajax({
-        url: "/Hm-7UQjf9.r18Z/public/reload-money",
+       /*  url: "/Hm-7UQjf9.r18Z/public/reload-money", */
+        url: "/reload-money",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -237,52 +244,19 @@ setInterval(function () {
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
+/*     document.getElementById('challenge').innerHTML = timedown;  */
     /* console.log(result); */
-   
 
 
-        if (result === '5:0') {  
-        const n = 999999999999 - 100000000000  + 1;
-        let numberCount = Math.floor(Math.random() * n) + 100000000000;
-        document.getElementById('re-number').innerHTML = `[${numberCount}]`;
+
+        if (result === '5:0') {   
+        
+         let number =    numberCount();
+         document.getElementById('re-number').innerHTML = `รอบที่ ${number}`;
         let numberShop =   document.getElementById('numberShopUser').innerHTML;
         let numberShop2 =  numberShop.substring(1, 13);
-   
-        console.log(numberShop2);
-          setTimeout(() => { 
-           if (numberShop === numberCount) {
 
-                document.getElementById('won-prize').innerHTML = `ยินดี ด้วย คุณ ถูก รางวัน` ;
-                     jQuery.ajax({
-                        url: "/Hm-7UQjf9.r18Z/public/save-prize",
-                        method: 'post',
-                        data: {
-                            "_token": "{{ csrf_token() }}",
-                            won_prize: numberShop2,
-                            },
-                        success: function(result){
-                            console.log("result",result);
-
-                            },
-                        error: function(result){
-                            console.log(result);
-                        }      
-                    });   
-
-                setPrize();
-                    
-           }else{
-               if (numberShop2 != 'ังไม่สั่งซื้') {
-                document.getElementById('won-prize').innerHTML = `เสีจใจด้วย  คุณ  ไม่ ถูก รางวัน`;
-                setPrize();
-               }
-               
-           }
-         }, 500);
-
-        
-        
-       }   
+        }   
       
 
 }, 1000) //calling it every 0.5 second to do a count down
@@ -298,32 +272,36 @@ $( ".nameShop" ).click(function() {
  document.getElementById('nameshop-1').value = text.trim();
 });
 
+
+
+
+
+
+
 $( "#buy-shop" ).click(function() {
+        var contTime =  document.getElementById('re-number').innerHTML ;
         var money =  document.getElementById('money-user').innerHTML ;
         var name = document.getElementById('nameshop-1').value;
         let size =  document.getElementById('size').value;
         let price =  document.getElementById('price').value;
 
-        const n = 999999999999 - 100000000000  + 1;
-        let numberCount = Math.floor(Math.random() * n) + 100000000000;
-
-
 
         let money2 =   Number(money.replace(/,/g,'')); 
         if (money2 >= Number(price)) {
             jQuery.ajax({
-                url: "/Hm-7UQjf9.r18Z/public/buy-shop",
+               /*  url: "/Hm-7UQjf9.r18Z/public/buy-shop", */
+                url: "/buy-shop",
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
                     name: name,
                     size: size,
                     price: price,
-                    numberCount: numberCount
+                    numberCount: contTime,
                     },
                 success: function(result){
                     console.log("result",result);
-                    document.getElementById('error-price').innerHTML = result; 
+                    document.getElementById('error-price').innerHTML = contTime; 
                     reloadMoney();
                     getNumber();
                     
@@ -346,14 +324,15 @@ $( "#buy-shop" ).click(function() {
 function getNumber() {
 
     jQuery.ajax({
-        url: "/Hm-7UQjf9.r18Z/public/get-number",
+        /* url: "/Hm-7UQjf9.r18Z/public/get-number", */
+        url: "/get-number", 
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
             },
         success: function(result){
-
-            let number = `[${result}]`;
+            console.log(result);
+            let number = `${result}`;
             document.getElementById('numberShopUser').innerHTML = number;
                     
             },

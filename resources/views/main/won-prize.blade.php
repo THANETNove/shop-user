@@ -27,7 +27,7 @@
     <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">ชื่อ</th>
+          <th scope="col">รหัสรอบ</th>
           <th scope="col">รหัสที่ถูกรางวัน</th>
           <th scope="col">วันที่</th>
         </tr>
@@ -43,7 +43,7 @@
                        {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                     </td>
                     <td class="col-3 col-sm-3 col-md-3">
-                      {{ $user->userId }} 
+                      {{ $user->time_number }} 
                     </td>
                     <td class="col-3 col-sm-3 col-md-3 ">
                       {{ $user->won_prize }} 

@@ -94,8 +94,6 @@ Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::clas
 Route::post('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);
 Route::post('/buy-shop', [App\Http\Controllers\BuyOutController::class ,'store'] );
 Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
-Route::get('/won-prize', [App\Http\Controllers\WonPrizesController::class, 'index'])->name('won-prize');
-Route::post('/save-prize', [App\Http\Controllers\WonPrizesController::class, 'store'])->name('won-prize');
 Route::post('/get-number', [App\Http\Controllers\Withdraw_moneyController::class,'getNumber']);
 /* admin */
 
@@ -105,6 +103,8 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/link-line', App\Http\Controllers\LinkLineController::class);
     Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
     Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);
+    Route::resource('/won-prize', App\Http\Controllers\WonPrizesController::class);
+    Route::get('/challenge', [App\Http\Controllers\WonPrizesController::class, 'create'])->name('home');
     
 });
 

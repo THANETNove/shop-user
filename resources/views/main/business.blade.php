@@ -30,7 +30,7 @@
     </div>
 </div>
 <div class="border-th span">
-    <p  class="font-size span" id="re-number">รอ...</p>
+    <p  class="font-size span" id="re-number">รอบที่...</p>
     <p id="countingdown" class="font-size forgot">กำหนดเวลาการจับคู่คำสั่งชื้อ</p>
 </div>
 <table class="table table-bordered down12">

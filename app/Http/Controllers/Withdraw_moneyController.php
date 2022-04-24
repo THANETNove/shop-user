@@ -53,16 +53,11 @@ class Withdraw_moneyController extends Controller
     {
         $idUser =  Auth::user()->id;
 
-        $conut = DB::table('buy_outs')
-                     ->where('userId',$idUser)  
-                    ->count();
-
+    
         $withdraw = DB::table('buy_outs')
                      ->where('userId',$idUser)
-                     ->where('id',$conut)  
                     ->get();
-           $numberShop =     $withdraw[0]->numberCount;
-           return response()->json($numberShop);
+           return response()->json($withdraw[0]->numberCount);
     }
 
     /**

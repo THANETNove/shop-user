@@ -9,7 +9,7 @@ class WonPrize extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'userId',
+        'time_number',
         'won_prize',
     ];
 }
