@@ -7,6 +7,7 @@ use App\Models\Withdraw_money;
 use auth;
 use DB;
 use App\Models\User;
+use App\Models\Re_countNumber;
 
 
 class Withdraw_moneyController extends Controller
@@ -59,6 +60,27 @@ class Withdraw_moneyController extends Controller
                     ->get();
            return response()->json($withdraw[0]->numberCount);
     }
+
+
+    public function number_count(Request $request)
+    {
+
+        $data = Re_countNumber::find(1);
+        $data->number_count = $request->number_count;
+         $data->save(); 
+         $withdraw = "บันทึกเรียบร้อย";
+         return response()->json($withdraw);
+    }
+
+    public function getConut(Request $request)
+    {
+
+        $withdraw = DB::table('re_count_numbers')
+                    ->where('id',1)
+                    ->get();
+         return response()->json($withdraw[0]->number_count);
+    }
+
 
     /**
      * Show the form for creating a new resource.

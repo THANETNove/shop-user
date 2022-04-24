@@ -1,4 +1,4 @@
-<script src="{{ asset('/js/number.js') }}"></script>
+
 <script type="text/JavaScript">
 $(document).ready(function(){
    
@@ -247,19 +247,35 @@ setInterval(function () {
 /*     document.getElementById('challenge').innerHTML = timedown;  */
     /* console.log(result); */
 
-
+ 
 
         if (result === '5:0') {   
-        
-         let number =    numberCount();
-         document.getElementById('re-number').innerHTML = `รอบที่ ${number}`;
-        let numberShop =   document.getElementById('numberShopUser').innerHTML;
-        let numberShop2 =  numberShop.substring(1, 13);
+    
+            jQuery.ajax({
+               /*  url: "/Hm-7UQjf9.r18Z/public/buy-shop", */
+                url: "/get-conut",
+                method: 'post',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    },
+                success: function(result){
+
+                    document.getElementById('re-number').innerHTML = `รอบที่ ${result}`
+
+                    },
+                error: function(result){
+
+                }      
+            });   
+      
+
 
         }   
       
 
 }, 1000) //calling it every 0.5 second to do a count down
+
+
 
 function setPrize() {
     setTimeout(() => {
@@ -324,23 +340,21 @@ $( "#buy-shop" ).click(function() {
 function getNumber() {
 
     jQuery.ajax({
-        /* url: "/Hm-7UQjf9.r18Z/public/get-number", */
-        url: "/get-number", 
-        method: 'post',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            },
-        success: function(result){
-            console.log(result);
-            let number = `${result}`;
-            document.getElementById('numberShopUser').innerHTML = number;
+               /*  url: "/Hm-7UQjf9.r18Z/public/buy-shop", */
+                url: "/get-conut",
+                method: 'post',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    },
+                success: function(result){
+
+                    document.getElementById('numberShopUser').innerHTML = `รอบที่ ${result}`
                     
-            },
-        error: function(result){
-            console.log(result);
-        }      
-    });   
-    
+                    },
+                error: function(result){
+
+                }      
+            });   
 }
 
 $( ".product-price" ).click(function() {

@@ -14,4 +14,5 @@
    
 </body>
 @include('layouts.js')
+@include('layouts.reload_number')
 </html>

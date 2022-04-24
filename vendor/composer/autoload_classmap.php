@@ -43,6 +43,7 @@ return array(
     'App\\Models\\BuyOut' => $baseDir . '/app/Models/BuyOut.php',
     'App\\Models\\Invitation' => $baseDir . '/app/Models/Invitation.php',
     'App\\Models\\LinkLine' => $baseDir . '/app/Models/LinkLine.php',
+    'App\\Models\\Re-countNumber' => $baseDir . '/app/Models/Re-countNumber.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\Withdraw_money' => $baseDir . '/app/Models/Withdraw_money.php',
     'App\\Models\\WonPrize' => $baseDir . '/app/Models/WonPrize.php',

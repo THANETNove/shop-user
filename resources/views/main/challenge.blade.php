@@ -64,18 +64,28 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('/js/number.js') }}"></script>
     <script type="text/JavaScript">
         $(document).ready(function(){
              setInterval(function () {
-                let number =    numberCount();
-                console.log(number);
-                document.getElementById('challenge').value = number;
-            },3000);
-           /*  setTimeout(() => {
-                let number =    numberCount();
-                console.log(number);
-            }, 1000);  */
+              
+                jQuery.ajax({
+               /*  url: "/Hm-7UQjf9.r18Z/public/buy-shop", */
+                url: "/get-conut",
+                method: 'post',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    },
+                success: function(result){
+
+                    document.getElementById('challenge').value = `${result}`
+                    
+                    },
+                error: function(result){
+
+                }      
+            });   
+            },1000);
+         
         });
     </script>
 @endsection

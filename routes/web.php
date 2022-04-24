@@ -95,6 +95,10 @@ Route::post('/reload-money', [App\Http\Controllers\Withdraw_moneyController::cla
 Route::post('/buy-shop', [App\Http\Controllers\BuyOutController::class ,'store'] );
 Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 Route::post('/get-number', [App\Http\Controllers\Withdraw_moneyController::class,'getNumber']);
+Route::post('/timeNumberCount', [App\Http\Controllers\Withdraw_moneyController::class,'number_count']);
+Route::post('/get-conut', [App\Http\Controllers\Withdraw_moneyController::class,'getConut']);
+
+
 /* admin */
 
 Route::group(['middleware'=>'check'],function () {
@@ -105,6 +109,9 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);
     Route::resource('/won-prize', App\Http\Controllers\WonPrizesController::class);
     Route::get('/challenge', [App\Http\Controllers\WonPrizesController::class, 'create'])->name('home');
+
     
 });
+
+
 

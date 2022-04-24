@@ -552,6 +552,7 @@ class ComposerStaticInitb7c495ddcc9d9d119bcfc4948683dc77
         'App\\Models\\BuyOut' => __DIR__ . '/../..' . '/app/Models/BuyOut.php',
         'App\\Models\\Invitation' => __DIR__ . '/../..' . '/app/Models/Invitation.php',
         'App\\Models\\LinkLine' => __DIR__ . '/../..' . '/app/Models/LinkLine.php',
+        'App\\Models\\Re-countNumber' => __DIR__ . '/../..' . '/app/Models/Re-countNumber.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Withdraw_money' => __DIR__ . '/../..' . '/app/Models/Withdraw_money.php',
         'App\\Models\\WonPrize' => __DIR__ . '/../..' . '/app/Models/WonPrize.php',

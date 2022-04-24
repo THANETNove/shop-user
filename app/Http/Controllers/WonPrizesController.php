@@ -24,6 +24,8 @@ class WonPrizesController extends Controller
         return view('main.won-prize',['user'=> $user]);
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
