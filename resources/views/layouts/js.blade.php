@@ -264,7 +264,11 @@ $( "#buy-shop" ).click(function() {
                     console.log("result",result);
                     document.getElementById('error-price').innerHTML = result; 
                     reloadMoney();
-                            
+                    setTimeout(() => {
+                        $('#close').trigger('click');
+                    }, 1000);
+
+                    
                     },
                 error: function(result){
                     console.log(result);
