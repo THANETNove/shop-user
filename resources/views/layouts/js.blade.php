@@ -363,5 +363,45 @@ function getNumber() {
     
 }
 
+$( ".product-price" ).click(function() {
+ let text = $(this).text();
+ 
+ let id = $(this).attr('id');
+ console.log(id);
+ var money = "";
+
+if (text.trim() === '1 k') {
+    money += "1000";
+}else if (text.trim() === '2.5 k') {
+    money += "2500";
+}else if (text.trim() === '5 k') {
+    money += "5000";
+}else{
+    money += text;
+}
+
+ document.getElementById('price').value = money.trim();
+ let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
+    document.getElementById(id).innerHTML = icon;
+
+/*  if(id === 'product1'){
+    let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
+    document.getElementById(id).innerHTML = icon;
+ }else{
+    let icon = `<i class="fa-solid fa-tag" style='font-size:40px'></i> <p>${text}</p>`;
+    document.getElementById(id).innerHTML = icon;
+ }
+ if(id === 'product2'){
+    let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
+    document.getElementById(id).innerHTML = icon;
+ }else{
+    let icon = `<i class="fa-solid fa-tag" style='font-size:40px'></i> <p>${text}</p>`;
+    document.getElementById(id).innerHTML = icon;
+ }
+  */
+
+});
+
+
 
 </script>

@@ -116,29 +116,29 @@
                      <div>
                         <div class="container">
                             <div class="row row-cols-6 font-size15">
-                              <div class="col">
+                              <div class="col product-price" id="product1">
                                   <i class="fa-solid fa-tag" style='font-size:40px'></i>
-                                  <p>25%</p>
+                                  <p>25</p>
                                 </div>
-                              <div class="col">
+                              <div class="col product-price" id="product2">
                                   <i class="fa-solid fa-tag" style='font-size:40px'></i>
-                                  <p>30%</p>
+                                  <p>100</p>
                                 </div>
-                              <div class="col">
+                              <div class="col product-price" id="product3">
                                   <i class="fa-solid fa-tag" style='font-size:40px'></i>
-                                  <p>40%</p>
+                                  <p>500</p>
                                 </div>
-                              <div class="col">
+                              <div class="col  product-price" id="product4">
                                   <i class="fa-solid fa-tag" style='font-size:40px'></i>
-                                  <p>50%</p>
+                                  <p>1 k</p>
                             </div>
-                              <div class="col">
+                              <div class="col product-price" id="product5"> 
                                   <i class="fa-solid fa-tag" style='font-size:40px'></i>
-                                  <p>80%</p>
+                                  <p>2.5 k</p>
                                 </div>
-                              <div class="col">
+                              <div class="col product-price" id="product6">
                                   <i class="fa-solid fa-tag" style='font-size:40px'></i>
-                                  <p>100%</p>
+                                  <p>5 k</p>
 
                                 </div>
                             </div>
