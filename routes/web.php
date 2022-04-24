@@ -57,6 +57,10 @@ Route::get('registerAdmin', function () {
     return view('/auth/registerAdmin');
 });
 
+Route::get('', function () {
+    return view('/auth/registerAdmin');
+});
+
 Auth::routes();
 
 
@@ -97,6 +101,7 @@ Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index
 Route::post('/get-number', [App\Http\Controllers\Withdraw_moneyController::class,'getNumber']);
 Route::post('/timeNumberCount', [App\Http\Controllers\Withdraw_moneyController::class,'number_count']);
 Route::post('/get-conut', [App\Http\Controllers\Withdraw_moneyController::class,'getConut']);
+Route::post('/get-data', [App\Http\Controllers\Withdraw_moneyController::class,'getData']);
 
 
 /* admin */

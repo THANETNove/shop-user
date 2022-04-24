@@ -26,13 +26,14 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {   
-
+  
 
         $line = DB::table('link_lines')
                     ->get();
                     $line = $line[0]->link; 
                     Session::put('link', $line);
 
+  
 
       $idStatus =  Auth::user()->is_idadmin;
         $contBank = DB::table('bank_accounts')

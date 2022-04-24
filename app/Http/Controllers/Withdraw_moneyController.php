@@ -81,6 +81,19 @@ class Withdraw_moneyController extends Controller
          return response()->json($withdraw[0]->number_count);
     }
 
+    public function getData()
+    {   
+        $id =  Auth::user()->id;
+        $user = DB::table('buy_outs')
+                    ->where('userId',$id)
+                    ->get();
+      
+        $admin = DB::table('won_prizes')
+                    ->get();
+      
+        return response()->json([$user,$admin]);
+    }
+
 
     /**
      * Show the form for creating a new resource.

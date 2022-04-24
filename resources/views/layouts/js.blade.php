@@ -247,10 +247,6 @@ setInterval(function () {
 /*     document.getElementById('challenge').innerHTML = timedown;  */
     /* console.log(result); */
 
- 
-
-        if (result === '5:0') {   
-    
             jQuery.ajax({
                /*  url: "/Hm-7UQjf9.r18Z/public/buy-shop", */
                 url: "/get-conut",
@@ -270,7 +266,7 @@ setInterval(function () {
       
 
 
-        }   
+        
       
 
 }, 1000) //calling it every 0.5 second to do a count down
@@ -300,6 +296,8 @@ $( "#buy-shop" ).click(function() {
         var name = document.getElementById('nameshop-1').value;
         let size =  document.getElementById('size').value;
         let price =  document.getElementById('price').value;
+       let conettimeNumber =  contTime.substring(7, 17);
+
 
 
         let money2 =   Number(money.replace(/,/g,'')); 
@@ -313,7 +311,7 @@ $( "#buy-shop" ).click(function() {
                     name: name,
                     size: size,
                     price: price,
-                    numberCount: contTime,
+                    numberCount: conettimeNumber,
                     },
                 success: function(result){
                     console.log("result",result);
@@ -358,27 +356,28 @@ function getNumber() {
 }
 
 $( ".product-price" ).click(function() {
- let text = $(this).text();
- 
- let id = $(this).attr('id');
- console.log(id);
- var money = "";
+        let text = $(this).text();
+        
+        let id = $(this).attr('id');
+        console.log(id);
+        var money = "";
 
-if (text.trim() === '1 k') {
-    money += "1000";
-}else if (text.trim() === '2.5 k') {
-    money += "2500";
-}else if (text.trim() === '5 k') {
-    money += "5000";
-}else{
-    money += text;
-}
+        if (text.trim() === '1 k') {
+            money += "1000";
+        }else if (text.trim() === '2.5 k') {
+            money += "2500";
+        }else if (text.trim() === '5 k') {
+            money += "5000";
+        }else{
+            money += text;
+        }
 
- document.getElementById('price').value = money.trim();
- let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
-    document.getElementById(id).innerHTML = icon;
+        document.getElementById('price').value = money.trim();
+        let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
+            document.getElementById(id).innerHTML = icon;
 
 });
+
 
 
 
