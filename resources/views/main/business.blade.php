@@ -106,16 +106,43 @@
                           </select>
                       </div>
                       <div class="mb-3">
-                        <p for="exampleFormControlInput1"    class="form-label font-size-14">ขนาดสินค้า</p>
-                        <select class="form-select" id="price" name="price" aria-label="Default select example">
-                            <option value="25" selected>25</option>
-                            <option value="100">100</option>
-                            <option value="5">500</option>
-                            <option value="1 k">1 k</option>
-                            <option value="2.5 k">2.5 k</option>
-                            <option value="5 k">5 k</option>
-                          </select>
+                        <p for="exampleFormControlInput1"    class="form-label font-size-14">ราคา</p>
+                        <input type="text" class="form-control" id="price" name="price" value="25" >
                       </div>
+                     <div>
+                        <div class="container">
+                            <div class="row row-cols-6 font-size15">
+                              <div class="col">
+                                  <i class="fa-solid fa-tag" style='font-size:40px'></i>
+                                  <p>25%</p>
+                                </div>
+                              <div class="col">
+                                  <i class="fa-solid fa-tag" style='font-size:40px'></i>
+                                  <p>30%</p>
+                                </div>
+                              <div class="col">
+                                  <i class="fa-solid fa-tag" style='font-size:40px'></i>
+                                  <p>40%</p>
+                                </div>
+                              <div class="col">
+                                  <i class="fa-solid fa-tag" style='font-size:40px'></i>
+                                  <p>50%</p>
+                            </div>
+                              <div class="col">
+                                  <i class="fa-solid fa-tag" style='font-size:40px'></i>
+                                  <p>80%</p>
+                                </div>
+                              <div class="col">
+                                  <i class="fa-solid fa-tag" style='font-size:40px'></i>
+                                  <p>100%</p>
+
+                                </div>
+                            </div>
+                          </div>
+                     </div>
+                     <br>
+                     <br>
+                     <br>
                     <div class="mb-3  head-center">
                         <button type="button" id="buy-shop" class="btn btn-outline-light">ซื้อสินค้า</button>
                     </div>
