@@ -93,6 +93,7 @@ Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);
 Route::post('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);
 Route::post('/buy-shop', [App\Http\Controllers\BuyOutController::class ,'store'] );
+Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 /* admin */
 
 Route::group(['middleware'=>'check'],function () {

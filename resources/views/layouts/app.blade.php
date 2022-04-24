@@ -51,6 +51,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('link-line')}}"  >Link-Line</a>
                         </li>       
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to('buy-goods')}}"  >ส้่งชื้อสินต้า</a>
+                        </li>       
                       </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
