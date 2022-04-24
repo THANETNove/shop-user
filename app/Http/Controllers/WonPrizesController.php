@@ -18,9 +18,9 @@ class WonPrizesController extends Controller
      */
     public function index()
     {
-        $user = DB::table('buy_outs') 
+        $user = DB::table('won_prizes') 
         ->get(); 
-        return view('main.BuyGoods',['user'=> $user]);
+        return view('main.won-prize',['user'=> $user]);
     }
 
     /**

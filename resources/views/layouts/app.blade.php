@@ -52,7 +52,7 @@
                             <a class="nav-link" href="{{ URL::to('link-line')}}"  >Link-Line</a>
                         </li>       
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('buy-goods')}}"  >ส้่งชื้อสินต้า</a>
+                            <a class="nav-link" href="{{ URL::to('buy-goods')}}"  >สั่งชื้อสินต้า</a>
                         </li>       
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('won-prize')}}"  >ถุกรางวัล</a>
