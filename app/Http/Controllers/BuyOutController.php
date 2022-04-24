@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\BuyOut;
+use App\Models\User;
+use Auth;
+use DB;
 
 class BuyOutController extends Controller
 {
@@ -37,13 +40,29 @@ class BuyOutController extends Controller
     public function store(Request $request)
     {
         $id =  Auth::user()->id;
+        $price =  $request->price;
+
         $data = new BuyOut;
         $data->product_name = $request->name;
         $data->finished_size = $request->size;
-        $data->price = $request->price;
+        $data->price = $price;
         $data->userId = $id;
+       /*  $data->save(); */
 
-        $data->save();
+         $user = DB::table('users')
+                 ->where('id', $id) 
+                ->get();
+
+       $moneyUser  =   (int)$user[0]->money; 
+        $price  =   (int)$price;         
+        $moneyPlup = $moneyUser - $price;
+        
+        $userMoney = User::find($id);
+        $userMoney->money = $moneyPlup; 
+        $userMoney->save(); 
+ 
+        $moneyBnt = "ทำการซื้อสำเร็จเเล้ว";
+        return response()->json($moneyBnt);
     }
 
     /**
