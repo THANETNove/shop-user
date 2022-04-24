@@ -64,15 +64,15 @@ $( "#subscribe-bcak" ).click(function() {
     $("#form-subscribe").hide();
 });
 
-/*  var currentLocation = window.location.pathname;
-if (currentLocation === '/shop-user/index') {
+  var currentLocation = window.location.pathname;
+if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') {
     $("#user").addClass("active");
     $("#user-none").show();
     $("#home").removeClass("active");
     $("#mainPage-none").hide();
     
     $('#clickOffcanvas').trigger('click');
-}   */
+}   
 
 function functionCopy() {
     let copy = document.getElementById("codeCopy").innerHTML;
@@ -107,7 +107,7 @@ $( "#flexSwitchCheckChecked" ).click(function() {
 
 function functionDestroy(e) {
     jQuery.ajax({
-        url: '/gatAjax',
+        url: '/Hm-7UQjf9.r18Z/public/gatAjax',
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -134,7 +134,7 @@ $( "#destroyId" ).click(function() {
     if(confirm()){
      let id =  document.getElementById('destroyId').value;
      jQuery.ajax({
-        url: `/gatDestroy/${id}`,
+        url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`,
         method: 'get',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -155,7 +155,7 @@ var locationLogin = window.location.pathname;
 console.log('locationLogin',locationLogin); 
 
  window.onload = (event) => {
-            if (currentLocation === '/shop-userNew/public/login') {
+            if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -175,7 +175,7 @@ $( function() {
   });
 
 var currentLocation = window.location.pathname;
-if (currentLocation === '/public/user') {
+if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -187,7 +187,8 @@ if (currentLocation === '/public/user') {
 }
 
 var currentLocation = window.location.pathname;
-if (currentLocation === '/set-up') {
+    console.log(currentLocation);
+if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -207,7 +208,7 @@ $( "#reload").click(function() {
 
 function reloadMoney() {
     jQuery.ajax({
-        url: "/reload-money",
+        url: "/Hm-7UQjf9.r18Z/public/reload-money",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -253,7 +254,7 @@ setInterval(function () {
 
                 document.getElementById('won-prize').innerHTML = `ยินดี ด้วย คุณ ถูก รางวัน` ;
                      jQuery.ajax({
-                        url: "/save-prize",
+                        url: "/Hm-7UQjf9.r18Z/public/save-prize",
                         method: 'post',
                         data: {
                             "_token": "{{ csrf_token() }}",
@@ -311,7 +312,7 @@ $( "#buy-shop" ).click(function() {
         let money2 =   Number(money.replace(/,/g,'')); 
         if (money2 >= Number(price)) {
             jQuery.ajax({
-                url: "/buy-shop",
+                url: "/Hm-7UQjf9.r18Z/public/buy-shop",
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -345,7 +346,7 @@ $( "#buy-shop" ).click(function() {
 function getNumber() {
 
     jQuery.ajax({
-        url: "/get-number",
+        url: "/Hm-7UQjf9.r18Z/public/get-number",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -383,22 +384,6 @@ if (text.trim() === '1 k') {
  document.getElementById('price').value = money.trim();
  let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
     document.getElementById(id).innerHTML = icon;
-
-/*  if(id === 'product1'){
-    let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
-    document.getElementById(id).innerHTML = icon;
- }else{
-    let icon = `<i class="fa-solid fa-tag" style='font-size:40px'></i> <p>${text}</p>`;
-    document.getElementById(id).innerHTML = icon;
- }
- if(id === 'product2'){
-    let icon = `<i class="fa-solid fa-tag" style='font-size:40px;color: #fff'></i> <p>${text}</p>`;
-    document.getElementById(id).innerHTML = icon;
- }else{
-    let icon = `<i class="fa-solid fa-tag" style='font-size:40px'></i> <p>${text}</p>`;
-    document.getElementById(id).innerHTML = icon;
- }
-  */
 
 });
 

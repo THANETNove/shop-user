@@ -1,3 +1,6 @@
+<div class="head">
+  <p class="center text-head">รายชื่อธุระกิจ</p>
+</div>
 <div class=py-12>
     <div class="container">
         <div class="row head-center text-offcanvas font-size15 ">
@@ -8,7 +11,8 @@
              <p>ผลการจับคู่คำสั่งชื้อ</p>
             </div>
             <div class="col-4 col-sm-4 col-md-4">
-                <p>108Shop</p>
+              <br>
+             <br>
              <br>
              <p>ชิ้นเล็ก</p>
             </div>

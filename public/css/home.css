@@ -144,7 +144,7 @@
         background-color: var(--bs-body-bg);
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        background-color: #d3291c;
+        background-color: #e96a03;
     }
     
     html {
@@ -165,7 +165,7 @@
         text-align: center;
         width: 100%;
         color: #FFFFFF;
-        background-color: #ff6566;
+        background-color: #9d5618;
     }
     
     .icon-text {
@@ -190,7 +190,7 @@
     
     .welcome-to-buy {
         color: #FFFFFF;
-        background-color: #d3291c;
+        background-color: #b34c11bf;
         max-width: 100%;
         height: 75px;
         padding: 20px;
@@ -204,25 +204,25 @@
     }
     
     .box-shop {
-        background-color: #d3291c;
+        background-color: #b34c11bf;
         max-width: 100%;
         height: 75px;
     }
     
     .img-shop {
-        background-color: #9b1e14;
+        background-color: #b34c11bf;
         max-width: 100%;
         height: 60px;
         max-width: 100%;
-        border-color: #d3291c;
+        border-color: #b34c11bf;
     }
     
     .img-report {
-        background-color: #9b1e14;
+        background-color: #b34c11bf;
         max-width: 100%;
         height: 60px;
         max-width: 100%;
-        border-color: #d3291c;
+        border-color: #b34c11bf;
     }
     
     .img-shop td {
@@ -242,7 +242,7 @@
         margin-bottom: 1rem;
         color: #212529;
         vertical-align: top;
-        border-color: #d3291c;
+        border-color: #b34c11bf;
     }
     
     .center {
@@ -280,11 +280,11 @@
         width: 100%;
         height: 70px;
         padding: 10px;
-        background-color: #9b1e14;
+        background-color: #b34c11bf;
     }
     
     .overflowTest {
-        background: #d3291c;
+        background: #b34c11bf;
         color: white;
         padding: 15px;
         width: 100%;
@@ -306,7 +306,7 @@
         width: 100%;
         height: 70px;
         padding: 10px;
-        background-color: #ff6566;
+        background-color: #e78e46;
     }
     
     .text-head {
@@ -425,7 +425,7 @@
     }
     
     .offcanvas-color {
-        background-color: #d3291c;
+        background-color: #e96a03;
     }
     
     .margin-user {
@@ -470,7 +470,7 @@
     }
     
     .offcanvas-bottom {
-        background-color: #d3291c;
+        background-color: #b34c11bf;
         height: 400px;
     }
     
@@ -492,7 +492,7 @@
         width: 100%;
         border-radius: 25px;
         border: rgb(155, 30, 20);
-        background-color: rgb(155, 30, 20);
+        background-color: #b34c11bf;
     }
     
     .border-red {
@@ -501,8 +501,8 @@
         height: 50px;
         width: 100%;
         border-radius: 25px;
-        border: #d3291c;
-        background-color: #d3291c;
+        border: #b34c11bf;
+        background-color: #b34c11bf;
         color: #fff;
     }
     
@@ -560,9 +560,9 @@
     }
     
     .background-color {
-        background-color: #d3291c;
-        border: #d3291c;
-        border-bottom: 1px solid #d3291c;
+        background-color: #b34c11bf;
+        border: #b34c11bf;
+        border-bottom: 1px solid #b34c11bf;
     }
     
     .modal-header2 {
@@ -586,7 +586,7 @@
         text-align: center;
         width: 100%;
         height: 60px;
-        background-color: #9b1e14;
+        background-color: #865414;
     }
     
     .inpput-text {
@@ -631,7 +631,7 @@
         width: 100%;
         height: 150px;
         border-radius: 20px;
-        background-color: #9b1e14;
+        background-color: #e96a03;
         padding-top: 20px;
     }
     
@@ -657,7 +657,7 @@
         color: #fff;
         font-size: 16px;
         margin-left: 20px;
-        background-color: #d3291c;
+        background-color: #e96a03;
         border-radius: 30px;
     }
     
@@ -695,10 +695,10 @@
     }
     
     .input-back {
-        background-color: #9b1e14;
+        background-color: #e96a03;
         color: #fff;
-        border: #9b1e14;
-        border-bottom: 1px solid #9b1e14;
+        border: #e96a03;
+        border-bottom: 1px solid #e96a03;
     }
     
     .color1 {
@@ -753,7 +753,7 @@
     }
     
     .overflowTest-ll {
-        background: #d3291c;
+        background: #b34c11bf;
         color: white;
         padding: 15px;
         width: 100%;
@@ -766,7 +766,7 @@
     .box-scroll {
         width: auto;
         height: 350px;
-        background-color: floralwhite;
+        background-color: #e96a03;
     }
     
     @keyframes move {

@@ -88,7 +88,7 @@
                             <img src="{{ asset('/image/line.png') }}" class="bgm-image" alt="...">
                         </div>
                         <div class="col-auto col-sm-auto col-md-4">
-                            <p class="font-size top">BGM(ฝ่ายบริการ)</p>
+                            <p class="font-size top">zipmax789 (ฝ่ายบริการ)</p>
                         </div>
                         <div class="col-auto col-sm-auto col-md-4">
                             <button type="button" class="btn btn-outline-light  top contact ">ติดต่อ</button>
