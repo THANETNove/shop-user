@@ -11,5 +11,6 @@ class WonPrize extends Model
     protected $fillable = [
         'time_number',
         'won_prize',
+        'won_prize1',
     ];
 }
