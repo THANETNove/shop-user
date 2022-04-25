@@ -278,6 +278,28 @@ function conutBye() {
         
     }
 
+    function   byeConuntData() {
+
+        jQuery.ajax({
+                /*  url: "/Hm-7UQjf9.r18Z/public/byeConun",  */
+                    url: "/byeConun", 
+                    method: 'post',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        },
+                    success: function(result){
+                        console.log(result);
+                    document.getElementById('re-number').innerHTML = `รอบที่ ${result}`  
+
+                        },
+                    error: function(result){
+
+                    }      
+                });   
+    
+}
+
+
 
 function setPrize() {
     setTimeout(() => {

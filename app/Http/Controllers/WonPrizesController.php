@@ -50,6 +50,7 @@ class WonPrizesController extends Controller
         $data = new WonPrize;
         $data->time_number = $request->challenge;
         $data->won_prize = $request->size;
+        $data->won_prize1 = $request->won_prize1;
 
         $data->save();
 

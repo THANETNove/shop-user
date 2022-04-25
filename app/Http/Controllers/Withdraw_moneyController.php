@@ -83,6 +83,17 @@ class Withdraw_moneyController extends Controller
          return response()->json($withdraw[0]->number_count);
     }
 
+    public function byeConun()
+    {
+        $user = DB::table('won_prizes')
+                    ->get();
+      
+        $admin = DB::table('won_prizes')
+                    ->get();
+      
+        return response()->json([$user,$admin]);
+    }
+
     public function getData()
     {   
         $id =  Auth::user()->id;
