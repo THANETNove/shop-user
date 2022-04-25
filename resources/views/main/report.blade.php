@@ -13,7 +13,7 @@
         <p  class="text">รายงาน</p>
     </div>
 </div>
-<div class="col-md-10 col 12 violation ">
+<div class="col-md-10 col 12 violation  table-responsive">
     <table class="table table-bordered text-table">
         <thead>
             <tr>
