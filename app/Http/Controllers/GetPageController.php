@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Invitation;
 use Auth;
+use Session;
 use DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -60,6 +61,18 @@ class GetPageController extends Controller
     public function groupReport()
     {
         return view('main.group_report');
+    }
+
+    public function dataJoin()
+    {
+        $dataJoin = DB::table('won_prizes')
+        ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
+        ->where('buy_outs.userId', Auth::user()->id) 
+        ->get();
+        Session::put('dataJoin', $dataJoin);
+
+        $messege = "โหลดเรีบยบร้อย";
+        return response()->json($messege);
     }
 
     public function topUpMoney()

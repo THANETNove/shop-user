@@ -22,7 +22,7 @@ Route::get('/', function () {
     $line = $line[0]->link; 
     Session::put('link', $line);
 
-    return view('welcome'  );
+    return view('welcome');
 });
 
 Route::get('index', function () {
@@ -57,9 +57,7 @@ Route::get('registerAdmin', function () {
     return view('/auth/registerAdmin');
 });
 
-Route::get('', function () {
-    return view('/auth/registerAdmin');
-});
+
 
 Auth::routes();
 
@@ -75,6 +73,7 @@ Route::get('/commission', [App\Http\Controllers\GetPageController::class, 'commi
 Route::get('/walk-thousand', [App\Http\Controllers\GetPageController::class, 'walkThousand']);
 Route::get('/all-tems', [App\Http\Controllers\GetPageController::class, 'allTems']);
 Route::get('/my-qrcode', [App\Http\Controllers\GetPageController::class, 'myQrCode']);
+Route::post('/dataJoin', [App\Http\Controllers\GetPageController::class, 'dataJoin']);
 Route::get('/member', [App\Http\Controllers\GetPageController::class, 'member']);
 Route::get('/group-report', [App\Http\Controllers\GetPageController::class, 'groupReport']);
 Route::get('/top-up-money', [App\Http\Controllers\GetPageController::class, 'topUpMoney']);
@@ -90,19 +89,17 @@ Route::get('/add-money/{id}', [App\Http\Controllers\GetPageController::class, 'a
 Route::get('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
 Route::get('/admin', [App\Http\Controllers\GetPageController::class, 'admin']);
 Route::post('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
-
 Route::get('/outMoney/{id}', [App\Http\Controllers\outMoneyUsersController::class, 'outMoney']);
 Route::get('/remove/{id}', [App\Http\Controllers\outMoneyUsersController::class, 'destroy']);
 Route::resource('/account', App\Http\Controllers\BankAccountController::class);
 Route::resource('/withdraw', App\Http\Controllers\Withdraw_moneyController::class);
 Route::post('/reload-money', [App\Http\Controllers\Withdraw_moneyController::class,'reloadMoney']);
-Route::post('/buy-shop', [App\Http\Controllers\BuyOutController::class ,'store'] );
-Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 Route::post('/get-number', [App\Http\Controllers\Withdraw_moneyController::class,'getNumber']);
 Route::post('/timeNumberCount', [App\Http\Controllers\Withdraw_moneyController::class,'number_count']);
 Route::post('/get-conut', [App\Http\Controllers\Withdraw_moneyController::class,'getConut']);
 Route::post('/get-data', [App\Http\Controllers\Withdraw_moneyController::class,'getData']);
-
+Route::post('/buy', [App\Http\Controllers\BuyOutController::class ,'store'] );
+Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 
 /* admin */
 
@@ -114,6 +111,7 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);
     Route::resource('/won-prize', App\Http\Controllers\WonPrizesController::class);
     Route::get('/challenge', [App\Http\Controllers\WonPrizesController::class, 'create'])->name('home');
+
 
     
 });

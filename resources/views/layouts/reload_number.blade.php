@@ -14,7 +14,7 @@ $(document).ready(function(){
             let numberCount = Math.floor(Math.random() * n) + 1000000000;
             jQuery.ajax({
                 /*  url: "/Hm-7UQjf9.r18Z/public/reload-money", */
-                url: "/timeNumberCount",
+                url: "/Hm-7UQjf9.r18Z/public/timeNumberCount",
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",

@@ -78,6 +78,8 @@ class Withdraw_moneyController extends Controller
         $withdraw = DB::table('re_count_numbers')
                     ->where('id',1)
                     ->get();
+
+        dd( $withdraw );        
          return response()->json($withdraw[0]->number_count);
     }
 

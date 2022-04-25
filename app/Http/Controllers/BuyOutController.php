@@ -39,6 +39,8 @@ class BuyOutController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $id =  Auth::user()->id;
         $price =  $request->price;
 
@@ -61,8 +63,9 @@ class BuyOutController extends Controller
         $userMoney = User::find($id);
         $userMoney->money = $moneyPlup; 
         $userMoney->save(); 
- 
+
         $moneyBnt = "ทำการซื้อสำเร็จเเล้ว";
+       
         return response()->json($moneyBnt);
     }
 
