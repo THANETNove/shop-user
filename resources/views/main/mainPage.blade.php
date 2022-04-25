@@ -33,54 +33,58 @@
         <tbody>
           <tr class="img-shop">
             <td class="col-3 col-sm-3 col-md-6 " >
-                <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb" alt="...">
-                &nbsp;&nbsp;
-                <span class="center-shop">SHOPEE</span>
-            </td>
-            <td class="col-3 col-sm-3 col-md-6 " >
                 <img src="{{asset('/image/shop-22.png')}}" class="img-shop-tb" alt="...">
                 &nbsp;&nbsp;
-                <span class="center-shop">LAZADA</span>
+                <span class="center-shop">300Lazada</span>
             </td>
-          </tr>
-          <tr class="img-shop">
             <td class="col-3 col-sm-3 col-md-6 " >
                 <img src="{{asset('/image/shop-23.png')}}" class="img-shop-tb" alt="...">
                 &nbsp;&nbsp;
-                <span class="center-shop">SHOP24</span>
-            </td>
-            <td class="col-3 col-sm-3 col-md-6 " >
-                <img src="{{asset('/image/shop-24.png')}}" class="img-shop-tb" alt="...">
-                &nbsp;&nbsp;
-                <span class="center-shop">JIB</span>
+                <span class="center-shop">180Shop</span>
             </td>
           </tr>
           <tr class="img-shop">
             <td class="col-3 col-sm-3 col-md-6 " >
-                <img src="{{asset('/image/shop-25.png')}}" class="img-shop-tb" alt="...">
+                <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb" alt="...">
                 &nbsp;&nbsp;
-                <span class="center-shop">JD CENTRAL</span>
+                <span class="center-shop">180Shopee</span>
             </td>
-            <td class="col-3 col-sm-3 col-md-6 " >
-                <img src="{{asset('/image/shop-26.png')}}" class="img-shop-tb" alt="...">
-                &nbsp;&nbsp;
-                <span class="center-shop">Chilindo</span>
-            </td>
-          </tr>
-          <tr class="img-shop">
             <td class="col-3 col-sm-3 col-md-6 " >
                 <img src="{{asset('/image/shop-27.png')}}" class="img-shop-tb" alt="...">
                 &nbsp;&nbsp;
-                <span class="center-shop">CENTRAL</span>
+                <span class="center-shop">1200CENTRAL</span>
+            </td>
+          </tr>
+          <tr class="img-shop">
+            <td class="col-3 col-sm-3 col-md-6 " >
+                <img src="{{asset('/image/shop-26.png')}}" class="img-shop-tb" alt="...">
+                &nbsp;&nbsp;
+                <span class="center-shop">300Chilindo</span>
             </td>
             <td class="col-3 col-sm-3 col-md-6 " >
                 <img src="{{asset('/image/shop-28.png')}}" class="img-shop-tb" alt="...">
                 &nbsp;&nbsp;
-                <span class="center-shop">POWER BUY</span>
+                <span class="center-shop">180PowerBuy</span>
+            </td>
+          </tr>
+          <tr class="img-shop">
+            <td class="col-3 col-sm-3 col-md-6 " >
+                <img src="{{asset('/image/Advice.png')}}" class="img-shop-tb" alt="...">
+                &nbsp;&nbsp;
+                <span class="center-shop">60Advice</span>
+            </td>
+            <td class="col-3 col-sm-3 col-md-6 " >
+                <img src="{{asset('/image/shop-25.png')}}" class="img-shop-tb" alt="...">
+                &nbsp;&nbsp;
+                <span class="center-shop">300JD</span>
             </td>
           </tr>
         </tbody>
       </table>
+        <div class="head-center color-fff">
+          <h1>คอลัมน์รายได้</h1>
+        </div>
+
       <div class="overflowTest-ll">
         <div class="box-scroll animation-box">
           <table class="table table-bordered">

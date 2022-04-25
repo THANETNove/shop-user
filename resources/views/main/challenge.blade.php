@@ -39,7 +39,7 @@
 
                             <div class="row mb-3">
                                 <label for="password"
-                                    class="col-md-4 col-form-label text-md-end">{{ __('ผลทาย') }}</label>
+                                    class="col-md-4 col-form-label text-md-end">{{ __('ผลทายหน้า') }}</label>
 
                                 <div class="col-md-6">
                                     <select class="form-select"  id="size"  name="size" aria-label="Default select example">
@@ -51,6 +51,21 @@
                                 </div>
                             </div>
 
+                            <div class="row mb-3">
+                                <label for="password"
+                                    class="col-md-4 col-form-label text-md-end">{{ __('ผลทายหลัง') }}</label>
+
+                                <div class="col-md-6">
+                                    <select class="form-select"  id="size"  name="won_prize1" aria-label="Default select example">
+                                        <option  value="ชิ้นใหญ่" selected>ชิ้นใหญ่</option>
+                                        <option value="ชิ้นเล็ก">ชิ้นเล็ก</option>
+                                        <option value="ชิ้นคู่">ชิ้นคู่</option>
+                                        <option value="ชิ้นเดียว">ชิ้นเดียว</option>
+                                      </select>
+                                </div>
+                            </div>
+
+
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
@@ -59,6 +74,8 @@
                                 </div>
                             </div>
                         </form>
+
+                            
                     </div>
                 </div>
             </div>
