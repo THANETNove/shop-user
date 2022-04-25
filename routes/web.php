@@ -88,6 +88,7 @@ Route::post('/new-user', [App\Http\Controllers\GetPageController::class, 'newUse
 Route::get('/add-money/{id}', [App\Http\Controllers\GetPageController::class, 'addMoney']);
 Route::get('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
 Route::get('/admin', [App\Http\Controllers\GetPageController::class, 'admin']);
+Route::get('/report', [App\Http\Controllers\GetPageController::class, 'index']);
 Route::post('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
 Route::get('/outMoney/{id}', [App\Http\Controllers\outMoneyUsersController::class, 'outMoney']);
 Route::get('/remove/{id}', [App\Http\Controllers\outMoneyUsersController::class, 'destroy']);

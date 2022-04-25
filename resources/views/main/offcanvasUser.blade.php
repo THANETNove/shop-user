@@ -125,7 +125,7 @@
 {{-- รายงาน --}}
 
 
-<div>
+{{-- <div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight4" aria-labelledby="offcanvasRightLabel4">
         <div class="offcanvas-header head ">
             <div class="head-center"></div>
@@ -195,7 +195,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 {{-- บัญชี --}}

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Invitation;
 use Auth;
+use Carbon\Carbon;
 use Session;
 use DB;
 use Illuminate\Support\Facades\Hash;
@@ -216,6 +217,22 @@ class GetPageController extends Controller
             } 
 
        
+    }
+    public function index(){
+
+        $mytime =  Carbon::now("+07:00");
+
+      
+        $dataJoin = DB::table('won_prizes')
+        ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
+        ->where('buy_outs.userId', Auth::user()->id)
+        ->whereDate('created_at', '2016-12-31')
+        ->orderBy('buy_outs.id', 'DESC')
+        ->get();
+        
+
+        return view('main.report',['dataJoin'=> $dataJoin]);
+
     }
 
   
