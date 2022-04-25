@@ -78,7 +78,7 @@ class Withdraw_moneyController extends Controller
         $withdraw = DB::table('re_count_numbers')
                     ->where('id',1)
                     ->get();
-
+        
   
          return response()->json($withdraw[0]->number_count);
     }
@@ -86,12 +86,17 @@ class Withdraw_moneyController extends Controller
     public function byeConun()
     {
         $user = DB::table('won_prizes')
-                    ->get();
-      
+                    ->count();
+
+
+      if ($user !== 0) {
         $admin = DB::table('won_prizes')
-                    ->get();
+            ->where('id',$user)
+            ->get();
+      }
+        
       
-        return response()->json([$user,$admin]);
+        return response()->json($admin);
     }
 
     public function getData()

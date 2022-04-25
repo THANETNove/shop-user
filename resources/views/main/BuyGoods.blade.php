@@ -43,7 +43,7 @@
                        {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                     </td>
                     <td class="col-3 col-sm-3 col-md-3">
-                      {{ $user->userId }} 
+                      {{ $user->username }} 
                     </td>
                     <td class="col-3 col-sm-3 col-md-3 ">
                       {{ $user->product_name }} 

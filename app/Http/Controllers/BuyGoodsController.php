@@ -15,7 +15,8 @@ class BuyGoodsController extends Controller
      */
     public function index()
     {
-        $user = DB::table('buy_outs') 
+        $user = DB::table('users') 
+        ->rightJoin('buy_outs', 'users.id', '=', 'buy_outs.userId')
         ->get(); 
         return view('main.BuyGoods',['user'=> $user]);
     }
