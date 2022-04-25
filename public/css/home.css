@@ -785,3 +785,10 @@
     .font-size15 {
         font-size: 15px;
     }
+    .violation {
+        margin-top: 20px;
+        margin-left: 8%;
+        text-align: center;
+    
+
+    }

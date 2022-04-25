@@ -226,7 +226,6 @@ class GetPageController extends Controller
         $dataJoin = DB::table('won_prizes')
         ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
         ->where('buy_outs.userId', Auth::user()->id)
-        ->whereDate('created_at', '2016-12-31')
         ->orderBy('buy_outs.id', 'DESC')
         ->get();
         

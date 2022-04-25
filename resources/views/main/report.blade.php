@@ -13,7 +13,7 @@
         <p  class="text">รายงาน</p>
     </div>
 </div>
-<div>
+<div class="col-md-10 col 12 violation ">
     <table class="table table-bordered text-table">
         <thead>
             <tr>
@@ -32,28 +32,28 @@
             @endphp
             @foreach ($dataJoin as $line)
                 <tr class="onClickBtn" >
-                        <td class="col-3 col-sm-3 col-md-3" >
+                        <td class="col-3 col-sm-3 col-md-2" >
                             {{ $idUser++ }} 
                         </td>
-                        <td class="col-3 col-sm-3 col-md-3 ">
+                        <td class="col-3 col-sm-3 col-md-2 ">
                           {{ $line->numberCount }} 
                       </td>
-                        <td class="col-3 col-sm-3 col-md-3">
+                        <td class="col-3 col-sm-3 col-md-2">
                           {{ $line->product_name }} 
                         </td>
-                        <td class="col-3 col-sm-3 col-md-3 ">
+                        <td class="col-3 col-sm-3 col-md-2 ">
                           {{ $line->finished_size }} 
                         </td>
-                    <td class="col-3 col-sm-3 col-md-2" >
+                    <td class="col-3 col-sm-3 col-md-1" >
                       @php
                       $moneyAll =  number_format( $line->price,2)
                      @endphp
                        {{ $moneyAll }} 
                     </td>
-                    <td class="col-3 col-sm-3 col-md-3 ">
+                    <td class="col-3 col-sm-3 col-md-1 ">
                       {{ $line->won_prize }} 
                     </td>
-                    <td class="col-3 col-sm-3 col-md-3 ">
+                    <td class="col-3 col-sm-3 col-md-2 ">
                       {{ $line->created_at }} 
                     </td>
                 </tr>
