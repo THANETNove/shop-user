@@ -261,7 +261,7 @@ function conutBye() {
 
     jQuery.ajax({
              /*  url: "/Hm-7UQjf9.r18Z/public/get-conut",  */
-                url: "/buy-shop", 
+                url: "/get-conut", 
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -309,7 +309,7 @@ $( "#buy-shop" ).click(function() {
 
              jQuery.ajax({
                  /* url: "/Hm-7UQjf9.r18Z/public/buy",   */
-                  url: "/buy-shop",  
+                  url: "/buy",  
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",

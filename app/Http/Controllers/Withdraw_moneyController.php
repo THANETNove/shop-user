@@ -79,7 +79,7 @@ class Withdraw_moneyController extends Controller
                     ->where('id',1)
                     ->get();
 
-        dd( $withdraw );        
+  
          return response()->json($withdraw[0]->number_count);
     }
 
