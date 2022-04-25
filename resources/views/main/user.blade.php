@@ -34,7 +34,7 @@
         <tbody >
           <tr class="img-report">
             <td class="col-3 col-sm-3 col-md-4 td-box" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight4" aria-controls="offcanvasRight4"  >
-                <a href="{{ URL::to('report')}}">
+                <a href="{{ URL('report')}}" class="text-decoration">
                   <img src="{{asset('/image/re.png')}}" class="report" alt="...">
                <br>
                 <span class="center-shop color2" >รายงาน</span>

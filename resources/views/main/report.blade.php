@@ -9,7 +9,7 @@
             <i class="fa-solid fa-arrow-left" style='font-size:28px'></i>
         </a>
     </div>
-    <div class="set-head">
+    <div class="set-head ">
         <p  class="text">รายงาน</p>
     </div>
 </div>
