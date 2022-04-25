@@ -220,9 +220,6 @@ class GetPageController extends Controller
     }
     public function index(){
 
-        $mytime =  Carbon::now("+07:00");
-
-      
         $dataJoin = DB::table('won_prizes')
         ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
         ->where('buy_outs.userId', Auth::user()->id)
