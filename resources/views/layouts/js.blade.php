@@ -195,6 +195,17 @@ var currentLocation = window.location.pathname;
             console.log('window.onload');
         };
 }
+var currentLocation = window.location.pathname;
+/*    if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  */
+    if (currentLocation === '/shop') {  
+        window.onload = (event) => {
+            $("#location").addClass("active");
+            $("#business-none").show();
+            $("#home").removeClass("active");
+            $("#mainPage-none").hide();
+            console.log('window.onload');
+        };
+}
 
 var currentLocation = window.location.pathname;
     console.log(currentLocation);
@@ -261,7 +272,8 @@ setInterval(function () {
  
 
 function conutBye() {
-
+/*     var room = document.getElementById('room').innerHTML;
+    console.log("Room",room); */
     jQuery.ajax({
             
              /*  url: `/Hm-7UQjf9.r18Z/public/get-conut/${}`, */

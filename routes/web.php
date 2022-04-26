@@ -43,6 +43,15 @@ Route::get('user', function () {
     return view('welcome');
 })->name('index');
 
+Route::get('/shop', function () {
+    $line = DB::table('link_lines')
+            ->get();
+    $line = $line[0]->link; 
+    Session::put('link', $line);
+
+    return view('welcome');
+})->name('index');
+
 Route::get('set-up', function () {
     $line = DB::table('link_lines')
          ->get();

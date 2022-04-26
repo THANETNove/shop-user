@@ -9,6 +9,7 @@
    
     <div class="set-head">
         <p  class="text">รายชื่อธุระกิจ</p>
+        <p  class="text" id="room">{{$name}}</p>
     </div>
 </div>
   <div class=py-12>
