@@ -68,6 +68,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ URL::to('miniature')}}"  >เพิ่มผลทายรางวัล</a>
                         </li>      
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ URL::to('product')}}"  >ผลคุณรางวัล</a>
+                        </li>      
                       </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
