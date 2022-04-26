@@ -12,7 +12,7 @@
                         @endif
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('account.update',$account[0]->id) }}">
+                        <form method="POST" >
                             @method('PUT')
                             @csrf
                             <div class="mb-3">

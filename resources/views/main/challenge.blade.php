@@ -86,8 +86,8 @@
              setInterval(function () {
               
                 jQuery.ajax({
-                url: "/Hm-7UQjf9.r18Z/public/get-conut",
-                /* url: "/get-conut", */
+               /*  url: "/Hm-7UQjf9.r18Z/public/get-conut", */
+                url: "/get-conut", 
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
