@@ -262,8 +262,6 @@ setInterval(function () {
     document.getElementById('countingdown').innerHTML = timedown;
 
 
-
-
             if (result === '5:0') { 
                 conutBye();
                 byeConun();
@@ -283,7 +281,7 @@ function conutBye() {
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    "room": room,
+                    "room": id,
                     },
                 success: function(result){
                     console.log("aa",result);
