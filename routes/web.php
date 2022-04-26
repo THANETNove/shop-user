@@ -104,6 +104,7 @@ Route::post('/buy', [App\Http\Controllers\BuyOutController::class ,'store'] );
 Route::get('/reserve', [App\Http\Controllers\BuyOutController::class ,'index'] );
 Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/topping/{name}', [App\Http\Controllers\ToppingController::class, 'index']);
 
 /* admin */
 

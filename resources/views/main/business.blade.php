@@ -1,84 +1,69 @@
 <div class="head">
   <p class="center text-head">รายชื่อธุระกิจ</p>
 </div>
-<div class=py-12>
-    <div class="container">
-        <div class="row head-center text-offcanvas font-size15 ">
-            <div class="col-4 col-sm-4 col-md-4">
-            <br>
-            <br>
-             <p id="numberShopUser">ยังไม่สั่งซื้อ...</p>
-             <p>ผลการจับคู่คำสั่งชื้อ</p>
-            </div>
-            <div class="col-4 col-sm-4 col-md-4">
-              <br>
-             <br>
-             <br>
-             <p id="won_prize">รอผล...</p>
-            </div>
-            <div class="col-4 col-sm-4 col-md-4">
-             <br>
-             <br>
-             <br>
-             <p id="won_prize1">รอผล...</p>
-            </div>
 
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 head-center">
-            <p id="won-prize" class="text-offcanvas"></p>
-        </div>
-    </div>
-</div>
-<div class="border-th span">
-    <p  class="font-size span" id="re-number">รอบที่...</p>
-    <p id="countingdown" class="font-size forgot">กำหนดเวลาการจับคู่คำสั่งชื้อ</p>
-</div>
 <table class="table table-bordered down12">
     <tbody>
-      <tr class="img-shop box-shop center">
-        <td class="col-3 col-sm-3 col-md-4 .box-shop-padding nameShop"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"  >
-            <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2" alt="...">
-           <br>
-            <span class="center-shop">180Shopee</span>
+      <tr class="img-shop box-shop center ">
+        <td class="col-3 col-sm-3 col-md-4 " >
+           <a href="{{ URL('topping/180Shopee')}}" class="text-decoration">
+            <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2 " alt="..."  >
+            <br>
+             <span class="center-shop">180Shopee</span>
+           </a>
         </td>
-        <td class="col-3 col-sm-3 col-md-4 nameShop" >
-            <img src="{{asset('/image/shop-22.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+        <td class="col-3 col-sm-3 col-md-4 nameShop " >
+            <a href="{{ URL('topping/300Lazada')}}" class="text-decoration">
+              <img src="{{asset('/image/shop-22.png')}}"  class="img-shop-tb-2" alt="...">
             <br>
             <span class="center-shop">300Lazada</span>
+            </a>
         </td>
             <td class="col-3 col-sm-3 col-md-4 nameShop" >
-                <img src="{{asset('/image/shop-23.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                <a href="{{ URL('topping/180Shop')}}" class="text-decoration">
+                  <img src="{{asset('/image/shop-23.png')}}"  class="img-shop-tb-2" alt="..." >
               <br>
                 <span class="center-shop">180Shop</span>
+                </a>
             </td>
       </tr>
       <tr class="img-shop box-shop center">
         <td class="col-3 col-sm-3 col-md-4 nameShop" >
-            <img src="{{asset('/image/Advice.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+            <a href="{{ URL('topping/60Advice')}}" class="text-decoration">
+              <img src="{{asset('/image/Advice.png')}}"  class="img-shop-tb-2" alt="...">
             <br>
             <span class="center-shop">60Advice</span>
+            </a>
         </td>
         <td class="col-3 col-sm-3 col-md-4 nameShop" >
-            <img src="{{asset('/image/shop-25.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+            <a href="{{ URL('topping/300 JDL')}}" class="text-decoration">
+              <img src="{{asset('/image/shop-25.png')}}" class="img-shop-tb-2" alt="...">
            <br>
             <span class="center-shop">300 JDL</span>
+            </a>
         </td>
             <td class="col-3 col-sm-3 col-md-4 nameShop" >
-                <img src="{{asset('/image/shop-26.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+               <a href="{{ URL('topping/300Chilindo')}}" class="text-decoration">
+                <img src="{{asset('/image/shop-26.png')}}"  class="img-shop-tb-2" alt="...">
                 <br>
                 <span class="center-shop">300Chilindo</span>
+               </a>
             </td>
       </tr>
       <tr class="img-shop box-shop center nameShop">
         <td class="col-3 col-sm-3 col-md-4 " >
-            <img src="{{asset('/image/shop-27.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+            <a href="{{ URL('topping/1200CENTRAL')}}" class="text-decoration">
+              <img src="{{asset('/image/shop-27.png')}}"  class="img-shop-tb-2" alt="...">
             <br>
             <span class="center-shop">1200CENTRAL</span>
+            </a>
         </td>
         <td class="col-3 col-sm-3 col-md-4 nameShop" >
-            <img src="{{asset('/image/shop-28.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+            <a href="{{ URL('topping/180PowerBuy')}}" class="text-decoration">
+              <img src="{{asset('/image/shop-28.png')}}" class="img-shop-tb-2" alt="...">
             <br>
             <span class="center-shop">180PowerBuy</span>
+            </a>
         </td>
       </tr>
     </tbody>
