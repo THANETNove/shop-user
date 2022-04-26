@@ -12,5 +12,7 @@ class WonPrize extends Model
         'time_number',
         'won_prize',
         'won_prize1',
+        'nameShop',
+        'countNameShop'
     ];
 }

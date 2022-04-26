@@ -66,7 +66,7 @@
                             <a class="nav-link" href="{{ URL::to('won-prize')}}"  >ผลทายรางวัล</a>
                         </li>   
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('challenge')}}"  >เพิ่มผลทายรางวัล</a>
+                            <a class="nav-link" href="{{ URL::to('miniature')}}"  >เพิ่มผลทายรางวัล</a>
                         </li>      
                       </ul>
                     <!-- Right Side Of Navbar -->

@@ -104,6 +104,7 @@ Route::post('/buy', [App\Http\Controllers\BuyOutController::class ,'store'] );
 Route::get('/reserve', [App\Http\Controllers\BuyOutController::class ,'index'] );
 Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 
+
 /* admin */
 
 Route::group(['middleware'=>'check'],function () {
@@ -113,7 +114,8 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
     Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);
     Route::resource('/won-prize', App\Http\Controllers\WonPrizesController::class);
-    Route::get('/challenge', [App\Http\Controllers\WonPrizesController::class, 'create'])->name('home');
+    Route::get('/challenge/{name}', [App\Http\Controllers\WonPrizesController::class, 'create'])->name('home');
+    Route::get('/miniature', [App\Http\Controllers\MiniatureController::class, 'index']);
 
 
     

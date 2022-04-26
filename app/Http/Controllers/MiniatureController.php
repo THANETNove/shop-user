@@ -6,10 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
-use App\Models\WonPrize;
 
-
-class WonPrizesController extends Controller
+class MiniatureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,37 +16,25 @@ class WonPrizesController extends Controller
      */
     public function index()
     {
-    
-        $user = DB::table('won_prizes') 
-        ->get(); 
-        return view('main.won-prize',['user'=> $user]);
+        $dataJoin = DB::table('won_prizes')
+        ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
+        ->where('buy_outs.userId', Auth::user()->id)
+        ->orderBy('buy_outs.id', 'DESC')
+        ->get();
+
+
+        return view('main.miniature',['dataJoin'=> $dataJoin]);
+
     }
-
-
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($name)
+    public function create()
     {
-        
-        $user = DB::table('won_prizes')
-        ->where('nameShop',$name) 
-        ->count();
-         if ($user === 0) {
-             
-            $countNameShop = "1";
-         
-        }else{
-
-            $countNameShop = $user+1;   
-
-         }
-       return view('main.challenge',['name'=>$name , 'countNameShop'=>$countNameShop]);
-       
-
+        //
     }
 
     /**
@@ -59,20 +45,8 @@ class WonPrizesController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $id =  Auth::user()->id;
-        $data = new WonPrize;
-        $data->time_number = $request->challenge;
-        $data->won_prize = $request->size;
-        $data->won_prize1 = $request->won_prize1;
-        $data->nameShop = $request->nameShop;
-        $data->countNameShop = $request->countNameShop;
-
-        $data->save();
-
-        return Redirect()->back()->with('status',"เพิ่มสำเร็จเเล้ว");
-
-    }     
+        //
+    }
 
     /**
      * Display the specified resource.

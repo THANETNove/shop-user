@@ -19,9 +19,9 @@
                         @endif
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ 'won-prize' }}">
+                        <form method="POST" action="{{route('won-prize.store' )}}">
                             @csrf
-
+                            {{$name}} ครั้งที่ {{$countNameShop}}
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('รหัสรอบ') }}</label>
 
@@ -29,6 +29,34 @@
                                     <input id="challenge" type="text"
                                         class="form-control @error('challenge') is-invalid @enderror" name="challenge"
                                         value="" required placeholder="รอบผลทาย" autofocus readonly>
+                                    @error('challenge')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('ชื่อสินค้า') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="challenge" type="text"
+                                        class="form-control @error('challenge') is-invalid @enderror" name="nameShop"
+                                        value="{{$name}}" required placeholder="รอบผลทาย" autofocus readonly>
+                                    @error('challenge')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('ครั้งที่') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="challenge" type="text"
+                                        class="form-control @error('challenge') is-invalid @enderror" name="countNameShop"
+                                        value="{{$countNameShop}}" required placeholder="รอบผลทาย" autofocus readonly>
                                     @error('challenge')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>

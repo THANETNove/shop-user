@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('time_number');
             $table->string('won_prize');
             $table->string('won_prize1');
+            $table->string('nameShop');
+            $table->string('countNameShop');
             $table->timestamps();
         });
     }
