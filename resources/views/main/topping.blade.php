@@ -126,8 +126,17 @@
                           <input type="text" class="form-control" id="nameshop-1" name="nameshop" >
                         </div>
                         <div class="mb-3">
-                          <p for="exampleFormControlInput1"  class="form-label font-size-14">ขนาดสินค้า</p>
+                          <p for="exampleFormControlInput1"  class="form-label font-size-14">ผลทายหน้า</p>
                           <select class="form-select"  id="size"  name="size" aria-label="Default select example">
+                              <option  value="ชิ้นใหญ่" selected>ชิ้นใหญ่</option>
+                              <option value="ชิ้นเล็ก">ชิ้นเล็ก</option>
+                              <option value="ชิ้นคู่">ชิ้นคู่</option>
+                              <option value="ชิ้นเดียว">ชิ้นเดียว</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                          <p for="exampleFormControlInput1"  class="form-label font-size-14">ผลทายหลัง</p>
+                          <select class="form-select"  id="back_piece"  name="back_piece" aria-label="Default select example">
                               <option  value="ชิ้นใหญ่" selected>ชิ้นใหญ่</option>
                               <option value="ชิ้นเล็ก">ชิ้นเล็ก</option>
                               <option value="ชิ้นคู่">ชิ้นคู่</option>

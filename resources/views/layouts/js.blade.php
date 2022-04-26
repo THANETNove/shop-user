@@ -312,8 +312,9 @@ $( ".nameShop" ).click(function() {
 
 
 $( "#buy-shop" ).click(function() {
-        var contTime =  document.getElementById('re-number').innerHTML ;
-        var money =  document.getElementById('money-user').innerHTML ;
+        var contTime =  document.getElementById('re-number').innerHTML;
+        var money =  document.getElementById('money-user').innerHTML;
+        var back_piece =  document.getElementById('back_piece').value;
         var name = document.getElementById('nameshop-1').value;
         let size =  document.getElementById('size').value;
         let price =  document.getElementById('price').value;
@@ -331,6 +332,7 @@ $( "#buy-shop" ).click(function() {
                      name: name,
                     size: size,
                     price: price,
+                    back_piece: back_piece,
                     numberCount: conettimeNumber 
                     },
                 success: function(result){

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('product_name');
             $table->string('finished_size');
             $table->string('price');
-            $table->string('back piece');
-            $table->string('price');
+            $table->string('back_piece');
+            $table->string('outgrowth')->nullable();
             $table->string('numberCount');
             $table->timestamps();
         });

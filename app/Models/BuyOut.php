@@ -14,6 +14,8 @@ class BuyOut extends Model
         'product_name',
         'finished_size',
         'price',
+        'back_piece',
+        'outgrowth',
         'numberCount',
     ];
 }
