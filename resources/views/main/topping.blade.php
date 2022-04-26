@@ -102,67 +102,6 @@
 
                 @endif
             </td>
-
-            
-          {{-- <td class="col-3 col-sm-3 col-md-4 .box-shop-padding nameShop"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"  >
-              <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2" alt="...">
-             <br>
-              <span class="center-shop">18<td class="col-3 col-sm-3 col-md-4 .box-shop-padding nameShop"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"  >
-              <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2" alt="...">
-             <br>
-              <span class="center-shop">180Shopee</span>
-          </td>
-          <td class="col-3 col-sm-3 col-md-4 nameShop" >
-              <img src="{{asset('/image/shop-22.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-              <br>
-              <span class="center-shop">300Lazada</span>
-          </td>
-              <td class="col-3 col-sm-3 col-md-4 nameShop" >
-                  <img src="{{asset('/image/shop-23.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-                <br>
-                  <span class="center-shop">180Shop</span>
-              </td></span>
-          </td>
-          <td class="col-3 col-sm-3 col-md-4 nameShop" >
-              <img src="{{asset('/image/shop-22.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-              <br>
-              <span class="center-shop">300Lazada</span>
-          </td>
-              <td class="col-3 col-sm-3 col-md-4 nameShop" >
-                  <img src="{{asset('/image/shop-23.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-                <br>
-                  <span class="center-shop">180Shop</span>
-              </td> -
-         </tr>
-        <tr class="img-shop box-shop center">
-          <td class="col-3 col-sm-3 col-md-4 nameShop" >
-              <img src="{{asset('/image/Advice.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-              <br>
-              <span class="center-shop">60Advice</span>
-          </td>
-          <td class="col-3 col-sm-3 col-md-4 nameShop" >
-              <img src="{{asset('/image/shop-25.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-             <br>
-              <span class="center-shop">300 JDL</span>
-          </td>
-              <td class="col-3 col-sm-3 col-md-4 nameShop" >
-                  <img src="{{asset('/image/shop-26.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-                  <br>
-                  <span class="center-shop">300Chilindo</span>
-              </td>
-        </tr>
-        <tr class="img-shop box-shop center ">
-          <td class="col-3 col-sm-3 col-md-4 nameShop" >
-              <img src="{{asset('/image/shop-27.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-              <br>
-              <span class="center-shop">1200CENTRAL</span>
-          </td>
-          <td class="col-3 col-sm-3 col-md-4 nameShop" >
-              <img src="{{asset('/image/shop-28.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
-              <br>
-              <span class="center-shop">180PowerBuy</span>
-          </td>
-        </tr> --}}
       </tbody>
     </table>
     <br>
