@@ -74,11 +74,12 @@ class Withdraw_moneyController extends Controller
 
     public function getConut(Request $request)
     {
-
+        dd($request->all());
         $withdraw = DB::table('re_count_numbers')
                     ->where('id',1)
+                    ->where('id',1)
                     ->get();
-        
+     
   
          return response()->json($withdraw[0]->number_count);
     }

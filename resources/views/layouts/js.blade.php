@@ -207,7 +207,7 @@ var currentLocation = window.location.pathname;
         };
 }
 
-var currentLocation = window.location.pathname;
+
     console.log(currentLocation);
 /*  if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {    */
   if (currentLocation === '/set-up') {   
@@ -260,7 +260,9 @@ setInterval(function () {
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
-      
+
+
+
 
             if (result === '5:0') { 
                 conutBye();
@@ -272,8 +274,8 @@ setInterval(function () {
  
 
 function conutBye() {
-/*     var room = document.getElementById('room').innerHTML;
-    console.log("Room",room); */
+    let id = $("#room").text();
+    console.log("id--",id);
     jQuery.ajax({
             
              /*  url: `/Hm-7UQjf9.r18Z/public/get-conut/${}`, */
@@ -281,6 +283,7 @@ function conutBye() {
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
+                    "room": room,
                     },
                 success: function(result){
                     console.log("aa",result);
