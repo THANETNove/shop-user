@@ -107,6 +107,7 @@ Route::post('/reload-money', [App\Http\Controllers\Withdraw_moneyController::cla
 Route::post('/get-number', [App\Http\Controllers\Withdraw_moneyController::class,'getNumber']);
 Route::post('/timeNumberCount', [App\Http\Controllers\Withdraw_moneyController::class,'number_count']);
 Route::post('/get-conut', [App\Http\Controllers\Withdraw_moneyController::class,'getConut']);
+Route::post('/getConutNumber', [App\Http\Controllers\Withdraw_moneyController::class,'getConutNumber']);
 Route::post('/get-data', [App\Http\Controllers\Withdraw_moneyController::class,'getData']);
 Route::post('/byeConun', [App\Http\Controllers\Withdraw_moneyController::class,'byeConun']);
 Route::post('/buy', [App\Http\Controllers\BuyOutController::class ,'store'] );

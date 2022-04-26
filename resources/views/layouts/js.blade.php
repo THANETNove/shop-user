@@ -251,50 +251,82 @@ function reloadMoney() {
 }
 
 
-
+var i = 1;
+var m = 1;
 setInterval(function () {
     var d = new Date(); //get current time
     var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
-    var fiveMin = 60 * 5; //five minutes is 300 seconds!
+    var fiveMin = 60 * 1; //five minutes is 300 seconds!
     var timeleft = fiveMin - seconds % fiveMin; // let's say now is 01:30, then current seconds is 60+30 = 90. And 90%300 = 90, finally 300-90 = 210. That's the time left!
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
-
-
-            if (result === '5:0') { 
+    
+             if (result === '1:0') { 
+                m = ++i;
                 conutBye();
                 byeConun();
                 
-           }
+            } 
  
 }, 1000) //calling it every 0.5 second to do a count down
  
 
 function conutBye() {
     let id = $("#room").text();
-    console.log("id--",id);
-    jQuery.ajax({
+
+     jQuery.ajax({
             
-             /*  url: `/Hm-7UQjf9.r18Z/public/get-conut/${}`, */
-              url: `/get-conut`,
+             /*  url: `/Hm-7UQjf9.r18Z/public/getConutNumber/${}`, */
+              url: `/getConutNumber`,
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    "room": id,
+                    room: id,
+                    count: m,
                     },
                 success: function(result){
-                    console.log("aa",result);
+                   /*  console.log("aa",result); */
                   document.getElementById('re-number').innerHTML = `รอบที่ ${result}`  
 
                     },
                 error: function(result){
 
                 }      
-             });   
+             }); 
         
     }
+    function byeConun() {
+        let id = $("#room").text();
+        let l = m - 1;
+         console.log("l: ",l,id ); 
+        if (l === 0) {
+            document.getElementById('won_prize').innerHTML = "รอผล..";
+            document.getElementById('won_prize1').innerHTML = "รอผล.."; 
+        }else{
+            jQuery.ajax({
+            /* url: "/Hm-7UQjf9.r18Z/public/byeConun", */
+                url: "/byeConun", 
+                method: 'post',
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    room: id,
+                    count: l,
+                    },
+                success: function(result){
+                    console.log(result);
+                    document.getElementById('won_prize').innerHTML = result[0].won_prize;
+                    document.getElementById('won_prize1').innerHTML = result[0].won_prize1;
+                console.log(result);
+                    },
+                error: function(result){
+                    console.log(result);
+                }       
+            });  
 
+        }
+
+}
 
 function setPrize() {
     setTimeout(() => {
@@ -340,7 +372,6 @@ $( "#buy-shop" ).click(function() {
                      document.getElementById('error-price').innerHTML = contTime; 
                      document.getElementById('numberShopUser').innerHTML = `รอบที่ ${conettimeNumber}` 
                      reloadMoney(); 
-                     getNumber();  
                     
                         setTimeout(() => {
                                 $('#close').trigger('click');
@@ -358,46 +389,8 @@ $( "#buy-shop" ).click(function() {
 
 });
 
-function byeConun() {
-    
-            jQuery.ajax({
-               /* url: "/Hm-7UQjf9.r18Z/public/byeConun", */
-                url: "/byeConun", 
-                method: 'post',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    },
-                success: function(result){
-                    document.getElementById('won_prize').innerHTML = result[0].won_prize;
-                    document.getElementById('won_prize1').innerHTML = result[0].won_prize1;
-                   console.log(result);
-                    },
-                error: function(result){
-                    console.log(result);
-                }       
-            });  
 
-    
-}
- function getNumber() {
 
-    jQuery.ajax({
-          /*       url: "/Hm-7UQjf9.r18Z/public/get-conut", */
-                url: "/get-conut",  
-                 method: 'post',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    },
-                success: function(result){
-
-                    document.getElementById('numberShopUser').innerHTML = `รอบที่ ${result}`
-                    
-                    },
-                error: function(result){
-
-                }      
-            });   
-} 
  
 $( ".product-price" ).click(function() {
         let text = $(this).text();

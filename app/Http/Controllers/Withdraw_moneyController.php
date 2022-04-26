@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Withdraw_money;
 use auth;
 use DB;
+Use \Carbon\Carbon;
 use App\Models\User;
 use App\Models\Re_countNumber;
 
@@ -74,30 +75,69 @@ class Withdraw_moneyController extends Controller
 
     public function getConut(Request $request)
     {
-        dd($request->all());
         $withdraw = DB::table('re_count_numbers')
                     ->where('id',1)
-                    ->where('id',1)
                     ->get();
-     
+        
   
          return response()->json($withdraw[0]->number_count);
     }
 
-    public function byeConun()
+    public function getConutNumber(Request $request)
     {
-        $user = DB::table('won_prizes')
+     $mutable = Carbon::now();
+
+
+        dd($mutable->toDateTimeString('M d Y'));
+ 
+        $idNname = $request->room;
+        $countid = $request->count;
+  
+        $countWithdraw = DB::table('won_prizes')
+                    ->where('nameShop',$idNname)
+                    ->where('countNameShop',$countid)
+                    ->whereDate('created_at', '2016-12-31')
                     ->count();
+        if ($countWithdraw !== 0) {
+            $withdraw = DB::table('won_prizes')
+                    ->where('nameShop',$idNname)
+                    ->where('countNameShop',$countid)
+                    ->whereDate('created_at', '2016-12-31')
+                    ->select('won_prizes.time_number','won_prizes.countNameShop')
+                    ->get();
+            $number =  $withdraw[0]->time_number;
+        }else{
+            $number =  "รอบยังไม่ได้เปิด";
+        }
+  
+         return response()->json($number);
+    }
 
+    public function byeConun(Request $request)
+    {
 
-      if ($user !== 0) {
-        $admin = DB::table('won_prizes')
-            ->where('id',$user)
-            ->get();
-      }
-        
-      
-        return response()->json($admin);
+        $idNname = $request->room;
+        $countid = $request->count;
+  
+        $countWithdraw = DB::table('won_prizes')
+                    ->where('nameShop',$idNname)
+                    ->where('countNameShop',$countid)
+                    ->whereDate('created_at', '2016-12-31')
+                    ->count();
+        if ($countWithdraw !== 0) {
+            $withdraw = DB::table('won_prizes')
+                    ->where('nameShop',$idNname)
+                    ->where('countNameShop',$countid)
+                    ->whereDate('created_at', '2016-12-31')
+                    ->select( 'won_prizes.won_prize', 'won_prizes.won_prize1','won_prizes.countNameShop')
+                    ->get();
+            $number =  $withdraw;
+        }else{
+            $number =  "รอผล..";
+        }
+
+         return response()->json($number);
+
     }
 
     public function getData()

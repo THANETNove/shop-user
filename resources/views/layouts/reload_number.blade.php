@@ -9,7 +9,7 @@ $(document).ready(function(){
         var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
         var timedown = `00:0${result}`;
 
-        if (result === '5:0') {
+ 
             const n = 9999999999 - 1000000000 + 1;
             let numberCount = Math.floor(Math.random() * n) + 1000000000;
             jQuery.ajax({
@@ -27,7 +27,7 @@ $(document).ready(function(){
                     console.log(result);
                 }
             });
-        }
+    
 
     },  1000 );
 });

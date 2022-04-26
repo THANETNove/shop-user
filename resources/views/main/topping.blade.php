@@ -25,12 +25,14 @@
                 <br>
                <br>
                <br>
+               <p>ผลรอบก่อนหน้า (ผลข้างหลัง)</p>
                <p id="won_prize">รอผล...</p>
               </div>
               <div class="col-4 col-sm-4 col-md-4">
                <br>
                <br>
                <br>
+               <p>ผลรอบก่อนหน้า (ผลข้างหน้า)</p>
                <p id="won_prize1">รอผล...</p>
               </div>
   
