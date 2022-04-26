@@ -27,9 +27,12 @@
     <thead>
         <tr>
           <th scope="col">#</th>
+          <th scope="col">รหัสรอบ</th>
           <th scope="col">ชื่อ</th>
           <th scope="col">ซื้อสินค้า</th>
           <th scope="col">จำนวนเงิน</th>
+          <th scope="col">ผลทาย</th>
+          <th scope="col">วันที่</th>
         </tr>
       </thead>
     <tbody>
@@ -40,20 +43,28 @@
             <tr class="buy_outs" >
                     <td class="col-1 col-sm-1 col-md-1" >
                         {{ $idUser++ }} 
-                       {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                     </td>
-                    <td class="col-3 col-sm-3 col-md-3">
+                    <td class="col-2 col-sm-2 col-md-2">
+                     
+                    </td>
+                    <td class="col-2 col-sm-2 col-md-2">
                       {{ $user->username }} 
                     </td>
-                    <td class="col-3 col-sm-3 col-md-3 ">
+                    <td class="col-2 col-sm-2 col-md-2 ">
                       {{ $user->product_name }} 
                     </td>
-                <td class="col-3 col-sm-3 col-md-3" >
+                <td class="col-2 col-sm-2 col-md-2" >
                   @php
                   $money =  number_format($user->price,2)
                  @endphp
                    {{ $money }}  บาท
                 </td> 
+                <td class="col-1 col-sm-1 col-md-1">
+                     
+                </td>
+                <td class="col-1 col-sm-1 col-md-1">
+                     
+                </td>
             </tr>
         @endforeach
     </tbody>

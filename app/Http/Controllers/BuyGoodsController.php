@@ -17,8 +17,11 @@ class BuyGoodsController extends Controller
     {
         $user = DB::table('users') 
             ->rightJoin('buy_outs', 'users.id', '=', 'buy_outs.userId')
+            ->leftJoin('won_prizes', 'buy_outs.numberCount', '=', 'won_prizes.time_number')
+            ->select('users.*', 'won_prizes.*', 'buy_outs.*')
             ->orderBy('buy_outs.id', 'DESC')  
             ->get(); 
+
         return view('main.BuyGoods',['user'=> $user]);
     }
 

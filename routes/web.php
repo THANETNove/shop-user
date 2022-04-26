@@ -102,7 +102,6 @@ Route::post('/get-data', [App\Http\Controllers\Withdraw_moneyController::class,'
 Route::post('/byeConun', [App\Http\Controllers\Withdraw_moneyController::class,'byeConun']);
 Route::post('/buy', [App\Http\Controllers\BuyOutController::class ,'store'] );
 Route::get('/reserve', [App\Http\Controllers\BuyOutController::class ,'index'] );
-Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/topping/{name}', [App\Http\Controllers\ToppingController::class, 'index']);
 
@@ -118,7 +117,7 @@ Route::group(['middleware'=>'check'],function () {
     Route::get('/challenge/{name}', [App\Http\Controllers\WonPrizesController::class, 'create']);
     Route::get('/miniature', [App\Http\Controllers\MiniatureController::class, 'index']);
     Route::get('/program/{name}', [App\Http\Controllers\MiniatureController::class, 'pro']);
-
+    Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 
     
 });
