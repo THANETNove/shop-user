@@ -43,10 +43,70 @@
       <p  class="font-size span" id="re-number">รอบที่...</p>
       <p id="countingdown" class="font-size forgot">กำหนดเวลาการจับคู่คำสั่งชื้อ</p>
   </div>
+
+
+
   <table class="table table-bordered down12">
       <tbody>
         <tr class="img-shop box-shop center">
-          <td class="col-3 col-sm-3 col-md-4 .box-shop-padding nameShop"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"  >
+            <td class="col-6 col-sm-6 col-md-6 " >
+                @if ($name === '180Shopee')
+                    <div class="nameShop"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                        <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2" alt="...">
+                        <br>
+                         <span class="center-shop">180Shopee</span>
+                    </div>
+                @elseif ($name === '300Lazada')
+                    <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <img src="{{asset('/image/shop-22.png')}}" class="img-shop-tb-2" alt="...">
+                        <br>
+                        <span class="center-shop">300Lazada</span>
+                    </div>
+                @elseif ($name === '180Shop')
+                    <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <img src="{{asset('/image/shop-23.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <br>
+                        <span class="center-shop">180Shop</span>
+                    </div>
+                @elseif ($name === '60Advice')
+                    <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <img src="{{asset('/image/Advice.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <br>
+                        <span class="center-shop">60Advice</span>
+                    </div>
+                @elseif ($name === '300 JDL')
+                    <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <img src="{{asset('/image/shop-25.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <br>
+                        <span class="center-shop">300 JDL</span>
+                    </div>
+                @elseif ($name === '300Chilindo')
+                    <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <img src="{{asset('/image/shop-26.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <br>
+                        <span class="center-shop">300Chilindo</span>
+                    </div>
+                @elseif ($name === '1200CENTRAL')
+                    <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <img src="{{asset('/image/shop-27.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <br>
+                        <span class="center-shop">1200CENTRAL</span>
+                    </div>
+                @elseif ($name === '180PowerBuy')
+                    <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <img src="{{asset('/image/shop-28.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                        <br>
+                        <span class="center-shop">180PowerBuy</span>
+                    </div>
+
+                @endif
+            </td>
+
+            
+          {{-- <td class="col-3 col-sm-3 col-md-4 .box-shop-padding nameShop"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"  >
+              <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2" alt="...">
+             <br>
+              <span class="center-shop">18<td class="col-3 col-sm-3 col-md-4 .box-shop-padding nameShop"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"  >
               <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2" alt="...">
              <br>
               <span class="center-shop">180Shopee</span>
@@ -60,8 +120,19 @@
                   <img src="{{asset('/image/shop-23.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
                 <br>
                   <span class="center-shop">180Shop</span>
-              </td>
-        </tr>
+              </td></span>
+          </td>
+          <td class="col-3 col-sm-3 col-md-4 nameShop" >
+              <img src="{{asset('/image/shop-22.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+              <br>
+              <span class="center-shop">300Lazada</span>
+          </td>
+              <td class="col-3 col-sm-3 col-md-4 nameShop" >
+                  <img src="{{asset('/image/shop-23.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
+                <br>
+                  <span class="center-shop">180Shop</span>
+              </td> -
+         </tr>
         <tr class="img-shop box-shop center">
           <td class="col-3 col-sm-3 col-md-4 nameShop" >
               <img src="{{asset('/image/Advice.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
@@ -90,7 +161,7 @@
               <br>
               <span class="center-shop">180PowerBuy</span>
           </td>
-        </tr>
+        </tr> --}}
       </tbody>
     </table>
     <br>
