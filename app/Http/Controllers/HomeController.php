@@ -56,6 +56,9 @@ class HomeController extends Controller
             if ($name !== null) {
 
                 $user = DB::table('users')
+                    ->leftJoin('bank_accounts', 'users.id', '=', 'bank_accounts.id_user')
+                    ->where('users.is_idadmin', '0')  
+                    ->select('bank_accounts.*','users.*')
                     ->where('is_idadmin', '0')
                     ->where('username', 'LIKE', '%' . $name . '%')  
                     ->get(); 
@@ -65,9 +68,10 @@ class HomeController extends Controller
            }else{
 
             $user = DB::table('users')
-                    ->where('is_idadmin', '0')  
+                    ->leftJoin('bank_accounts', 'users.id', '=', 'bank_accounts.id_user')
+                    ->where('users.is_idadmin', '0')  
+                    ->select('bank_accounts.*','users.*')
                     ->get(); 
-        
             return view('home',['user'=> $user]);
 
            } 
