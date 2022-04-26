@@ -14,13 +14,13 @@
               <br>
              <br>
              <br>
-             <p>ชิ้นเล็ก</p>
+             <p id="won_prize">รอผล...</p>
             </div>
             <div class="col-4 col-sm-4 col-md-4">
              <br>
              <br>
              <br>
-             <p>ชิ้นคู่</p>
+             <p id="won_prize1">รอผล...</p>
             </div>
 
         </div>
