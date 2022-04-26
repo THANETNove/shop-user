@@ -263,14 +263,15 @@ setInterval(function () {
 function conutBye() {
 
     jQuery.ajax({
-             /*  url: "/Hm-7UQjf9.r18Z/public/get-conut", */
-              url: "/get-conut",
+            
+             /*  url: `/Hm-7UQjf9.r18Z/public/get-conut/${}`, */
+              url: `/get-conut/${}`,
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
                     },
                 success: function(result){
-                    console.log(result);
+                    console.log("aa",result);
                   document.getElementById('re-number').innerHTML = `รอบที่ ${result}`  
 
                     },
