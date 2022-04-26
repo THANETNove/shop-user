@@ -31,6 +31,7 @@
           <th scope="col">รหัสคำเชิญ</th>
           <th scope="col">จำนวนเงิน</th>
           <th scope="col">บัญชีธนาคาร</th>
+          <th scope="col">เเก้ไขบัญชีธนาคาร</th>
         </tr>
       </thead>
     <tbody>
@@ -46,18 +47,28 @@
                     <td class="col-3 col-sm-3 col-md-3">
                       {{ $user->username }} 
                     </td>
-                    <td class="col-3 col-sm-3 col-md-3 ">
+                    <td class="col-2 col-sm-2 col-md-2 ">
                       {{ $user->invitation }} 
                     </td>
-                <td class="col-3 col-sm-3 col-md-3" >
+                <td class="col-2 col-sm-2 col-md-2" >
                   @php
                   $money =  number_format($user->money,2)
                  @endphp
-                   {{ $money }}  บาท {{$user->id}}
+                   {{ $money }}  บาท
                 </td> 
-                <td class="col-2 col-sm-2 col-md-2 ">
-                  <a   href="{{route('account.edit',$user->id)}}" class="btn btn-outline-info"  onclick="if(confirm('ยืนยัน เปลี่ยน บัญชีธนาคาร')) return true; else return false;" >เเก้ไขบัญชีธนาคาร</a>
+                <td class="col-2 col-sm-2 col-md-2">
+                  {{ $user->bank_account_name }} 
                 </td>
+                @if($user->bank_account_name != null)
+                  <td class="col-2 col-sm-2 col-md-2 ">
+                    <a   href="{{route('account.edit',$user->id)}}" class="btn btn-outline-info"  onclick="if(confirm('ยืนยัน เปลี่ยน บัญชีธนาคาร')) return true; else return false;" >เเก้ไขบัญชีธนาคาร</a>
+                  </td>
+                @else
+                <td class="col-2 col-sm-2 col-md-2 ">
+                  <a   href="#" class="btn btn-outline-secondary" >เเก้ไขบัญชีธนาคาร</a>
+                </td>
+                @endif
+               
             </tr>
         @endforeach
     </tbody>
