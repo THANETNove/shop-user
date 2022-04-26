@@ -34,7 +34,7 @@
         <tbody >
           <tr class="img-report">
             <td class="col-3 col-sm-3 col-md-4 td-box" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight4" aria-controls="offcanvasRight4"  >
-                <a href="{{ URL('report')}}" class="text-decoration">
+                <a href="{{ URL('reserve')}}" class="text-decoration">
                   <img src="{{asset('/image/re.png')}}" class="report" alt="...">
                <br>
                 <span class="center-shop color2" >รายงาน</span>
@@ -46,10 +46,12 @@
                 <span class="center-shop color2">บัญชี</span>
             </td>
             <td class="col-3 col-sm-3 col-md-4 td-box"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight6" aria-controls="offcanvasRight6">
+              <a href="{{ URL('report')}}" class="text-decoration">
                 <img src="{{asset('/image/serve.png')}}" class="report" alt="...">
-               <br>
-                <span class="center-shop color2">บันทึกการจอง</span>
-            </td>
+                <br>
+                 <span class="center-shop color2">บันทึกการจอง</span>
+             </td>
+              </a>     
           </tr>
         </tbody>
       </table>

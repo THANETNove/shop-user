@@ -18,7 +18,15 @@ class BuyOutController extends Controller
      */
     public function index()
     {
-        //
+        $dataJoin = DB::table('won_prizes')
+        ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
+        ->where('buy_outs.userId', Auth::user()->id)
+        ->orderBy('buy_outs.id', 'DESC')
+        ->get();
+
+
+        return view('main.reserve',['dataJoin'=> $dataJoin]);
+
     }
 
     /**

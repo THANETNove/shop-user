@@ -10,7 +10,7 @@
         </a>
     </div>
     <div class="set-head ">
-        <p  class="text">รายงาน</p>
+        <p  class="text">บันทึกการจอง</p>
     </div>
 </div>
 <div class="col-md-10 col 12 violation  table-responsive">

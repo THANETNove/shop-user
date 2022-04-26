@@ -221,7 +221,7 @@
 
 {{-- บัญทึการจอง --}}
 
-<div>
+{{-- <div>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight6" aria-labelledby="offcanvasRightLabel6">
         <div class="offcanvas-header head ">
             <div class="head-center"></div>
@@ -287,7 +287,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
 {{-- โปรไฟล์ --}}

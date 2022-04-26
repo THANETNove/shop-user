@@ -101,6 +101,7 @@ Route::post('/get-conut', [App\Http\Controllers\Withdraw_moneyController::class,
 Route::post('/get-data', [App\Http\Controllers\Withdraw_moneyController::class,'getData']);
 Route::post('/byeConuna', [App\Http\Controllers\Withdraw_moneyController::class,'byeConun']);
 Route::post('/buy', [App\Http\Controllers\BuyOutController::class ,'store'] );
+Route::get('/reserve', [App\Http\Controllers\BuyOutController::class ,'index'] );
 Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
 
 /* admin */
