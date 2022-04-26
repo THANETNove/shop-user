@@ -116,6 +116,7 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/won-prize', App\Http\Controllers\WonPrizesController::class);
     Route::get('/challenge/{name}', [App\Http\Controllers\WonPrizesController::class, 'create'])->name('home');
     Route::get('/miniature', [App\Http\Controllers\MiniatureController::class, 'index']);
+    Route::get('/program/{name}', [App\Http\Controllers\MiniatureController::class, 'pro']);
 
 
     

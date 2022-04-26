@@ -20,6 +20,7 @@ class WonPrizesController extends Controller
     {
     
         $user = DB::table('won_prizes') 
+        ->orderBy('id', 'DESC') 
         ->get(); 
         return view('main.won-prize',['user'=> $user]);
     }

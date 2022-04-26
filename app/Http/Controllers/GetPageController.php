@@ -230,6 +230,7 @@ class GetPageController extends Controller
         return view('main.report',['dataJoin'=> $dataJoin]);
 
     }
+    
 
   
 

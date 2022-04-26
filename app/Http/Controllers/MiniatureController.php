@@ -27,6 +27,15 @@ class MiniatureController extends Controller
 
     }
 
+
+    public function pro($name){
+        $user = DB::table('won_prizes') 
+        ->orderBy('id', 'DESC') 
+        ->get(); 
+        return view('main.program' , ['user'=> $user , 'name'=>$name]);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
