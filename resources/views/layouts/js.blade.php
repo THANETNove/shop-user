@@ -283,9 +283,10 @@ setInterval(function () {
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
-   /*  onOpen(); */
-    console.log(on);
+
+
              if (result === '1:0') { 
+                 console.log("5555");
                 m = ++i;
                 
                 conutBye();
@@ -298,13 +299,14 @@ setInterval(function () {
 
 function conutBye() {
     let id = $("#room").text();
-
+    console.log('M:', m);
      jQuery.ajax({
                 /**
                   * !  เเก้ลิงค์
                   */
                //url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
                url: `/getConutNumber`,
+              
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -312,7 +314,7 @@ function conutBye() {
                     count: m,
                     },
                 success: function(result){
-                   /*  console.log("aa",result); */
+                     console.log("aa",result); 
                   document.getElementById('re-number').innerHTML = `รอบที่ ${result}`  
 
                     },
