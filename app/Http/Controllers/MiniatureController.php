@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+Use \Carbon\Carbon;
 
 class MiniatureController extends Controller
 {
@@ -16,6 +17,7 @@ class MiniatureController extends Controller
      */
     public function index()
     {
+
         $dataJoin = DB::table('won_prizes')
         ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
         ->where('buy_outs.userId', Auth::user()->id)
@@ -29,7 +31,11 @@ class MiniatureController extends Controller
 
 
     public function pro($name){
-        $user = DB::table('won_prizes') 
+        $mutable = Carbon::now();
+        $date = $mutable->toDateString('M d Y'); 
+        
+        $user = DB::table('won_prizes')
+        ->whereDate('created_at', $date) 
         ->orderBy('id', 'DESC') 
         ->get(); 
         return view('main.program' , ['user'=> $user , 'name'=>$name]);

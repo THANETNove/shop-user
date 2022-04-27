@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+Use \Carbon\Carbon;
 use App\Models\WonPrize;
 
 
@@ -19,7 +20,10 @@ class WonPrizesController extends Controller
     public function index()
     {
     
+        $mutable = Carbon::now();
+        $date = $mutable->toDateString('M d Y');
         $user = DB::table('won_prizes') 
+        ->whereDate('created_at',  $date) 
         ->orderBy('id', 'DESC') 
         ->get(); 
         return view('main.won-prize',['user'=> $user]);
@@ -34,9 +38,11 @@ class WonPrizesController extends Controller
      */
     public function create($name)
     {
-        
+        $mutable = Carbon::now();
+        $date = $mutable->toDateString('M d Y');
         $user = DB::table('won_prizes')
-        ->where('nameShop',$name) 
+        ->where('nameShop',$name)
+        ->whereDate('created_at',  $date) 
         ->count();
          if ($user === 0) {
              
