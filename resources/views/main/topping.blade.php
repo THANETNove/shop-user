@@ -181,8 +181,8 @@
                        <br>
                        <br>
                        <br>
-                      <div class="mb-3  head-center">
-                          <button type="button" id="buy-shop" class="btn btn-outline-light">ซื้อสินค้า</button>
+                      <div class="mb-3  head-center " id="on-open">
+                         
                       </div>
                       <br>
                   </div>
