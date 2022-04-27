@@ -70,8 +70,8 @@ $( "#subscribe-bcak" ).click(function() {
 });
 
   var currentLocation = window.location.pathname;
- if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') { 
- //if (currentLocation === '/index') {  
+ //if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') { 
+ if (currentLocation === '/index') {  
     $("#user").addClass("active");
     $("#user-none").show();
     $("#home").removeClass("active");
@@ -113,8 +113,8 @@ $( "#flexSwitchCheckChecked" ).click(function() {
 
 function functionDestroy(e) {
     jQuery.ajax({
-        url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
-        //url: '/gatAjax',
+        //url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
+        url: '/gatAjax',
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -141,8 +141,8 @@ $( "#destroyId" ).click(function() {
     if(confirm()){
      let id =  document.getElementById('destroyId').value;
      jQuery.ajax({
-        url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
-        // url: `/gatDestroy/${id}`,  
+        //url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
+        url: `/gatDestroy/${id}`,  
         method: 'get',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -163,8 +163,8 @@ var locationLogin = window.location.pathname;
 console.log('locationLogin',locationLogin); 
 
  window.onload = (event) => {
-             if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
-              //if (currentLocation === '/login') { 
+             //if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
+              if (currentLocation === '/login') { 
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -196,8 +196,8 @@ var currentLocation = window.location.pathname;
         };
 }
 var currentLocation = window.location.pathname;
-   if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  
-    //if (currentLocation === '/shop') {  
+   //if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  
+    if (currentLocation === '/shop') {  
         window.onload = (event) => {
             $("#location").addClass("active");
             $("#business-none").show();
@@ -209,8 +209,8 @@ var currentLocation = window.location.pathname;
 
 
     console.log(currentLocation);
-  if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {   
-  //if (currentLocation === '/set-up') {   
+  //if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {   
+  if (currentLocation === '/set-up') {   
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -230,8 +230,8 @@ $( "#reload").click(function() {
 
 function reloadMoney() {
     jQuery.ajax({
-         url: "/Hm-7UQjf9.r18Z/public/reload-money",
-         //url: "/reload-money",
+         //url: "/Hm-7UQjf9.r18Z/public/reload-money",
+         url: "/reload-money",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -277,8 +277,8 @@ function conutBye() {
 
      jQuery.ajax({
             
-               url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
-               //url: `/getConutNumber`,
+               //url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
+               url: `/getConutNumber`,
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -303,8 +303,8 @@ function conutBye() {
             if (l != 0) {
                 console.log('DASD');
                 jQuery.ajax({
-                url: "/Hm-7UQjf9.r18Z/public/byeConun", 
-                 //url: "/byeConun", 
+                //url: "/Hm-7UQjf9.r18Z/public/byeConun", 
+                 url: "/byeConun", 
                     method: 'post',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -419,8 +419,8 @@ $( ".product-price" ).click(function() {
 function dataJoin() {
 
         jQuery.ajax({
-                url: "/Hm-7UQjf9.r18Z/public/dataJoin", 
-                //url: "/dataJoin",  
+               // url: "/Hm-7UQjf9.r18Z/public/dataJoin", 
+                url: "/dataJoin",  
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
