@@ -1,7 +1,6 @@
 
 <script type="text/JavaScript">
 $(document).ready(function(){
-    onOpen();
     conutBye();
     byeConun();
   $(".navbarFooter").click(function(){
@@ -279,16 +278,16 @@ var m = 1;
 setInterval(function () {
     var d = new Date(); //get current time
     var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
-    var fiveMin = 60 * 5; //five minutes is 300 seconds!
+    var fiveMin = 60 * 1; //five minutes is 300 seconds!
     var timeleft = fiveMin - seconds % fiveMin; // let's say now is 01:30, then current seconds is 60+30 = 90. And 90%300 = 90, finally 300-90 = 210. That's the time left!
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
-
+   /*  onOpen(); */
     console.log(on);
-             if (result === '5:0') { 
+             if (result === '1:0') { 
                 m = ++i;
-                onOpen();
+                
                 conutBye();
                 byeConun();
                 
@@ -363,14 +362,19 @@ function conutBye() {
 
 function onOpen() {
 
-    let off01 = `<button type="button" id="buy-shop" class="btn btn-outline-light">ไม่ได้เปิดรอบ</button>`;
+    let off01 = ``;
     let on01 = `<button type="button" id="buy-shop" class="btn btn-outline-light">ซื้อสินค้า</button>`;
     let chick  =    document.getElementById('re-number').innerHTML;
     console.log(chick);
-    if ( chick != 'รอบที่ รอบยังไม่ได้เปิด') {
-        /* document.getElementById('on-open').innerHTML = on01; */
+    if ( chick === 'รอบที่ รอบยังไม่ได้เปิด') {
+      console.log('AAA');
+         document.getElementById('on-open').innerHTML = off01; 
+    }else if(chick === 'รอบที่...'){
+        console.log('5555');
+        document.getElementById('on-open').innerHTML = off01; 
     }else{
-        /* document.getElementById('on-open').innerHTML = off01; */
+        console.log('dd');
+         document.getElementById('on-open').innerHTML = on01; 
     }
     
 }
