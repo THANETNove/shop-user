@@ -326,6 +326,9 @@ function conutBye() {
         let id = $("#room").text();
         let l = m - 1;
          console.log("l: ",l,id ); 
+
+
+
             if (l != 0) {
                 console.log('DASD');
                 jQuery.ajax({
@@ -360,24 +363,7 @@ function conutBye() {
 
 }
 
-function onOpen() {
 
-    let off01 = ``;
-    let on01 = `<button type="button" id="buy-shop" class="btn btn-outline-light">ซื้อสินค้า</button>`;
-    let chick  =    document.getElementById('re-number').innerHTML;
-    console.log(chick);
-    if ( chick === 'รอบที่ รอบยังไม่ได้เปิด') {
-      console.log('AAA');
-         document.getElementById('on-open').innerHTML = off01; 
-    }else if(chick === 'รอบที่...'){
-        console.log('5555');
-        document.getElementById('on-open').innerHTML = off01; 
-    }else{
-        console.log('dd');
-         document.getElementById('on-open').innerHTML = on01; 
-    }
-    
-}
 
 function setPrize() {
     setTimeout(() => {
