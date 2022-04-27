@@ -182,7 +182,7 @@
                        <br>
                        <br>
                       <div class="mb-3  head-center " id="on-open">
-                         
+                        <button type="button" id="buy-shop" class="btn btn-outline-light">ซื้อสินค้า</button>
                       </div>
                       <br>
                   </div>
