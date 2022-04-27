@@ -128,7 +128,7 @@ Route::group(['middleware'=>'check'],function () {
     Route::get('/miniature', [App\Http\Controllers\MiniatureController::class, 'index']);
     Route::get('/program/{name}', [App\Http\Controllers\MiniatureController::class, 'pro']);
     Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
-    Route::get('/product', [App\Http\Controllers\ProductController::class, 'index']);
+    Route::resource('/product',App\Http\Controllers\ProductController::class);
     
 });
 

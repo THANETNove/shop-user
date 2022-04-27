@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -16,7 +17,20 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('main.product');
+        $user = DB::table('products')
+        ->count(); 
+        if ($user === 0){
+            return view('main.product');
+        }else{
+            $user1 = DB::table('products')
+        ->where('id',1)    
+        ->get();  
+          return view('main.editproduct' ,['user1'=>$user1]);
+        }
+
+
+        
+
     }
 
     /**
@@ -37,7 +51,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $data = new Product;
+        $data->x_1 = $request->challenge;
+        $data->x_2 = $request->nameShop;
+        $data->save();
+
+        return redirect('/product')->with('status',"เพิ่มสำเร็จเเล้ว");
     }
 
     /**
@@ -59,7 +79,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+      
     }
 
     /**
@@ -71,7 +91,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+ 
+        $data = Product::find($id);
+        $data->x_1 = $request->challenge;
+        $data->x_2 = $request->nameShop;
+        $data->save();
+
+        return redirect('/product')->with('status',"เพิ่มสำเร็จเเล้ว");
     }
 
     /**
