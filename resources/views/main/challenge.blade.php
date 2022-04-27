@@ -66,9 +66,7 @@
                                 <div class="col-md-6">
                                     <select class="form-select"  id="size"  name="size" aria-label="Default select example">
                                         <option  value="ชิ้นใหญ่" selected>ชิ้นใหญ่</option>
-                                        <option value="ชิ้นเล็ก">ชิ้นเล็ก</option>
-                                        <option value="ชิ้นคู่">ชิ้นคู่</option>
-                                        <option value="ชิ้นเดียว">ชิ้นเดียว</option>
+                                        <option value="ชิ้นเล็ก">ชิ้นเล็ก</option>                                                                       
                                       </select>
                                 </div>
                             </div>
@@ -79,8 +77,6 @@
 
                                 <div class="col-md-6">
                                     <select class="form-select"  id="size"  name="won_prize1" aria-label="Default select example">
-                                        <option  value="ชิ้นใหญ่" selected>ชิ้นใหญ่</option>
-                                        <option value="ชิ้นเล็ก">ชิ้นเล็ก</option>
                                         <option value="ชิ้นคู่">ชิ้นคู่</option>
                                         <option value="ชิ้นเดียว">ชิ้นเดียว</option>
                                       </select>
