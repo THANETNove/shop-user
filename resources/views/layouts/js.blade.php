@@ -300,33 +300,31 @@ function conutBye() {
         let id = $("#room").text();
         let l = m - 1;
          console.log("l: ",l,id ); 
-        if (l === 0) {
-            document.getElementById('won_prize').innerHTML = "รอผล..";
-            document.getElementById('won_prize1').innerHTML = "รอผล.."; 
-        }else{
-            jQuery.ajax({
-            /* url: "/Hm-7UQjf9.r18Z/public/byeConun", */
-                url: "/byeConun", 
-                method: 'post',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    room: id,
-                    count: l,
-                    },
-                success: function(result){
+            if (l != 0) {
+                console.log('DASD');
+                jQuery.ajax({
+            //   url: "/Hm-7UQjf9.r18Z/public/byeConun", 
+                    url: "/byeConun", 
+                    method: 'post',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        room: id,
+                        count: l,
+                        },
+                    success: function(result){
+                        console.log(result);
+                        document.getElementById('won_prize').innerHTML = result[0].won_prize;
+                        document.getElementById('won_prize1').innerHTML = result[0].won_prize1;
                     console.log(result);
-                    document.getElementById('won_prize').innerHTML = result[0].won_prize;
-                    document.getElementById('won_prize1').innerHTML = result[0].won_prize1;
-                console.log(result);
-                    },
-                error: function(result){
-                    console.log(result);
-                }       
-            });  
-
-        }
+                        },
+                    error: function(result){
+                        console.log(result);
+                    }       
+                });   
+            }
 
 }
+
 
 function setPrize() {
     setTimeout(() => {

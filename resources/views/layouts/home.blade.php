@@ -14,4 +14,5 @@
    
 </body>
 @include('layouts.js')
+
 </html>
