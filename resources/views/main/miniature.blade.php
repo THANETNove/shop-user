@@ -53,7 +53,7 @@
                     <img src="{{asset('/image/A-5.png')}}" >
                     <br>
                     <br>
-                    <span class="fs-4">300 JDL</span></a>
+                    <span class="fs-4">300 JD</span></a>
                     <br>
                     <br>
                 </td>

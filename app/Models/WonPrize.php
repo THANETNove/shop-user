@@ -13,6 +13,8 @@ class WonPrize extends Model
         'won_prize',
         'won_prize1',
         'nameShop',
-        'countNameShop'
+        'countNameShop',
+        'created_at',
+        'updated_at'
     ];
 }

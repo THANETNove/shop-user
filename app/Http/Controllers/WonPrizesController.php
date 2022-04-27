@@ -65,8 +65,9 @@ class WonPrizesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
+    {  
+        $mutable = Carbon::now();
+        $date = $mutable->toDateTimeString();
         $id =  Auth::user()->id;
         $data = new WonPrize;
         $data->time_number = $request->challenge;
@@ -74,6 +75,8 @@ class WonPrizesController extends Controller
         $data->won_prize1 = $request->won_prize1;
         $data->nameShop = $request->nameShop;
         $data->countNameShop = $request->countNameShop;
+        $data->created_at = $date;
+        $data->updated_at = $date;
 
         $data->save();
 

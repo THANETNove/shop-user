@@ -39,7 +39,7 @@
             <a href="{{ URL('topping/300 JDL')}}" class="text-decoration">
               <img src="{{asset('/image/shop-25.png')}}" class="img-shop-tb-2" alt="...">
            <br>
-            <span class="center-shop">300 JDL</span>
+            <span class="center-shop">300 JD</span>
             </a>
         </td>
             <td class="col-3 col-sm-3 col-md-4 nameShop" >

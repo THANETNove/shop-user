@@ -20,7 +20,8 @@ return new class extends Migration
             $table->string('won_prize1');
             $table->string('nameShop');
             $table->string('countNameShop');
-            $table->timestamps();
+            $table->string('created_at');
+            $table->string('updated_at');
         });
     }
 
