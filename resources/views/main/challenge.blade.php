@@ -122,6 +122,9 @@
                 }
                 console.log('status ;',status);
                     jQuery.ajax({
+                           /**
+                         * !  เเก้ลิงค์
+                         */
                     /*  url: "/Hm-7UQjf9.r18Z/public/get-conut", */
                         url: "/get-conut", 
                         method: 'post',

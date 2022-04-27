@@ -13,8 +13,11 @@ $(document).ready(function(){
             const n = 9999999999 - 1000000000 + 1;
             let numberCount = Math.floor(Math.random() * n) + 1000000000;
             jQuery.ajax({
-                 /*  url: "/Hm-7UQjf9.r18Z/public/reload-money",  */
-                url: "/timeNumberCount",
+                   /**
+                  * !  เเก้ลิงค์
+                  */
+               // url: "/Hm-7UQjf9.r18Z/public/timeNumberCount",  
+                url: "/timeNumberCount", 
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",

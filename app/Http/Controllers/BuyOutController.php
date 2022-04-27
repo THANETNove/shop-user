@@ -48,7 +48,7 @@ class BuyOutController extends Controller
     public function store(Request $request)
     {
 
-        
+        dd($request->all());
         $id =  Auth::user()->id;
         $price =  $request->price;
 
@@ -61,6 +61,9 @@ class BuyOutController extends Controller
         $data->numberCount = $request->numberCount;
         $data->userId = $id;
         $data->save(); 
+
+
+
 
          $user = DB::table('users')
                  ->where('id', $id) 
