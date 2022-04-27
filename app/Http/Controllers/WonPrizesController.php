@@ -66,18 +66,52 @@ class WonPrizesController extends Controller
      */
     public function store(Request $request)
     {  
-        $mutable = Carbon::now();
-        $date = $mutable->toDateTimeString();
+        $newDateTime = Carbon::now()->addMinute(5);
+        $date1 = $newDateTime->toDateTimeString();
         $id =  Auth::user()->id;
+        
+        /* หา user */
+        $user = DB::table('won_prizes') 
+                ->where('nameShop',$request->nameShop)
+                ->orderBy('id', 'DESC')
+                ->count();
+        
+
+        /*  หาวันที่ */
+        $user1 = DB::table('won_prizes') 
+                ->where('nameShop',$request->nameShop)
+                ->max('id');
+        
+        $user2 = DB::table('won_prizes') 
+                ->where('nameShop',$request->nameShop)
+                ->where('id', $user1)
+                ->get();
+
+        
+        $user3 = $user2[0]->created_at;
+
+
+        /* $newDate = new $user3->addMinute(5); */
+        $newDate =  Carbon::createFromFormat('Y-m-d H:m', $user3);
+
+        dd($user3,$newDate);
+
+
+        if($user != 0){
+            
+        }else{
+
         $data = new WonPrize;
         $data->time_number = $request->challenge;
         $data->won_prize = $request->size;
         $data->won_prize1 = $request->won_prize1;
         $data->nameShop = $request->nameShop;
         $data->countNameShop = $request->countNameShop;
-        $data->created_at = $date;
-        $data->updated_at = $date;
+        $data->created_at = $date1;
+        $data->updated_at = $date1;
 
+        } 
+        
         $data->save();
 
         return Redirect()->back()->with('status',"เพิ่มสำเร็จเเล้ว");
