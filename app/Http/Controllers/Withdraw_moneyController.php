@@ -101,7 +101,7 @@ class Withdraw_moneyController extends Controller
                      ->whereDate('created_at', $date)
                      ->whereTime('created_at', '>=',   $dateTime1)
                      ->whereTime('created_at', '<=',   $dateTime2)  
-                    ->get();
+                    ->count();
 
 
         if ($countWithdraw !== 0) {
