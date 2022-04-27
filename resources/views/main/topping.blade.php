@@ -115,8 +115,7 @@
        <p  id="money-user" style="display:none;"> {{ $money}}</p>
     <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
       <div class="offcanvas-header">
-          <p id="A01">555</p>
-        <h5 class="offcanvas-title font-size" id="idMoneShop">จำนวนเงินคงเหลือ {{ $money}} ฿ 11</h5>
+        <h5 class="offcanvas-title font-size" id="idMoneShop">จำนวนเงินคงเหลือ {{ $money}} ฿</h5>
         <button type="button" class="btn-close text-reset"  id="close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body small">

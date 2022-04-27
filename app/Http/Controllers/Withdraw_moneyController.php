@@ -8,6 +8,7 @@ use auth;
 use DB;
 Use \Carbon\Carbon;
 use App\Models\User;
+use App\Models\BuyOut;
 use App\Models\Re_countNumber;
 
 
@@ -119,25 +120,98 @@ class Withdraw_moneyController extends Controller
         $date = $mutable->toDateString('M d Y');
         $idNname = $request->room;
         $countid = $request->count;
-  
+
         $countWithdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                     ->where('countNameShop',$countid)
                     ->whereDate('created_at',  $date) 
                     ->count();
+
+        
         if ($countWithdraw !== 0) {
             $withdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                     ->where('countNameShop',$countid)
                     ->whereDate('created_at',  $date)
-                    ->select( 'won_prizes.won_prize', 'won_prizes.won_prize1','won_prizes.countNameShop')
+                    ->select( 'won_prizes.*')
+                    ->get();  
+
+            $wp_time_number = $withdraw[0]->time_number;
+            $wp_nameShop = $withdraw[0]->nameShop;
+            $wp_won_prize = $withdraw[0]->won_prize;
+            $wp_won_prize1 = $withdraw[0]->won_prize1;
+
+            $x = DB::table('products')
+                    ->get(); 
+            $x1 = $x[0]->x_1;
+            $x2 = $x[0]->x_2;
+
+            $buy_01 = DB::table('buy_outs')
+                    ->where('numberCount',$wp_time_number)
+                   ->where('product_name',$wp_nameShop)
+                   ->whereDate('created_at',  $date) 
+                    ->select( 'buy_outs.*') 
+                   ->get(); 
+
+
+            $buy_userid = $buy_01[0]->userId;
+            $buy_id = $buy_01[0]->id;
+            $buy_finished_size = $buy_01[0]->finished_size;
+            $buy_back_piece = $buy_01[0]->back_piece;
+            $buy_price = $buy_01[0]->price;
+
+            $users01 = DB::table('users')
+                    ->where('id',$buy_userid)
                     ->get();
+            $user_money =  $users01[0]->money;
+       
+
+            if ($wp_won_prize  === $buy_finished_size && $wp_won_prize1  === $buy_back_piece) {
+        
+
+                $outgrowth  = $buy_price * $x2;
+                $outgrowth1 = (int)$user_money+(int)$outgrowth;
+
+                $userMoney = User::find($buy_userid);
+                $userMoney->money = $outgrowth1; 
+                $userMoney->save(); 
+
+            
+                $buy02 = BuyOut::find($buy_id);
+                $buy02->outgrowth = "ถูก รายวัน 2 คู่";
+                $buy02->get_paid =  $outgrowth;  
+                $buy02->save(); 
+
+            }elseif ($wp_won_prize  === $buy_finished_size || $wp_won_prize1  === $buy_back_piece) {
+               
+
+                $outgrowth  = $buy_price * $x1;
+                $outgrowth1 = (int)$user_money+(int)$outgrowth;
+
+                $userMoney = User::find($buy_userid);
+                $userMoney->money = $outgrowth1; 
+                $userMoney->save(); 
+
+                $buy02 = BuyOut::find($buy_id);
+                $buy02->outgrowth = "ถูก รายวัน 1 คู่";
+                $buy02->get_paid =  $outgrowth;  
+                $buy02->save(); 
+
+            }else{
+                $buy02 = BuyOut::find($buy_id);
+                $buy02->outgrowth = "ไม่ถูก รางวัน";
+                $buy02->get_paid =  null;  
+                $buy02->save(); 
+            }
+ 
             $number =  $withdraw;
         }else{
             $number =  "รอผล..";
         }
-
-         return response()->json($number);
+        $usersMoney = DB::table('users')
+            ->where('id',$buy_userid)
+            ->get();
+         return response()->json([$number,$usersMoney]);
 
     }
 

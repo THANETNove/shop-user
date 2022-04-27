@@ -340,10 +340,16 @@ function conutBye() {
                         count: l,
                         },
                     success: function(result){
-                        console.log(result);
-                        document.getElementById('won_prize').innerHTML = result[0].won_prize;
-                        document.getElementById('won_prize1').innerHTML = result[0].won_prize1;
-                    console.log(result);
+                       let data_wp = result[0][0].won_prize;
+                       let data_wp1 = result[0][0].won_prize1;
+                       let data2 = result[1][0].money;
+                        
+
+                         document.getElementById('won_prize').innerHTML = data_wp;
+                        document.getElementById('won_prize1').innerHTML = data_wp1;
+                        let money = `จำนวนเงินคงเหลือ ${data2} ฿`
+                        document.getElementById('idMoneShop').innerHTML = money;  
+
                         },
                     error: function(result){
                         console.log(result);
