@@ -86,9 +86,9 @@ class Withdraw_moneyController extends Controller
     public function getConutNumber(Request $request)
     {
      $mutable = Carbon::now();
+     $date = $mutable->toDateString('M d Y');
 
-/* 
-        dd($mutable->toDateTimeString('M d Y')); */
+
  
         $idNname = $request->room;
         $countid = $request->count;
@@ -96,13 +96,13 @@ class Withdraw_moneyController extends Controller
         $countWithdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                     ->where('countNameShop',$countid)
-                    /* ->whereDate('created_at', '2016-12-31') */
+                     ->whereDate('created_at', $date) 
                     ->count();
         if ($countWithdraw !== 0) {
             $withdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                     ->where('countNameShop',$countid)
-                   /*  ->whereDate('created_at', '2016-12-31') */
+                     ->whereDate('created_at', $date)
                     ->select('won_prizes.time_number','won_prizes.countNameShop')
                     ->get();
             $number =  $withdraw[0]->time_number;
@@ -115,20 +115,21 @@ class Withdraw_moneyController extends Controller
 
     public function byeConun(Request $request)
     {
- 
+        $mutable = Carbon::now();
+        $date = $mutable->toDateString('M d Y');
         $idNname = $request->room;
         $countid = $request->count;
   
         $countWithdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                     ->where('countNameShop',$countid)
-                    /* ->whereDate('created_at', '2016-12-31') */
+                    ->whereDate('created_at',  $date) 
                     ->count();
         if ($countWithdraw !== 0) {
             $withdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                     ->where('countNameShop',$countid)
-                   /*  ->whereDate('created_at', '2016-12-31') */
+                    ->whereDate('created_at',  $date)
                     ->select( 'won_prizes.won_prize', 'won_prizes.won_prize1','won_prizes.countNameShop')
                     ->get();
             $number =  $withdraw;
