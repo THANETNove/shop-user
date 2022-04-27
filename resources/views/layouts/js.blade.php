@@ -70,6 +70,9 @@ $( "#subscribe-bcak" ).click(function() {
 });
 
   var currentLocation = window.location.pathname;
+              /**
+                  * !  เเก้ลิงค์
+                  */
  //if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') { 
  if (currentLocation === '/index') {  
     $("#user").addClass("active");
@@ -169,6 +172,9 @@ var locationLogin = window.location.pathname;
 console.log('locationLogin',locationLogin); 
 
  window.onload = (event) => {
+               /**
+                  * !  เเก้ลิงค์
+                  */
              //if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
               if (currentLocation === '/login') { 
                 
@@ -190,6 +196,9 @@ $( function() {
   });
 
 var currentLocation = window.location.pathname;
+                /**
+                  * !  เเก้ลิงค์
+                  */
     //if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {  
     if (currentLocation === '/user') {  
         window.onload = (event) => {
@@ -202,6 +211,9 @@ var currentLocation = window.location.pathname;
         };
 }
 var currentLocation = window.location.pathname;
+                /**
+                  * !  เเก้ลิงค์
+                  */
    //if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  
     if (currentLocation === '/shop') {  
         window.onload = (event) => {
@@ -215,6 +227,9 @@ var currentLocation = window.location.pathname;
 
 
     console.log(currentLocation);
+                /**
+                  * !  เเก้ลิงค์
+                  */
   //if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {   
   if (currentLocation === '/set-up') {   
         window.onload = (event) => {
