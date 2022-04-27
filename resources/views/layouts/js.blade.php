@@ -113,6 +113,9 @@ $( "#flexSwitchCheckChecked" ).click(function() {
 
 function functionDestroy(e) {
     jQuery.ajax({
+                 /**
+                  * !  เเก้ลิงค์
+                  */
         //url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
         url: '/gatAjax',
         method: 'post',
@@ -141,6 +144,9 @@ $( "#destroyId" ).click(function() {
     if(confirm()){
      let id =  document.getElementById('destroyId').value;
      jQuery.ajax({
+                /**
+                  * !  เเก้ลิงค์
+                  */
         //url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
         url: `/gatDestroy/${id}`,  
         method: 'get',
@@ -230,6 +236,9 @@ $( "#reload").click(function() {
 
 function reloadMoney() {
     jQuery.ajax({
+                /**
+                  * !  เเก้ลิงค์
+                  */
          //url: "/Hm-7UQjf9.r18Z/public/reload-money",
          url: "/reload-money",
         method: 'post',
@@ -276,7 +285,9 @@ function conutBye() {
     let id = $("#room").text();
 
      jQuery.ajax({
-            
+                /**
+                  * !  เเก้ลิงค์
+                  */
                //url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
                url: `/getConutNumber`,
                 method: 'post',
@@ -303,6 +314,9 @@ function conutBye() {
             if (l != 0) {
                 console.log('DASD');
                 jQuery.ajax({
+                    /**
+                  * !  เเก้ลิงค์
+                  */
                 //url: "/Hm-7UQjf9.r18Z/public/byeConun", 
                  url: "/byeConun", 
                     method: 'post',
@@ -419,6 +433,9 @@ $( ".product-price" ).click(function() {
 function dataJoin() {
 
         jQuery.ajax({
+                 /**
+                  * !  เเก้ลิงค์
+                  */
                // url: "/Hm-7UQjf9.r18Z/public/dataJoin", 
                 url: "/dataJoin",  
                 method: 'post',
