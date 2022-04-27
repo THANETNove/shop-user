@@ -73,8 +73,8 @@ $( "#subscribe-bcak" ).click(function() {
               /**
                   * !  เเก้ลิงค์
                   */
- //if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') { 
- if (currentLocation === '/index') {  
+ if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') { 
+ //if (currentLocation === '/index') {  
     $("#user").addClass("active");
     $("#user-none").show();
     $("#home").removeClass("active");
@@ -119,8 +119,8 @@ function functionDestroy(e) {
                  /**
                   * !  เเก้ลิงค์
                   */
-        //url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
-        url: '/gatAjax',
+        url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
+        //url: '/gatAjax',
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -150,8 +150,8 @@ $( "#destroyId" ).click(function() {
                 /**
                   * !  เเก้ลิงค์
                   */
-        //url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
-        url: `/gatDestroy/${id}`,  
+        url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
+        //url: `/gatDestroy/${id}`,  
         method: 'get',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -175,8 +175,8 @@ console.log('locationLogin',locationLogin);
                /**
                   * !  เเก้ลิงค์
                   */
-             //if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
-              if (currentLocation === '/login') { 
+             if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
+              //if (currentLocation === '/login') { 
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -199,8 +199,8 @@ var currentLocation = window.location.pathname;
                 /**
                   * !  เเก้ลิงค์
                   */
-    //if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {  
-    if (currentLocation === '/user') {  
+    if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {  
+   // if (currentLocation === '/user') {  
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -214,8 +214,8 @@ var currentLocation = window.location.pathname;
                 /**
                   * !  เเก้ลิงค์
                   */
-   //if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  
-    if (currentLocation === '/shop') {  
+   if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  
+    //if (currentLocation === '/shop') {  
         window.onload = (event) => {
             $("#location").addClass("active");
             $("#business-none").show();
@@ -230,8 +230,8 @@ var currentLocation = window.location.pathname;
                 /**
                   * !  เเก้ลิงค์
                   */
-  //if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {   
-  if (currentLocation === '/set-up') {   
+  if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {   
+  //if (currentLocation === '/set-up') {   
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -254,8 +254,8 @@ function reloadMoney() {
                 /**
                   * !  เเก้ลิงค์
                   */
-         //url: "/Hm-7UQjf9.r18Z/public/reload-money",
-         url: "/reload-money",
+         url: "/Hm-7UQjf9.r18Z/public/reload-money",
+         //url: "/reload-money",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -279,13 +279,13 @@ var m = 1;
 setInterval(function () {
     var d = new Date(); //get current time
     var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
-    var fiveMin = 60 * 1; //five minutes is 300 seconds!
+    var fiveMin = 60 * 5; //five minutes is 300 seconds!
     var timeleft = fiveMin - seconds % fiveMin; // let's say now is 01:30, then current seconds is 60+30 = 90. And 90%300 = 90, finally 300-90 = 210. That's the time left!
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
     
-             if (result === '1:0') { 
+             if (result === '5:0') { 
                 m = ++i;
                 conutBye();
                 byeConun();
@@ -302,8 +302,8 @@ function conutBye() {
                 /**
                   * !  เเก้ลิงค์
                   */
-               //url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
-               url: `/getConutNumber`,
+               url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
+               //url: `/getConutNumber`,
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -331,8 +331,8 @@ function conutBye() {
                     /**
                   * !  เเก้ลิงค์
                   */
-                //url: "/Hm-7UQjf9.r18Z/public/byeConun", 
-                 url: "/byeConun", 
+                url: "/Hm-7UQjf9.r18Z/public/byeConun", 
+                 //url: "/byeConun", 
                     method: 'post',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -391,8 +391,8 @@ $( "#buy-shop" ).click(function() {
                  /**
                   * !  เเก้ลิงค์
                   */
-                 //url: "/Hm-7UQjf9.r18Z/public/buy",  
-                  url: "/buy",   
+                 url: "/Hm-7UQjf9.r18Z/public/buy",  
+                 // url: "/buy",   
                  method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -456,8 +456,8 @@ function dataJoin() {
                  /**
                   * !  เเก้ลิงค์
                   */
-               // url: "/Hm-7UQjf9.r18Z/public/dataJoin", 
-                url: "/dataJoin",  
+                url: "/Hm-7UQjf9.r18Z/public/dataJoin", 
+               // url: "/dataJoin",  
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
