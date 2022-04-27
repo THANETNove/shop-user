@@ -47,7 +47,7 @@
                     <td class="col-2 col-sm-2 col-md-2">
                       {{ $user->numberCount }}
                     </td>
-                    <td class="col-2 col-sm-2 col-md-2">
+                    <td class="col-1 col-sm-1 col-md-1">
                       {{ $user->username }} 
                     </td>
                     <td class="col-2 col-sm-2 col-md-2 ">
@@ -61,17 +61,10 @@
                 </td> 
                 <td class="col-1 col-sm-1 col-md-1">
                    {{$user->outgrowth}}
-                   @if ()
-                     
-                   @else
-                     
-                   @endif
-                     
-                   
 
                 </td>
                 <td class="col-1 col-sm-1 col-md-1">
-                     
+                  {{$user->created_at}}
                 </td>
             </tr>
         @endforeach
