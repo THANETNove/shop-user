@@ -261,11 +261,10 @@ function reloadMoney() {
             "_token": "{{ csrf_token() }}",
             },
         success: function(result){
-            console.log("result",result);
-            document.getElementById('modeyUser').innerHTML = result; 
-            let money = `จำนวนเงินคงเหลือ  ${result} ฿`
-            document.getElementById('money-shop').innerHTML = money;
-                    
+            console.log("result -55",result);
+            let money = `จำนวนเงินคงเหลือ  ${result} ฿`;
+            document.getElementById('idMoneShop').innerHTML = money;
+
             },
         error: function(result){
             console.log(result);
@@ -401,12 +400,12 @@ $( "#buy-shop" ).click(function() {
                     console.log(result);
                      document.getElementById('error-price').innerHTML = contTime; 
                      document.getElementById('numberShopUser').innerHTML = `รอบที่ ${conettimeNumber}` 
-                     reloadMoney(); 
+                     reloadMoney();
                     
-                        setTimeout(() => {
+                         setTimeout(() => {
                                 $('#close').trigger('click');
                             }, 1000);  
-        
+         
                     
                     },
                 error: function(result){

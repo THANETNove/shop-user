@@ -16,6 +16,7 @@ class BuyOut extends Model
         'price',
         'back_piece',
         'outgrowth',
+        'get_paid',
         'numberCount',
     ];
 }

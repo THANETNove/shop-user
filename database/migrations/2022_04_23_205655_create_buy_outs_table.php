@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('price');
             $table->string('back_piece');
             $table->string('outgrowth')->nullable();
+            $table->string('get_paid')->nullable();
             $table->string('numberCount');
             $table->timestamps();
         });
