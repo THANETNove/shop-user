@@ -327,8 +327,6 @@ function conutBye() {
         let l = m - 1;
          console.log("l: ",l,id ); 
 
-
-
             if (l != 0) {
                 console.log('DASD');
                 jQuery.ajax({
@@ -390,42 +388,53 @@ $( "#buy-shop" ).click(function() {
        let conettimeNumber =  contTime.substring(7, 17);
 
         let money2 =   Number(money.replace(/,/g,'')); 
-        if (money2 >= Number(price)) {
 
-             jQuery.ajax({
-                 /**
-                  * !  เเก้ลิงค์
-                  */
-                 //url: "/Hm-7UQjf9.r18Z/public/buy",  
-                  url: "/buy",   
-                 method: 'post',
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                     name: name,
-                    size: size,
-                    price: price,
-                    back_piece: back_piece,
-                    numberCount: conettimeNumber 
-                    },
-                success: function(result){
-                    console.log(result);
-                     document.getElementById('error-price').innerHTML = contTime; 
-                     document.getElementById('numberShopUser').innerHTML = `รอบที่ ${conettimeNumber}` 
-                     reloadMoney();
-                    
-                         setTimeout(() => {
-                                $('#close').trigger('click');
-                            }, 1000);  
+        let chick  =     $("#re-number").text();
+            console.log(chick);
+            if ( chick === 'รอบที่ รอบยังไม่ได้เปิด') {
+                document.getElementById('buy-shop').innerHTML = `ไม่สามารถซื้อไม่ได้`;
+              
+            }else if(chick === 'รอบที่...'){
+                document.getElementById('buy-shop').innerHTML = `ไม่สามารถซื้อไม่ได้`;
+            }else{
+                if (money2 >= Number(price)) {
+
+                    jQuery.ajax({
+                        /**
+                         * !  เเก้ลิงค์
+                         */
+                        //url: "/Hm-7UQjf9.r18Z/public/buy",  
+                        url: "/buy",   
+                        method: 'post',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                            name: name,
+                        size: size,
+                        price: price,
+                        back_piece: back_piece,
+                        numberCount: conettimeNumber 
+                        },
+                    success: function(result){
+                        console.log(result);
+                            document.getElementById('error-price').innerHTML = contTime; 
+                            document.getElementById('numberShopUser').innerHTML = `รอบที่ ${conettimeNumber}` 
+                            reloadMoney();
+                        
+                                setTimeout(() => {
+                                    $('#close').trigger('click');
+                                }, 1000);  
+
+                        
+                        },
+                    error: function(result){
+                        console.log(result);
+                    }       
+                    });  
+                    }else{
+                    document.getElementById('error-price').innerHTML = "ยอด เงินของคุณไม่พอ กรุณาเติมเงิน";
+                    }  
+            }
          
-                    
-                    },
-                error: function(result){
-                    console.log(result);
-                }       
-            });  
-        }else{
-            document.getElementById('error-price').innerHTML = "ยอด เงินของคุณไม่พอ กรุณาเติมเงิน";
-        }   
 
 });
 
