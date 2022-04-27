@@ -8,6 +8,7 @@ use Auth;
 use DB;
 Use \Carbon\Carbon;
 use App\Models\WonPrize;
+use DateTime;
 
 
 class WonPrizesController extends Controller
@@ -77,27 +78,30 @@ class WonPrizesController extends Controller
                 ->count();
         
 
-        /*  หาวันที่ */
+      
+        if($user !== 0){
+              /*  หาวันที่ */
         $user1 = DB::table('won_prizes') 
                 ->where('nameShop',$request->nameShop)
                 ->max('id');
-        
+
         $user2 = DB::table('won_prizes') 
                 ->where('nameShop',$request->nameShop)
                 ->where('id', $user1)
                 ->get();
 
-        
         $user3 = $user2[0]->created_at;
+        $newDate = date('Y-m-d H:i:s',strtotime('5 minutes',strtotime($user3)));
 
-
-        /* $newDate = new $user3->addMinute(5); */
-        $newDate =  Carbon::createFromFormat('Y-m-d H:m', $user3);
-
-        dd($user3,$newDate);
-
-
-        if($user != 0){
+            $data = new WonPrize;
+            $data->time_number = $request->challenge;
+            $data->won_prize = $request->size;
+            $data->won_prize1 = $request->won_prize1;
+            $data->nameShop = $request->nameShop;
+            $data->countNameShop = $request->countNameShop;
+            $data->created_at = $newDate;
+            $data->updated_at = $newDate;
+            $data->save();
             
         }else{
 
@@ -109,10 +113,11 @@ class WonPrizesController extends Controller
         $data->countNameShop = $request->countNameShop;
         $data->created_at = $date1;
         $data->updated_at = $date1;
+        $data->save();
 
         } 
         
-        $data->save();
+       
 
         return Redirect()->back()->with('status',"เพิ่มสำเร็จเเล้ว");
 
