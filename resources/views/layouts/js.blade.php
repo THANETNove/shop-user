@@ -316,7 +316,10 @@ function conutBye() {
                 success: function(result){
                      console.log("aa",result); 
                   document.getElementById('re-number').innerHTML = `รอบที่ ${result}`  
-
+                        if (result === 'รอบยังไม่ได้เปิด') {
+                            document.getElementById('won_prize').innerHTML = `รอผล..`;
+                            document.getElementById('won_prize1').innerHTML = `รอผล..`
+                        }
                     },
                 error: function(result){
 
