@@ -317,7 +317,7 @@ function conutBye() {
                      console.log("aa",result); 
                     
                      if (result[0][0].time_number === undefined) {
-                        document.getElementById('re-number').innerHTML = `รหัสสินค้า ยังไม่ได้เปิด`;
+                       /*  document.getElementById('re-number').innerHTML = `รหัสสินค้า ยังไม่ได้เปิด`; */
                     }else{
                         document.getElementById('re-number').innerHTML = `รหัสสินค้า ${result[0][0].time_number}`
                     }
