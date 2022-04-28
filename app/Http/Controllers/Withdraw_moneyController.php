@@ -97,24 +97,26 @@ class Withdraw_moneyController extends Controller
         $idNname = $request->room;
         $countId = $request->count;
 
-        $countWithdraw = DB::table('won_prizes')
-                    ->where('nameShop',$idNname)
-                     ->whereDate('created_at', $date)
-                     ->whereTime('created_at', '>=',   $dateTime1)
-                     ->whereTime('created_at', '<=',   $dateTime2)  
-                    ->count();
-                $newDate_1 = date('Y-m-d H:i:s',strtotime('0 minutes',strtotime($dateTime1)));
-                $newDate_2 = date('Y-m-d H:i:s',strtotime('-3 minutes',strtotime($dateTime1)));
+
+                $newDate_1 = date('Y-m-d H:i:s',strtotime('0 minutes',strtotime($dateTime1))); //5:52:00
+                $newDate_2 = date('Y-m-d H:i:s',strtotime('-3 minutes',strtotime($dateTime1))); //5:49:00
     
-                    
+                $countWithdraw = DB::table('won_prizes')
+                    ->where('nameShop',$idNname)
+                    ->whereDate('created_at', $date)
+                    /* ->whereTime('created_at', '>=',   $dateTime2)  */
+                    ->whereTime('created_at', '<=',   $dateTime1) 
+                    ->orderBy('id', 'DESC') 
+                    ->count(); 
                   
 
-            if ($countId > '1') {
+             if ($countId > '1') { 
                        
                 $bay1 = DB::table('won_prizes')
                         ->where('nameShop',$idNname)
-                        ->whereTime('created_at', '>=',   $newDate_2)
-                        ->whereTime('created_at', '<=',   $newDate_1)
+                         /* ->whereTime('created_at', '>=',   $newDate_2)  */
+                        ->whereTime('created_at', '<=',   $newDate_2)
+                        ->orderBy('id', 'DESC')
                         ->get();
                 }
                 else{
@@ -127,8 +129,9 @@ class Withdraw_moneyController extends Controller
             $withdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                      ->whereDate('created_at', $date)
-                     ->whereTime('created_at', '>=',   $dateTime1) 
-                     ->whereTime('created_at', '<=',   $dateTime2)  
+                     /*  ->whereTime('created_at', '>=',   $dateTime2)   */
+                     ->whereTime('created_at', '<=',   $dateTime1)
+                     ->orderBy('id', 'DESC')  
                     ->select('won_prizes.time_number','won_prizes.countNameShop')
                     ->get();
             $number =  $withdraw;

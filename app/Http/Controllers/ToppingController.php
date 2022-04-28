@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+Use \Carbon\Carbon;
 
 class ToppingController extends Controller
 {
@@ -20,7 +21,44 @@ class ToppingController extends Controller
         ->orderBy('id', 'DESC') 
         ->get();
 
-        return view('main.topping' , ['user'=> $user , 'name'=>$name]);
+        $mutable = Carbon::now();
+        $mutable1 = Carbon::now()->addMinute(3);;
+        $date = $mutable->toDateString('M d Y');
+        $dateTime1 = $mutable->toTimeString();
+        $dateTime2 = $mutable1->toTimeString();
+        $newDate_1 = date('Y-m-d H:i:s',strtotime('0 minutes',strtotime($dateTime1)));
+        $newDate_2 = date('Y-m-d H:i:s',strtotime('-3 minutes',strtotime($dateTime1)));
+
+
+      
+
+        $countBay1 = DB::table('won_prizes')
+        ->where('nameShop',$name)
+        ->whereDate('created_at', $date)
+         ->whereTime('created_at', '>=',   $newDate_2)
+         ->whereTime('created_at', '<=',   $newDate_1) 
+        ->count();
+
+    
+
+                if ($countBay1 !== 0) {
+
+                    $bay1 = DB::table('won_prizes')
+                    ->where('nameShop',$name)
+                    ->whereDate('created_at', $date)
+                    /*  ->whereTime('created_at', '>=',   $newDate_2) */
+                     ->whereTime('created_at', '<=',   $dateTime1)
+                     ->orderBy('id', 'DESC')
+                    ->get();
+    
+                  $number =   $bay1[0]->time_number;
+                }else{
+                    $number = "รหัสสินค้า ยังไม่ได้เปิด";
+                }
+
+
+
+        return view('main.topping' , ['user'=> $user , 'name'=>$name,'number'=>$number]);
     }
 
     /**

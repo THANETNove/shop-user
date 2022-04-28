@@ -43,7 +43,7 @@
       </div>
   </div>
   <div class="border-th span">
-      <p  class="font-size span" id="re-number">รหัสสินค้า</p>
+      <p  class="font-size span" id="re-number">รหัสสินค้า {{$number}}</p>
       <p id="countingdown" class="font-size forgot">กำหนดเวลาการจับคู่คำสั่งชื้อ</p>
   </div>
 
