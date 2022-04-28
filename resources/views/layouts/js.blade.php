@@ -315,11 +315,22 @@ function conutBye() {
                     },
                 success: function(result){
                      console.log("aa",result); 
-                  document.getElementById('re-number').innerHTML = `รหัสสินค้า ${result}`  
-                        if (result === 'ยังไม่ได้เปิด') {
-                            document.getElementById('won_prize').innerHTML = `รอผล..`;
-                            document.getElementById('won_prize1').innerHTML = `รอผล..`
-                        }
+                    
+                     if (result[0][0].time_number === undefined) {
+                        document.getElementById('re-number').innerHTML = `รหัสสินค้า ยังไม่ได้เปิด`;
+                    }else{
+                        document.getElementById('re-number').innerHTML = `รหัสสินค้า ${result[0][0].time_number}`
+                    }
+                    if (result[1][0].won_prize === undefined) {
+                        document.getElementById('won_prize').innerHTML = `${result[1]}`; 
+                        document.getElementById('won_prize1').innerHTML =`${result[1]}`;
+                    } else {
+                        document.getElementById('won_prize').innerHTML = `${result[1][0].won_prize}`; 
+                       document.getElementById('won_prize1').innerHTML =`${result[1][0].won_prize1}`;
+                    }
+                  
+                  
+               
                     },
                 error: function(result){
 

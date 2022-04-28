@@ -86,25 +86,44 @@ class Withdraw_moneyController extends Controller
 
     public function getConutNumber(Request $request)
     {
+
      $mutable = Carbon::now();
-     $mutable1 = Carbon::now()->addMinute(3);;
+     $mutable1 = Carbon::now()->addMinute(1);;
      $date = $mutable->toDateString('M d Y');
      $dateTime1 = $mutable->toTimeString();
      $dateTime2 = $mutable1->toTimeString();
 
  
         $idNname = $request->room;
-        $countid = $request->count;
-  
+        $countId = $request->count;
+
         $countWithdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                      ->whereDate('created_at', $date)
                      ->whereTime('created_at', '>=',   $dateTime1)
                      ->whereTime('created_at', '<=',   $dateTime2)  
                     ->count();
+                $newDate_1 = date('Y-m-d H:i:s',strtotime('0 minutes',strtotime($dateTime1)));
+                $newDate_2 = date('Y-m-d H:i:s',strtotime('-1 minutes',strtotime($dateTime1)));
+    
+                    
+                  
 
-
+            if ($countId > '1') {
+                       
+                $bay1 = DB::table('won_prizes')
+                        ->where('nameShop',$idNname)
+                        ->whereTime('created_at', '>=',   $newDate_2)
+                        ->whereTime('created_at', '<=',   $newDate_1)
+                        ->get();
+                }
+                else{
+                     $bay1 = "รอผล..";
+                }
         if ($countWithdraw !== 0) {
+
+           
+ 
             $withdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                      ->whereDate('created_at', $date)
@@ -112,19 +131,24 @@ class Withdraw_moneyController extends Controller
                      ->whereTime('created_at', '<=',   $dateTime2)  
                     ->select('won_prizes.time_number','won_prizes.countNameShop')
                     ->get();
-            $number =  $withdraw[0]->time_number;
+            $number =  $withdraw;
         }else{
+
             $number =  "ยังไม่ได้เปิด";
         }
   
-         return response()->json($number);
+         return response()->json([$number, $bay1]);
     }
 
     public function byeConun(Request $request)
     {
      
         $mutable = Carbon::now();
+        $mutable1 = Carbon::now()->addMinute(1);;
         $date = $mutable->toDateString('M d Y');
+        $dateTime1 = $mutable->toTimeString();
+        $dateTime2 = $mutable1->toTimeString();
+
 
                 $idNname = $request->room;
                 $countId = $request->count;
@@ -231,6 +255,7 @@ class Withdraw_moneyController extends Controller
                         }
         
                 }else{
+
                     $number =  "รอผล..";
                 }
                 $usersMoney = DB::table('users')

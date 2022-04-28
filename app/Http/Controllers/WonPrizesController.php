@@ -67,7 +67,7 @@ class WonPrizesController extends Controller
      */
     public function store(Request $request)
     {  
-        $newDateTime = Carbon::now()->addMinute(3);
+        $newDateTime = Carbon::now()->addMinute(1);
         $date1 = $newDateTime->toDateTimeString();
         
         $id =  Auth::user()->id;
@@ -92,7 +92,7 @@ class WonPrizesController extends Controller
                 ->get();
 
         $user3 = $user2[0]->created_at;
-        $newDate = date('Y-m-d H:i:s',strtotime('3 minutes',strtotime($user3)));
+        $newDate = date('Y-m-d H:i:s',strtotime('1 minutes',strtotime($user3)));
 
             $data = new WonPrize;
             $data->time_number = $request->challenge;
@@ -100,8 +100,8 @@ class WonPrizesController extends Controller
             $data->won_prize1 = $request->won_prize1;
             $data->nameShop = $request->nameShop;
             $data->countNameShop = $request->countNameShop;
-            $data->created_at = $date1;
-            $data->updated_at = $date1;
+            $data->created_at = $newDate;
+            $data->updated_at = $newDate;
             $data->save();
             
         }else{
