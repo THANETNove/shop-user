@@ -22,7 +22,7 @@ class BuyOutController extends Controller
         ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
         ->where('buy_outs.userId', Auth::user()->id)
         ->orderBy('buy_outs.id', 'DESC')
-        ->get();
+        ->count();
 
 
         return view('main.reserve',['dataJoin'=> $dataJoin]);

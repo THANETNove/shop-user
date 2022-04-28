@@ -48,33 +48,42 @@ class HomeController extends Controller
             Session::put('username', $bank[0]->bank_account_name); 
         }
 
-        if ($idStatus === '1') {
-
+        if ($idStatus >= '1') {
 
             $name = $request->search;
 
-            if ($name !== null) {
+            if (Auth::user()->is_idadmin === '1') {
+                return redirect('/money-user');
+            }else if(Auth::user()->is_idadmin === '2'){
+                return redirect('/miniature');
+            }else{
 
+                if ($name !== null) {
+
+                    $user = DB::table('users')
+                        ->leftJoin('bank_accounts', 'users.id', '=', 'bank_accounts.id_user')
+                        ->where('users.is_idadmin', '0')  
+                        ->select('bank_accounts.*','users.*')
+                        ->where('is_idadmin', '0')
+                        ->where('username', 'LIKE', '%' . $name . '%')  
+                        ->get(); 
+            
+                        return view('home',['user'=> $user]);
+    
+               }else{
+    
                 $user = DB::table('users')
-                    ->leftJoin('bank_accounts', 'users.id', '=', 'bank_accounts.id_user')
-                    ->where('users.is_idadmin', '0')  
-                    ->select('bank_accounts.*','users.*')
-                    ->where('is_idadmin', '0')
-                    ->where('username', 'LIKE', '%' . $name . '%')  
-                    ->get(); 
-        
-                    return view('home',['user'=> $user]);
+                        ->leftJoin('bank_accounts', 'users.id', '=', 'bank_accounts.id_user')
+                        ->where('users.is_idadmin', '0')  
+                        ->select('bank_accounts.*','users.*')
+                        ->get(); 
+                return view('home',['user'=> $user]);
+    
+               } 
 
-           }else{
+            }
 
-            $user = DB::table('users')
-                    ->leftJoin('bank_accounts', 'users.id', '=', 'bank_accounts.id_user')
-                    ->where('users.is_idadmin', '0')  
-                    ->select('bank_accounts.*','users.*')
-                    ->get(); 
-            return view('home',['user'=> $user]);
-
-           } 
+         
 
          
         }else{

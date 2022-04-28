@@ -26,10 +26,11 @@ class checkadmin
         Session::put('dataJoin', $dataJoin);
 
        if (Auth::user()) {
-            if(Auth::user()->is_idadmin === '1') {
-            
+            if(Auth::user()->is_idadmin >= '1') {
+              
                 return $next($request);
             }else{
+               
                 return redirect('/');
             }
        }else{

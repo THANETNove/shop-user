@@ -40,37 +40,65 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    
+                   
                     <ul class="nav">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href=" {{ URL::to('home')}} ">Home</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ URL::to('money-user')}}">เติมเงิน</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{{ URL::to('getOutMonetUser')}}" >ถอนเงิน</a>
-                        </li> 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('newAdmin')}}" >เพิ่ม Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('admin')}}" >Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('link-line')}}"  >Link-Line</a>
-                        </li>       
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('buy-goods')}}"  >สั่งชื้อสินต้า</a>
-                        </li>     
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('won-prize')}}"  >ผลทายรางวัล</a>
-                        </li>   
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('miniature')}}"  >เพิ่มผลทายรางวัล</a>
-                        </li>      
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ URL::to('product')}}"  >ผลคุณรางวัล</a>
-                        </li>      
+                    @if (Auth::user()->is_idadmin === '1')
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('money-user')}}">เติมเงิน</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('getOutMonetUser')}}" >ถอนเงิน</a>
+                      </li> 
+
+                    @elseif (Auth::user()->is_idadmin === '2')
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('won-prize')}}"  >ผลทายรางวัล</a>
+                    </li>   
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('miniature')}}"  >เพิ่มผลทายรางวัล</a>
+                    </li>      
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('product')}}"  >ผลคุณรางวัล</a>
+                    </li>    
+
+                    @elseif (Auth::user()->is_idadmin === '3')
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ URL::to('home')}} ">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('money-user')}}">เติมเงิน</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('getOutMonetUser')}}" >ถอนเงิน</a>
+                      </li> 
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('newAdmin')}}" >เพิ่ม Admin</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('admin')}}" >Admin</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('link-line')}}"  >Link-Line</a>
+                      </li>       
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('buy-goods')}}"  >สั่งชื้อสินต้า</a>
+                      </li>     
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('won-prize')}}"  >ผลทายรางวัล</a>
+                      </li>   
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('miniature')}}"  >เพิ่มผลทายรางวัล</a>
+                      </li>      
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('product')}}"  >ผลคุณรางวัล</a>
+                      </li> 
+
+                     @endif
+                            
                       </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
