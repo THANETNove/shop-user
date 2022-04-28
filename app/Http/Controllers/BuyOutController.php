@@ -8,6 +8,7 @@ use App\Models\BuyOut;
 use App\Models\User;
 use Auth;
 use DB;
+use \Carbon\Carbon;
 
 class BuyOutController extends Controller
 {
@@ -18,14 +19,62 @@ class BuyOutController extends Controller
      */
     public function index()
     {
+        
+        $mutable = Carbon::now();
+        $date = $mutable->toDateString('M d Y');
+
         $dataJoin = DB::table('won_prizes')
-        ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
-        ->where('buy_outs.userId', Auth::user()->id)
-        ->orderBy('buy_outs.id', 'DESC')
-        ->count();
+                ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
+                ->where('buy_outs.userId', Auth::user()->id)
+                ->orderBy('buy_outs.id', 'DESC')
+                ->get();
 
 
-        return view('main.reserve',['dataJoin'=> $dataJoin]);
+   
+
+                $sumPrice = DB::table('buy_outs')
+                    ->where('userId', Auth::user()->id)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('price'); 
+                $sumBonus = DB::table('buy_outs')
+                    ->where('userId', Auth::user()->id)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('get_paid');
+                $sumLoss = DB::table('buy_outs')
+                    ->where('userId', Auth::user()->id)
+                    ->whereNull('get_paid')
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('price');
+
+                $sumAddMoney = DB::table('add_money_users')
+                    ->where('id_user', Auth::user()->id)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('money');
+                $withdrawMoney = DB::table('withdraw_moneys')
+                    ->where('idUser', Auth::user()->id)
+                    ->where('statusMoney',1)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('withdrawMoney');
+                $withdrawMoneyArrears = DB::table('withdraw_moneys')
+                    ->where('idUser', Auth::user()->id)
+                    ->where('statusMoney',0)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('withdrawMoney');
+
+
+        
+
+        $priceUser = [$sumPrice , $sumBonus ,$sumLoss, $sumAddMoney, $withdrawMoney,$withdrawMoneyArrears];
+        return view('main.reserve',
+        [
+          'dataJoin'=> $dataJoin, 'priceUser'=>$priceUser,
+         ]);
 
     }
 

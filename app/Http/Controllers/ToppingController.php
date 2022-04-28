@@ -22,7 +22,7 @@ class ToppingController extends Controller
         ->get();
 
         $mutable = Carbon::now();
-        $mutable1 = Carbon::now()->addMinute(3);;
+        $mutable1 = Carbon::now()->addMinute(3);
         $date = $mutable->toDateString('M d Y');
         $dateTime1 = $mutable->toTimeString();
         $dateTime2 = $mutable1->toTimeString();

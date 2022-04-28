@@ -43,13 +43,19 @@
             <div class="container head-center">
                 <div class="row">
                     <div class="col-4 col-sm-4 col-md-4">
-                        <p class="date">0.00 <br> <span class="font-16">ยอดสั่งซื้อ</span></p>
+                        <p class="date">
+                            {{ number_format($priceUser[0],2)}}
+                        <br>
+                         <span class="font-16">ยอดสั่งซื้อ</span></p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
-                        <p class="date">0.00 <br> <span class="font-16">โบนัสที่ได้</span></p>
+                        <p class="date">
+                            {{ number_format($priceUser[1],2)}}
+                            <br> <span class="font-16">โบนัสที่ได้</span></p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
-                        <p class="date">0.00 <br> <span class="font-16">โบนัสที่ได้</span></p>
+                        <p class="date">{{ number_format($priceUser[5],2)}}
+                            <br> <span class="font-16">ยอดที่ค้าง</span></p>
                     </div>
                 </div>
             </div>
@@ -59,17 +65,23 @@
                         <p class="date">0.00 <br> <span class="font-16">ค่าคอมมิชชั่น</span></p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
-                        <p class="date">0.00 <br> <span class="font-16">จำนวนเงินเติม</span></p>
+                        <p class="date">
+                            {{ number_format($priceUser[3],2)}}
+                            <br> <span class="font-16">จำนวนเงินเติม</span></p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
-                        <p class="date">0.00 <br> <span class="font-16">จำนวนเงินถอน</span></p>
+                        <p class="date">
+                            {{ number_format($priceUser[4],2)}}
+                            <br> <span class="font-16">จำนวนเงินถอน</span></p>
                     </div>
                 </div>
             </div>
             <div class="container head-center">
                 <div class="row">
                     <div class="col-4 col-sm-4 col-md-4 head-center ">
-                        <p class="date">0.00 <br> <span class="font-16">ยอดรวมได้เสีย</span></p>
+                        <p class="date">
+                            {{ number_format($priceUser[2],2)}}
+                        <br> <span class="font-16">ยอดรวมได้เสีย</span></p>
                     </div>
                 </div>
             </div>
