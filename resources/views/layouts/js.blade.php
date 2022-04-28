@@ -315,8 +315,8 @@ function conutBye() {
                     },
                 success: function(result){
                      console.log("aa",result); 
-                  document.getElementById('re-number').innerHTML = `รอบที่ ${result}`  
-                        if (result === 'รอบยังไม่ได้เปิด') {
+                  document.getElementById('re-number').innerHTML = `รหัสสินค้า ${result}`  
+                        if (result === 'ยังไม่ได้เปิด') {
                             document.getElementById('won_prize').innerHTML = `รอผล..`;
                             document.getElementById('won_prize1').innerHTML = `รอผล..`
                         }
@@ -395,17 +395,15 @@ $( "#buy-shop" ).click(function() {
         var name = document.getElementById('nameshop-1').value;
         let size =  document.getElementById('size').value;
         let price =  document.getElementById('price').value;
-       let conettimeNumber =  contTime.substring(7, 17);
+       let conettimeNumber =  contTime.substring(11);
 
         let money2 =   Number(money.replace(/,/g,'')); 
 
         let chick  =     $("#re-number").text();
             console.log(chick);
-            if ( chick === 'รอบที่ รอบยังไม่ได้เปิด') {
+            if ( chick === 'รหัสสินค้า ยังไม่ได้เปิด') {
                 document.getElementById('buy-shop').innerHTML = `ไม่สามารถซื้อไม่ได้`;
               
-            }else if(chick === 'รอบที่...'){
-                document.getElementById('buy-shop').innerHTML = `ไม่สามารถซื้อไม่ได้`;
             }else{
                 if (money2 >= Number(price)) {
 

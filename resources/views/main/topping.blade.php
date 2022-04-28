@@ -43,7 +43,7 @@
       </div>
   </div>
   <div class="border-th span">
-      <p  class="font-size span" id="re-number">รอบที่...</p>
+      <p  class="font-size span" id="re-number">รหัสสินค้า</p>
       <p id="countingdown" class="font-size forgot">กำหนดเวลาการจับคู่คำสั่งชื้อ</p>
   </div>
 
@@ -101,7 +101,6 @@
                         <br>
                         <span class="center-shop">180PowerBuy</span>
                     </div>
-
                 @endif
             </td>
       </tbody>

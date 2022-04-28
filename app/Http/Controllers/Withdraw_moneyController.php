@@ -114,7 +114,7 @@ class Withdraw_moneyController extends Controller
                     ->get();
             $number =  $withdraw[0]->time_number;
         }else{
-            $number =  "รอบยังไม่ได้เปิด";
+            $number =  "ยังไม่ได้เปิด";
         }
   
          return response()->json($number);
