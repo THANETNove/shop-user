@@ -104,7 +104,7 @@ class Withdraw_moneyController extends Controller
                      ->whereTime('created_at', '<=',   $dateTime2)  
                     ->count();
                 $newDate_1 = date('Y-m-d H:i:s',strtotime('0 minutes',strtotime($dateTime1)));
-                $newDate_2 = date('Y-m-d H:i:s',strtotime('-1 minutes',strtotime($dateTime1)));
+                $newDate_2 = date('Y-m-d H:i:s',strtotime('-3 minutes',strtotime($dateTime1)));
     
                     
                   
@@ -127,7 +127,7 @@ class Withdraw_moneyController extends Controller
             $withdraw = DB::table('won_prizes')
                     ->where('nameShop',$idNname)
                      ->whereDate('created_at', $date)
-                     ->whereTime('created_at', '>=',   $dateTime1)
+                     ->whereTime('created_at', '>=',   $dateTime1) 
                      ->whereTime('created_at', '<=',   $dateTime2)  
                     ->select('won_prizes.time_number','won_prizes.countNameShop')
                     ->get();

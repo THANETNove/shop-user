@@ -278,14 +278,14 @@ var m = 1;
 setInterval(function () {
     var d = new Date(); //get current time
     var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
-    var fiveMin = 60 * 1; //five minutes is 300 seconds!
+    var fiveMin = 60 * 3; //five minutes is 300 seconds!
     var timeleft = fiveMin - seconds % fiveMin; // let's say now is 01:30, then current seconds is 60+30 = 90. And 90%300 = 90, finally 300-90 = 210. That's the time left!
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
 
 
-             if (result === '1:0') { 
+             if (result === '3:0') { 
                  console.log("5555");
                 m = ++i;
                 
