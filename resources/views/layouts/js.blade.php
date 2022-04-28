@@ -326,11 +326,16 @@ function conutBye() {
     }
     function byeConun() {
         let id = $("#room").text();
+        let number_shop = $("#numberShopUser").text();
+
+      /*   let 
+       = $("#room").text(); */
         let l = m - 1;
          console.log("l: ",l,id ); 
 
-            if (l != 0) {
-                console.log('DASD');
+            if (number_shop != 'ยังไม่สั่งซื้อ...') {
+              let idshop =   number_shop.substring(7)
+
                 jQuery.ajax({
                     /**
                   * !  เเก้ลิงค์
@@ -341,7 +346,7 @@ function conutBye() {
                     data: {
                         "_token": "{{ csrf_token() }}",
                         room: id,
-                        count: l,
+                        count: idshop,
                         },
                     success: function(result){
                        let data_wp = result[0][0].won_prize;

@@ -87,7 +87,7 @@ class Withdraw_moneyController extends Controller
     public function getConutNumber(Request $request)
     {
      $mutable = Carbon::now();
-     $mutable1 = Carbon::now()->addMinute(1);;
+     $mutable1 = Carbon::now()->addMinute(3);;
      $date = $mutable->toDateString('M d Y');
      $dateTime1 = $mutable->toTimeString();
      $dateTime2 = $mutable1->toTimeString();
@@ -124,20 +124,16 @@ class Withdraw_moneyController extends Controller
     {
      
         $mutable = Carbon::now();
-        $mutable1 = Carbon::now()->addMinute(1);;
         $date = $mutable->toDateString('M d Y');
-        $dateTime1 = $mutable->toTimeString();
-        $dateTime2 = $mutable1->toTimeString();
 
                 $idNname = $request->room;
-                $countid = $request->count;
+                $countId = $request->count;
         
         
                 $countWithdraw = DB::table('won_prizes')
                             ->where('nameShop',$idNname)
-                             ->whereDate('created_at', $date)
-                             ->whereTime('created_at', '>=',   $dateTime1)
-                             ->whereTime('created_at', '<=',   $dateTime2)  
+                            ->where('time_number',$countId)
+                             ->whereDate('created_at', $date) 
                             ->count();
         
                 
@@ -145,11 +141,10 @@ class Withdraw_moneyController extends Controller
 
                     $withdraw = DB::table('won_prizes')
                             ->where('nameShop',$idNname)
-                            ->whereDate('created_at', $date)
-                            ->whereTime('created_at', '>=',   $dateTime1)
-                            ->whereTime('created_at', '<=',   $dateTime2)  
-                            ->select( 'won_prizes.*')
-                            ->get();  
+                            ->where('time_number',$countId)
+                             ->whereDate('created_at', $date) 
+                            ->get();
+        
        
                     $wp_time_number = $withdraw[0]->time_number;
                     $wp_nameShop = $withdraw[0]->nameShop;
@@ -175,8 +170,6 @@ class Withdraw_moneyController extends Controller
                             ->where('product_name',$wp_nameShop)
                             ->whereNull('outgrowth')
                             ->whereDate('created_at', $date)
-                            ->whereTime('created_at', '>=',   $dateTime1)
-                            ->whereTime('created_at', '<=',   $dateTime2)  
                             ->select( 'buy_outs.*') 
                             ->count(); 
         
@@ -208,7 +201,7 @@ class Withdraw_moneyController extends Controller
         
                             
                                 $buy02 = BuyOut::find($buy_id);
-                                $buy02->outgrowth = "ถูก รายวัน 2 คู่";
+                                $buy02->outgrowth = "ถูก รางวัล 2 คู่";
                                 $buy02->get_paid =  $outgrowth;  
                                 $buy02->save(); 
         
@@ -223,13 +216,13 @@ class Withdraw_moneyController extends Controller
                                 $userMoney->save(); 
         
                                 $buy02 = BuyOut::find($buy_id);
-                                $buy02->outgrowth = "ถูก รายวัน 1 คู่";
+                                $buy02->outgrowth = "ถูก รางวัล 1 คู่";
                                 $buy02->get_paid =  $outgrowth;  
                                 $buy02->save(); 
         
                             }else{
                                 $buy02 = BuyOut::find($buy_id);
-                                $buy02->outgrowth = "ไม่ถูก รางวัน";
+                                $buy02->outgrowth = "ไม่ถูก รางวัล";
                                 $buy02->get_paid =  null;  
                                 $buy02->save(); 
                             }
