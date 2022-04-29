@@ -49,7 +49,7 @@
             </tr>
             <tr>
                 <td class="col-3 col-sm-3 col-md-4 " >
-                    <a href="{{ URL('challenge/300 JDL')}}" class="text-decoration-none ">
+                    <a href="{{ URL('challenge/300 JD')}}" class="text-decoration-none ">
                     <img src="{{asset('/image/A-5.png')}}" >
                     <br>
                     <br>

@@ -77,7 +77,7 @@
                         <br>
                         <span class="center-shop">60Advice</span>
                     </div>
-                @elseif ($name === '300 JDL')
+                @elseif ($name === '300 JD')
                     <div class="nameShop" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
                         <img src="{{asset('/image/shop-25.png')}}" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" class="img-shop-tb-2" alt="...">
                         <br>
