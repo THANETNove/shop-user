@@ -119,7 +119,7 @@ function functionDestroy(e) {
                   * !  เเก้ลิงค์
                   */
         //url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
-        url: '/gatAjax',
+       url: '/gatAjax',
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -174,8 +174,8 @@ console.log('locationLogin',locationLogin);
                /**
                   * !  เเก้ลิงค์
                   */
-            // if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
-              if (currentLocation === '/login') { 
+             //if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
+             if (currentLocation === '/login') { 
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -423,7 +423,7 @@ $( "#buy-shop" ).click(function() {
                          * !  เเก้ลิงค์
                          */
                         //url: "/Hm-7UQjf9.r18Z/public/buy",  
-                        url: "/buy",   
+                       url: "/buy",   
                         method: 'post',
                     data: {
                         "_token": "{{ csrf_token() }}",

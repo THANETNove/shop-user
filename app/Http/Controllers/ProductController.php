@@ -23,8 +23,8 @@ class ProductController extends Controller
             return view('main.product');
         }else{
             $user1 = DB::table('products')
-        ->where('id',1)    
-        ->get();  
+                ->where('id',1)    
+                ->get();  
           return view('main.editproduct' ,['user1'=>$user1]);
         }
 
