@@ -69,19 +69,22 @@ class WonPrizesController extends Controller
     {  
         $newDateTime = Carbon::now()->addMinute(3);
         $date1 = $newDateTime->toDateTimeString();
+        $dateData = $newDateTime->toDateString('M d Y');
         
         $id =  Auth::user()->id;
         
         /* หา user */
         $user = DB::table('won_prizes') 
                 ->where('nameShop',$request->nameShop)
+                ->whereDate('created_at',  $dateData) 
                 ->orderBy('id', 'DESC')
                 ->count();
         
 
       
-        if($user !== 0){
+        if($user != 0){
               /*  หาวันที่ */
+          
         $user1 = DB::table('won_prizes') 
                 ->where('nameShop',$request->nameShop)
                 ->max('id');
@@ -102,19 +105,22 @@ class WonPrizesController extends Controller
             $data->countNameShop = $request->countNameShop;
             $data->created_at = $newDate;
             $data->updated_at = $newDate;
+           // dd($data);
             $data->save();
             
         }else{
 
-        $data = new WonPrize;
-        $data->time_number = $request->challenge;
-        $data->won_prize = $request->size;
-        $data->won_prize1 = $request->won_prize1;
-        $data->nameShop = $request->nameShop;
-        $data->countNameShop = $request->countNameShop;
-        $data->created_at = $date1;
-        $data->updated_at = $date1;
-        $data->save();
+            $data = new WonPrize;
+            $data->time_number = $request->challenge;
+            $data->won_prize = $request->size;
+            $data->won_prize1 = $request->won_prize1;
+            $data->nameShop = $request->nameShop;
+            $data->countNameShop = $request->countNameShop;
+            $data->created_at = $date1;
+            $data->updated_at = $date1;
+
+            //dd("asdasd", $data );
+            $data->save();
 
         } 
         
