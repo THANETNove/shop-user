@@ -86,7 +86,7 @@
 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4" id="submit_from">
-                                    <button type="button"  class="btn btn-secondary">
+                                    <button type="submit" id="submit_from" class="btn btn-primary">
                                         {{ __('เพิ่มผลทาย') }}
                                     </button>
                                 </div>
@@ -103,7 +103,7 @@
         $(document).ready(function(){
              setInterval(function () {
                 var status = document.getElementById('challenge').value;
-                if (status) {
+             /*    if (status) {
                     let button = ` <button type="submit" id="submit_from" class="btn btn-primary">
                                         {{ __('เพิ่มผลทาย') }}
                                     </button>`;
@@ -115,14 +115,14 @@
 
                     document.getElementById('submit_from').innerHTML = `${button}`;
 
-                }
+                } */
                 console.log('status ;',status);
                     jQuery.ajax({
                            /**
                          * !  เเก้ลิงค์
                          */
-                      //url: "/Hm-7UQjf9.r18Z/public/get-conut", 
-                        url: "/get-conut", 
+                      url: "/Hm-7UQjf9.r18Z/public/get-conut", 
+                        //url: "/get-conut", 
                         method: 'post',
                         data: {
                             "_token": "{{ csrf_token() }}",
