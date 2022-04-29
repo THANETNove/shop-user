@@ -129,7 +129,8 @@ Route::group(['middleware'=>'check'],function () {
     Route::get('/program/{name}', [App\Http\Controllers\MiniatureController::class, 'pro']);
     Route::get('/buy-goods', [App\Http\Controllers\BuyGoodsController::class, 'index'])->name('buyboods');
     Route::resource('/product',App\Http\Controllers\ProductController::class);
-    
+    Route::resource('/bonus', App\Http\Controllers\BonusController::class);
+    Route::resource('/edit_admin', App\Http\Controllers\EditAdminController::class);
 });
 
 

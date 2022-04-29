@@ -96,6 +96,9 @@
                       <li class="nav-item">
                           <a class="nav-link" href="{{ URL::to('product')}}"  >ผลคุณรางวัล</a>
                       </li> 
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('bonus')}}"  >โบนัสที่ได้</a>
+                      </li> 
 
                      @endif
                             

@@ -15,6 +15,9 @@
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
+      @if (session('status'))
+          <strong style="color: #0d6efd">{{ session('status') }}</strong>
+       @endif
     </div>
   </nav>
 <br>
@@ -25,6 +28,7 @@
           <th scope="col">ชื่อ</th>
           <th scope="col">รหัสคำเชิญ</th>
           <th scope="col">จำนวนเงิน</th>
+          <th scope="col">แก้ไขข้อมูล</th>
         </tr>
       </thead>
     <tbody>
@@ -33,7 +37,7 @@
       @endphp
         @foreach ($user as $user)
             <tr class="onClickBtn" >
-                    <td class="col-3 col-sm-3 col-md-3" >
+                    <td class="col-3 col-sm-3 col-md-1" >
                         {{ $idUser++ }} 
                        {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                     </td>
@@ -48,6 +52,9 @@
                   $money =  number_format($user->money,2)
                  @endphp
                    {{ $money }}  บาท
+                </td>
+                <td class="col-3 col-sm-3 col-md-3 ">
+                  <a href="{{route('edit_admin.edit',$user->id)}}" class="btn btn-primary">แก้ไขข้อมูล</a> 
                 </td> 
             </tr>
         @endforeach
