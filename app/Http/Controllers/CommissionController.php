@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
-use App\Models\bonus;
+use App\Models\Commission;
 
-class BonusController extends Controller
+class CommissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,17 +17,18 @@ class BonusController extends Controller
      */
     public function index()
     {
-        $user = DB::table('bonuses')
+        $user = DB::table('commissions')
         ->count();
         if ($user === 0){
             
-            return view('main.bonus');                     
+            return view('main.commiss');                     
         }else{
-            $user1 = DB::table('bonuses')
+            $user1 = DB::table('commissions')
                 ->where('id',1)    
-                ->get(); 
+                ->get();
+                 
 
-          return view('main.editBonus' ,['user1'=>$user1]);
+          return view('main.editCommiss' ,['user1'=>$user1]);
             
         }
 
@@ -40,7 +41,7 @@ class BonusController extends Controller
      */
     public function create()
     {
-       //
+        //
     }
 
     /**
@@ -52,13 +53,12 @@ class BonusController extends Controller
     public function store(Request $request)
     {
         
-        $data = new Bonus;
-        $data->bonus = $request->bonus;
-        $data->percent = $request->percent;
+        $data = new Commission;
+        $data->commission = $request->com_miss;
        
         $data->save();
 
-        return redirect('/bonus')->with('status',"เพิ่มสำเร็จเเล้ว");
+        return redirect('/com_miss')->with('status',"[บันทึกเรียบร้อย]");
     }
 
     /**
@@ -91,15 +91,14 @@ class BonusController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
+    {   
+        $data = Commission::find($id);
+        $data->commission = $request->com_miss;
         
-        $data = Bonus::find($id);
-        $data->bonus = $request->challenge;
-        $data->percent = $request->percent;
         $data->save();
         
 
-        return redirect('/bonus')->with('status',"บันทึกข้อมูล");
+        return redirect('/com_miss')->with('status',"บันทึกข้อมูล");
     }
 
     /**

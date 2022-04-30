@@ -17,14 +17,24 @@
                             @csrf
                          
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('คุณเปอร์เช็น') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('จำนวน') }}</label>
                                  <div class="col-md-6">
-                                    <input id="challenge" type="number" min="0"
-                                    class="form-control @error('challenge') is-invalid @enderror" name="challenge"
+                                    <input id="bonus" type="number" min="0"
+                                    class="form-control @error('bonus') is-invalid @enderror" name="bonus"
                                     value="" required placeholder="รอบผลทาย" autofocus>
                                     
                                 </div>
                             </div>               
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('โบนัส') }}</label>
+                                 <div class="col-md-6">
+                                    <select class="form-select" aria-label="Default select example" name="percent">
+                                        <option selected>เลือกวิธีคิดโบนัส</option>
+                                        <option value="1">เป็นเปอร์เช็น</option>
+                                        <option value="2">เป็นเงิน</option>
+                                      </select>
+                                </div>
+                            </div>              
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4" id="submit_from">
                                     <button type="submit"  class="btn btn-primary">

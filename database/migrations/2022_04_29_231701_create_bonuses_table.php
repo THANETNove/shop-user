@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('bonuses', function (Blueprint $table) {
             $table->id();
             $table->string('bonus');
+            $table->string('percent');
             $table->timestamps();
         });
     }

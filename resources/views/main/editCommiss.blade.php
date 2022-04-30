@@ -14,31 +14,20 @@
                     </div>
                     <div class="card-body">
                         
-                        <form  method="post"  action="{{route('bonus.update',$user1[0]->id)}}">
+                        <form  method="post"  action="{{route('com_miss.update',$user1[0]->id)}}">
                             @method('PUT')
                             @csrf
 
                          
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('คุณเปอร์เช็น') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('ค่าคอมมิชชั่น %') }}</label>
                                  <div class="col-md-6">
-                                    <input id="challenge" type="number" min="0"
-                                    class="form-control @error('challenge') is-invalid @enderror" name="challenge"
-                                    value="{{$user1[0]->bonus}}" required placeholder="รอบผลทาย" autofocus>     
+                                    <input id="com_miss" type="number" min="0"
+                                    class="form-control @error('com_miss') is-invalid @enderror" name="com_miss"
+                                    value="{{$user1[0]->commission}}" required  autofocus>     
                                 </div>
                             </div> 
-
-                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('โบนัส') }}</label>
-                                 <div class="col-md-6">
-                                    <select class="form-select" aria-label="Default select example" name="percent">
-                                        <option selected>เลือกวิธีคิดโบนัส</option>
-                                        <option value="1">เป็นเปอร์เช็น</option>
-                                        <option value="2">เป็นเงิน</option>
-                                      </select>
-                                </div>
-                            </div> 
-                                                      
+                           
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4" id="submit_from">
                                     <button type="submit"  class="btn btn-primary">

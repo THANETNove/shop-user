@@ -131,6 +131,7 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/product',App\Http\Controllers\ProductController::class);
     Route::resource('/bonus', App\Http\Controllers\BonusController::class);
     Route::resource('/edit_admin', App\Http\Controllers\EditAdminController::class);
+    Route::resource('/com_miss', App\Http\Controllers\CommissionController::class);
 });
 
 

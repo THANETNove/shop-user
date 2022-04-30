@@ -96,10 +96,13 @@
                       <li class="nav-item">
                           <a class="nav-link" href="{{ URL::to('product')}}"  >ผลคุณรางวัล</a>
                       </li> 
+                      
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ URL::to('bonus')}}"  >โบนัสที่ได้</a>
+                          <a class="nav-link" href="{{ URL::to('bonus')}}"  >โบนัส</a>
                       </li> 
-
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('com_miss')}}"  >ค่าคอมมิชชั่น</a>
+                      </li> 
                      @endif
                             
                       </ul>
