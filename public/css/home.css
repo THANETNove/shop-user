@@ -796,4 +796,12 @@
     .margin-img {
        width: 60% !important; 
     }
-    
+    .margin-left1 {
+        margin-right: 50px;
+    }
+    .bgm-color {
+        background-color:#e96a03;
+        color: #fff;
+        font-size:20px;
+
+    }

@@ -60,6 +60,7 @@
 <div class="margin-user">
     <div class="border-th">
         <p  class="text color2">เป๋าตังของฉัน</p>
+        <p class="set-money text color2 margin-left1" data-bs-toggle="modal" data-bs-target="#exampleModal">โปรโมชั่น </p>
       </div>
       <br>
       @php
@@ -85,4 +86,20 @@
         &nbsp;&nbsp;
         <span class="text margin-top color2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight3" aria-controls="offcanvasRight3">ประกาศ</span>
       </div>
+</div>
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bgm-color">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">โบนัส</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        คุณได้รับโบนัสพิเศษ
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">ok</button>
+      </div>
+    </div>
+  </div>
 </div>
