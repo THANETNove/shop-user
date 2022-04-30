@@ -27,7 +27,7 @@ class ToppingController extends Controller
         $dateTime1 = $mutable->toTimeString();
         $dateTime2 = $mutable1->toTimeString();
         $newDate_1 = date('Y-m-d H:i:s',strtotime('0 minutes',strtotime($dateTime1)));
-        $newDate_2 = date('Y-m-d H:i:s',strtotime('-3 minutes',strtotime($dateTime1)));
+
 
 
       
@@ -35,7 +35,6 @@ class ToppingController extends Controller
         $countBay1 = DB::table('won_prizes')
         ->where('nameShop',$name)
         ->whereDate('created_at', $date)
-         ->whereTime('created_at', '>=',   $newDate_2)
          ->whereTime('created_at', '<=',   $newDate_1) 
         ->count();
 
@@ -47,13 +46,13 @@ class ToppingController extends Controller
                     ->where('nameShop',$name)
                     ->whereDate('created_at', $date)
                     /*  ->whereTime('created_at', '>=',   $newDate_2) */
-                     ->whereTime('created_at', '<=',   $dateTime1)
+                     ->whereTime('created_at', '<=',   $newDate_1)
                      ->orderBy('id', 'DESC')
                     ->get();
     
                   $number =   $bay1[0]->time_number;
                 }else{
-                    $number = "รหัสสินค้า ยังไม่ได้เปิด";
+                  $number = "ยังไม่ได้เปิด";
                 }
 
 

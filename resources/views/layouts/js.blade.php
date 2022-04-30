@@ -1,7 +1,7 @@
 
 <script type="text/JavaScript">
 $(document).ready(function(){
-    conutBye();
+    getConutNumber();
     byeConun();
   $(".navbarFooter").click(function(){
     let id =  $(this).attr('id');
@@ -273,9 +273,10 @@ function reloadMoney() {
 }
 
 
-var i = 1;
-var m = 1;
+
 setInterval(function () {
+
+
     var d = new Date(); //get current time
     var seconds = d.getMinutes() * 60 + d.getSeconds(); //convet current mm:ss to seconds for easier caculation, we don't care hours.
     var fiveMin = 60 * 3; //five minutes is 300 seconds!
@@ -283,26 +284,29 @@ setInterval(function () {
     var result = parseInt(timeleft / 60) + ':' + timeleft % 60; //formart seconds back into mm:ss 
     var timedown = `00:0${result}`;
     document.getElementById('countingdown').innerHTML = timedown;
+    
+ /**
+  * ! ส่วนของการดึงข้อมูลมาเเสดง
+ */
+    var fiveMin = 60 * 1;
+    var timeleft2 = fiveMin - seconds % fiveMin; // let's say now is 01:30, then current seconds is 60+30 = 90. And 90%300 = 90, finally 300-90 = 210. That's the time left!
+    var result2 = parseInt(timeleft2 / 60) + ':' + timeleft2 % 60; //formart seconds back into mm:ss 
 
-
-             if (result === '3:0') { 
-                 console.log("5555");
-                m = ++i;
-                
-                conutBye();
-                byeConun();
-                
+    
+             if (result2 == '1:0') {
+                getConutNumber();
+                byeConun();  
             } 
  
 }, 1000) //calling it every 0.5 second to do a count down
  
 
-function conutBye() {
-    let id = $("#room").text();
-    console.log('M:', m);
+function getConutNumber() {
+    let name_shop = $("#room").text();
+
      jQuery.ajax({
                 /**
-                  * !  เเก้ลิงค์
+                  * !  เเก้ลิงค์ ดึง หรัสสินค้า กับ ผล ผลทายรอบก่อนหน้า
                   */
                //url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
                url: `/getConutNumber`,
@@ -310,27 +314,15 @@ function conutBye() {
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    room: id,
-                    count: m,
+                    name_shop: name_shop,
                     },
                 success: function(result){
-                     console.log("aa",result); 
-                    
-                     if (result[0][0].time_number === undefined) {
-                       /*  document.getElementById('re-number').innerHTML = `รหัสสินค้า ยังไม่ได้เปิด`; */
-                    }else{
-                        document.getElementById('re-number').innerHTML = `รหัสสินค้า ${result[0][0].time_number}`
-                    }
-                    if (result[1][0].won_prize === undefined) {
-                        document.getElementById('won_prize').innerHTML = `${result[1]}`; 
-                        document.getElementById('won_prize1').innerHTML =`${result[1]}`;
-                    } else {
-                        document.getElementById('won_prize').innerHTML = `${result[1][0].won_prize}`; 
-                       document.getElementById('won_prize1').innerHTML =`${result[1][0].won_prize1}`;
-                    }
-                  
-                  
-               
+                    console.log(result);
+     
+
+                     document.getElementById('re-number').innerHTML = `รหัสสินค้า ${result[0]}`;
+                     document.getElementById('won_prize').innerHTML = result[1];  
+                     document.getElementById('won_prize1').innerHTML = result[2]; 
                     },
                 error: function(result){
 
@@ -338,48 +330,33 @@ function conutBye() {
              }); 
         
     }
+
+
+    /**
+     * !  เเก้ลิงค์   add ผล user   เเละเเสดงจำนวนเงิน
+    */
+
+
     function byeConun() {
-        let id = $("#room").text();
-        let number_shop = $("#numberShopUser").text();
-
-      /*   let 
-       = $("#room").text(); */
-        let l = m - 1;
-         console.log("l: ",l,id ); 
-
-            if (number_shop != 'ยังไม่สั่งซื้อ...') {
-              let idshop =   number_shop.substring(7)
 
                 jQuery.ajax({
                     /**
-                  * !  เเก้ลิงค์
+                  * !  เเก้ลิงค์   add ผล user   เเละเเสดงจำนวนเงิน
                   */
                 //url: "/Hm-7UQjf9.r18Z/public/byeConun", 
                  url: "/byeConun", 
                     method: 'post',
                     data: {
                         "_token": "{{ csrf_token() }}",
-                        room: id,
-                        count: idshop,
                         },
                     success: function(result){
-                       let data_wp = result[0][0].won_prize;
-                       let data_wp1 = result[0][0].won_prize1;
-                       let data2 = result[1][0].money;
-                        
-
-                         document.getElementById('won_prize').innerHTML = data_wp;
-                        document.getElementById('won_prize1').innerHTML = data_wp1;
-                        let money = `จำนวนเงินคงเหลือ ${data2} ฿`
-                        document.getElementById('idMoneShop').innerHTML = money;  
+                        let money =  `จำนวนเงินคงเหลือ  ${result[0].money} ฿`;
+                        document.getElementById('idMoneShop').innerHTML = money;
 
                         },
                     error: function(result){
-                        console.log(result);
                     }       
                 });   
-            }
-
 }
 
 
@@ -411,7 +388,6 @@ $( "#buy-shop" ).click(function() {
         let money2 =   Number(money.replace(/,/g,'')); 
 
         let chick  =     $("#re-number").text();
-            console.log(chick);
             if ( chick === 'รหัสสินค้า ยังไม่ได้เปิด') {
                 document.getElementById('buy-shop').innerHTML = `ไม่สามารถซื้อไม่ได้`;
               
@@ -434,7 +410,6 @@ $( "#buy-shop" ).click(function() {
                         numberCount: conettimeNumber 
                         },
                     success: function(result){
-                        console.log(result);
                             document.getElementById('error-price').innerHTML = contTime; 
                             document.getElementById('numberShopUser').innerHTML = `รอบที่ ${conettimeNumber}` 
                             reloadMoney();
@@ -446,7 +421,6 @@ $( "#buy-shop" ).click(function() {
                         
                         },
                     error: function(result){
-                        console.log(result);
                     }       
                     });  
                     }else{
