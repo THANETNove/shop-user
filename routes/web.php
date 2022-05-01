@@ -96,6 +96,7 @@ Route::post('/registerAdmin', [App\Http\Controllers\GetPageController::class, 'r
 Route::post('/new-user', [App\Http\Controllers\GetPageController::class, 'newUser']);
 Route::get('/add-money/{id}', [App\Http\Controllers\GetPageController::class, 'addMoney']);
 Route::get('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
+Route::get('/getMoney', [App\Http\Controllers\GetPageController::class, 'getMoney']);
 Route::get('/admin', [App\Http\Controllers\GetPageController::class, 'admin']);
 Route::get('/report', [App\Http\Controllers\GetPageController::class, 'index']);
 Route::post('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);

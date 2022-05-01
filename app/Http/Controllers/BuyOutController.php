@@ -31,46 +31,57 @@ class BuyOutController extends Controller
 
 
    
-
+                /*  ยอดสั่งซื้อ */
                 $sumPrice = DB::table('buy_outs')
                     ->where('userId', Auth::user()->id)
                     ->whereDate('created_at', $date)
                     ->orderBy('id','ASC')
                     ->sum('price'); 
+                
+                /*  โบนัสที่ได้ */
+
                 $sumBonus = DB::table('buy_outs')
                     ->where('userId', Auth::user()->id)
                     ->whereDate('created_at', $date)
                     ->orderBy('id','ASC')
                     ->sum('get_paid');
+
+            /*  ยอดที่ค้าง */
                 $sumLoss = DB::table('buy_outs')
                     ->where('userId', Auth::user()->id)
                     ->whereNull('get_paid')
-                    ->whereDate('created_at', $date)
+                     ->whereDate('created_at', $date)
                     ->orderBy('id','ASC')
                     ->sum('price');
 
+            /*   ค่าคอมมิชชั่น */
+           
+
+            
+
+            /*  เติมเงิน */
                 $sumAddMoney = DB::table('add_money_users')
                     ->where('id_user', Auth::user()->id)
                     ->whereDate('created_at', $date)
                     ->orderBy('id','ASC')
                     ->sum('money');
+    
+                /*  ถอนเงิน */
+
                 $withdrawMoney = DB::table('withdraw_moneys')
                     ->where('idUser', Auth::user()->id)
                     ->where('statusMoney',1)
                     ->whereDate('created_at', $date)
                     ->orderBy('id','ASC')
                     ->sum('withdrawMoney');
-                $withdrawMoneyArrears = DB::table('withdraw_moneys')
-                    ->where('idUser', Auth::user()->id)
-                    ->where('statusMoney',0)
-                    ->whereDate('created_at', $date)
-                    ->orderBy('id','ASC')
-                    ->sum('withdrawMoney');
 
+                /*  ยอดรวมได้เสีย */
+
+                 $withdrawMoneyArrears =    $withdrawMoney + $sumAddMoney ; 
 
         
 
-        $priceUser = [$sumPrice , $sumBonus ,$sumLoss, $sumAddMoney, $withdrawMoney,$withdrawMoneyArrears];
+        $priceUser = [$sumPrice , $sumBonus ,$sumLoss, $sumAddMoney, $withdrawMoney ,$withdrawMoneyArrears];
         return view('main.reserve',
         [
           'dataJoin'=> $dataJoin, 'priceUser'=>$priceUser,

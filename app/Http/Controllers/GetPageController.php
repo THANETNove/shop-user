@@ -230,6 +230,15 @@ class GetPageController extends Controller
         return view('main.report',['dataJoin'=> $dataJoin]);
 
     }
+
+public function getMoney()
+{
+    
+    $usersMoney = DB::table('users')
+            ->where('id',Auth::user()->id)
+            ->get();
+        return response()->json($usersMoney);
+}
     
 
   

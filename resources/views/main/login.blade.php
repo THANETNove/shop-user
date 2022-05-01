@@ -40,7 +40,9 @@
                                             <div class="row mb-3">
                     
                                                 <div class="col-md-12">
-                                                    <input id="password" type="password" class="form-control color55 color56 contact @error('password') is-invalid @enderror" name="password" required placeholder="กรุณากรอก password" autocomplete="current-password">
+                                                    <input id="password" type="password" class="form-control color55 color56 contact
+                                                     @error('password') is-invalid @enderror"  name="password" required placeholder="กรุณากรอก 
+                                                     password" autocomplete="current-password">
                     
                                                     @error('password')
                                                         <span class="invalid-feedback" role="alert">

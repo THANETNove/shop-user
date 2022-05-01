@@ -54,7 +54,7 @@
                             <br> <span class="font-16">โบนัสที่ได้</span></p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
-                        <p class="date">{{ number_format($priceUser[5],2)}}
+                        <p class="date">{{ number_format($priceUser[2],2)}}
                             <br> <span class="font-16">ยอดที่ค้าง</span></p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="row">
                     <div class="col-4 col-sm-4 col-md-4 head-center ">
                         <p class="date">
-                            {{ number_format($priceUser[2],2)}}
+                            {{ number_format($priceUser[5],2)}}
                         <br> <span class="font-16">ยอดรวมได้เสีย</span></p>
                     </div>
                 </div>

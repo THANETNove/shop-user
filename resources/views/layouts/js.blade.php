@@ -295,7 +295,7 @@ setInterval(function () {
     
              if (result2 == '1:0') {
                 getConutNumber();
-                byeConun();  
+                byeConun();
             } 
  
 }, 1000) //calling it every 0.5 second to do a count down
@@ -352,7 +352,7 @@ function getConutNumber() {
                     success: function(result){
                         let money =  `จำนวนเงินคงเหลือ  ${result[0].money} ฿`;
                         document.getElementById('idMoneShop').innerHTML = money;
-
+                        document.getElementById('modeyUser').innerHTML = money;
                         },
                     error: function(result){
                     }       
@@ -484,5 +484,27 @@ function dataJoin() {
 function locationReload() {
     location.reload();
 }
+
+setInterval(() => {
+  jQuery.ajax({
+      /**
+    * !  เเสดงจำนวนเงิน
+    */
+  //url: "/Hm-7UQjf9.r18Z/public/getMoney", 
+
+
+  url: "/getMoney", 
+      method: 'get',
+      data: {
+          "_token": "{{ csrf_token() }}",
+          },
+      success: function(result){
+          let money =  `จำนวนเงินคงเหลือ  ${result[0].money} ฿`;
+          document.getElementById('modeyUser').innerHTML = money;
+          },
+      error: function(result){
+      }       
+  });
+}, 1000);
 
 </script>
