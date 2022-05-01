@@ -28,6 +28,7 @@
           <th scope="col">ชื่อ</th>
           <th scope="col">รหัสคำเชิญ</th>
           <th scope="col">จำนวนเงิน</th>
+          <th scope="col">ค่าคอมมิชชั่น</th>
           <th scope="col">แก้ไขข้อมูล</th>
         </tr>
       </thead>
@@ -52,6 +53,9 @@
                   $money =  number_format($user->money,2)
                  @endphp
                    {{ $money }}  บาท
+                </td>
+                <td class="col-3 col-sm-3 col-md-3 ">
+                  {{ $user->commissions_points }} 
                 </td>
                 <td class="col-3 col-sm-3 col-md-3 ">
                   <a href="{{route('edit_admin.edit',$user->id)}}" class="btn btn-primary">แก้ไขข้อมูล</a> 

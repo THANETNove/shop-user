@@ -58,7 +58,7 @@ class CommissionController extends Controller
        
         $data->save();
 
-        return redirect('/com_miss')->with('status',"[บันทึกเรียบร้อย]");
+        return redirect('/com_miss')->with('status',"บันทึกเรียบร้อย");
     }
 
     /**

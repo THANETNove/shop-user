@@ -197,8 +197,11 @@ class GetPageController extends Controller
     {
         $name = $request->search;
 
+
         $user = DB::table('users')
-                ->where('is_idadmin', '1')  
+                ->leftJoin('commissions_points', 'users.id', '=', 'commissions_points.idUser')
+                ->where('users.is_idadmin', '!=','0')  
+                ->select('commissions_points.*', 'users.*')
                 ->get();
                 
  
@@ -207,14 +210,18 @@ class GetPageController extends Controller
 
             if ($name !== null) {
                     $user = DB::table('users')
-                        ->where('is_idadmin', '1') 
+                        ->leftJoin('commissions_points', 'users.id', '=', 'commissions_points.idUser')
+                        ->where('users.is_idadmin', '!=','0')  
                         ->where('username', 'LIKE', '%' . $name . '%')
+                        ->select('commissions_points.*', 'users.*')
                         ->get();
                         return view('admin.admin' ,['user'=> $user]);
             }else{
 
                  $user = DB::table('users')
-                        ->where('is_idadmin', '1')  
+                        ->leftJoin('commissions_points', 'users.id', '=', 'commissions_points.idUser')
+                        ->where('users.is_idadmin', '!=','0')  
+                        ->select('commissions_points.*', 'users.*')
                         ->get();
 
                   return view('admin.admin' ,['user'=> $user]);
