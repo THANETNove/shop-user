@@ -6,7 +6,15 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">แก้ไขข้อมูล</div>
+                    <div class="card-header">แก้ไขข้อมูล  &nbsp;&nbsp;&nbsp;
+                        การคูณโบนัสที่เลือกไว้
+                        &nbsp;&nbsp;&nbsp;
+                        @if($user1[0]->percent === '1')
+                                เลือกเป็นเปอร์เช็น
+                        @else
+                                เลือกเป็นเงินบาท
+                        @endif
+                    </div>
                     <div style="text-align: center">
                         @if (session('status'))
                             <strong style="color: #0d6efd">{{ session('status') }}</strong>

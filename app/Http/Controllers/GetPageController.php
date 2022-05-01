@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Invitation;
+use App\Models\AddMoneyUsers;
 use Auth;
 use Carbon\Carbon;
 use Session;
@@ -198,7 +199,11 @@ class GetPageController extends Controller
 
         $user = DB::table('users')
                 ->where('is_idadmin', '1')  
-                ->get(); 
+                ->get();
+                
+ 
+
+
 
             if ($name !== null) {
                     $user = DB::table('users')
@@ -239,7 +244,37 @@ public function getMoney()
             ->get();
         return response()->json($usersMoney);
 }
+
+public function addBonuses()
+{
     
+    $usersMoney = DB::table('add_money_users')
+            ->where('id_user',Auth::user()->id)
+            ->whereNull('status_bonus')
+            ->sum('bonus');
+
+    $users_bonus = DB::table('add_money_users')
+            ->where('id_user',Auth::user()->id)
+            ->whereNull('status_bonus')
+            ->get();
+
+    $user = DB::table('users')
+            ->where('id',Auth::user()->id)
+            ->get();
+    $money = $user[0]->money;
+        foreach ($users_bonus as $bonus) {
+            $Withdraw = AddMoneyUsers::find($bonus->id);
+            $Withdraw->status_bonus = "1"; 
+            $Withdraw->save();
+        
+        }
+
+    $moneyUser = User::find(Auth::user()->id);
+    $moneyUser->money = $money+$usersMoney; 
+    $moneyUser->save();
+
+    return response()->json($usersMoney);
+}
 
   
 

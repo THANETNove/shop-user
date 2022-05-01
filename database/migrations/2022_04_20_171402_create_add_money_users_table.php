@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('id_user');
             $table->string('money');
+            $table->string('bonus')->nullable();
+            $table->string('status_bonus')->nullable();;
             $table->timestamps();
         });
     }

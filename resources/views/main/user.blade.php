@@ -60,7 +60,7 @@
 <div class="margin-user">
     <div class="border-th">
         <p  class="text color2">เป๋าตังของฉัน</p>
-        <p class="set-money text color2 margin-left1" data-bs-toggle="modal" data-bs-target="#exampleModal">โปรโมชั่น </p>
+        <p class="set-money text color2 margin-left1" data-bs-toggle="modal" data-bs-target="#exampleModal" id="add-bonuses">โบนัส </p>
       </div>
       <br>
       @php
@@ -95,10 +95,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        คุณได้รับโบนัสพิเศษ
+        คุณได้รับโบนัสพิเศษ <span  id="bonus"></span> ฿
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">ok</button>
+        <button type="button" data-bs-dismiss="modal" class="btn btn-outline-light">ok</button>
       </div>
     </div>
   </div>

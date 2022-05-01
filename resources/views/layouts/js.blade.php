@@ -492,7 +492,6 @@ setInterval(() => {
     */
   //url: "/Hm-7UQjf9.r18Z/public/getMoney", 
 
-
   url: "/getMoney", 
       method: 'get',
       data: {
@@ -506,5 +505,30 @@ setInterval(() => {
       }       
   });
 }, 1000);
+
+
+ 
+$("#add-bonuses").click(function() {
+
+    console.log("5555");
+jQuery.ajax({
+    /**
+    * !  เเสดงจำนวนเงิน
+    */
+  //url: "/Hm-7UQjf9.r18Z/public/add_bonuses", 
+  url: "/add_bonuses", 
+      method: 'get',
+      data: {
+          "_token": "{{ csrf_token() }}",
+          },
+      success: function(result){
+
+          document.getElementById('bonus').innerHTML = result;
+          },
+      error: function(result){
+      }       
+  });
+});
+
 
 </script>

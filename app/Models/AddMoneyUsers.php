@@ -11,5 +11,7 @@ class AddMoneyUsers extends Model
     protected $fillable = [
         'id_user',
         'money',
+        'bonus',
+        'status_bonus',
     ];
 }
