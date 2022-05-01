@@ -173,13 +173,13 @@ class GetPageController extends Controller
         $data->password = Hash::make($request->password);
         $data->save();
 
-        $data = new Invitation;
-        $data->code = $code;
-        $data->status= "on";
-        $data->idUser= "admin";
-        $data->enrol= "เเพลตฟอร์อย่างเป็นทางการ";
-        $data->percent = "0% (900)";
-        $data->save();
+        $dataInv = new Invitation;
+        $dataInv->code = $code;
+        $dataInv->status= "on";
+        $dataInv->idUser= $data->id;
+        $dataInv->enrol= "เเพลตฟอร์อย่างเป็นทางการ";
+        $dataInv->percent = "0% (900)";
+        $dataInv->save();
 
         return redirect('/newAdmin')->with('status',"สมัคร Admin สำเสร็จเเล้ว");
     }

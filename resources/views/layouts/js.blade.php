@@ -72,8 +72,8 @@ $( "#subscribe-bcak" ).click(function() {
               /**
                   * !  เเก้ลิงค์
                   */
- //if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') { 
- if (currentLocation === '/index') {  
+ if (currentLocation === '/Hm-7UQjf9.r18Z/public/index') { 
+ //if (currentLocation === '/index') {  
     $("#user").addClass("active");
     $("#user-none").show();
     $("#home").removeClass("active");
@@ -118,8 +118,8 @@ function functionDestroy(e) {
                  /**
                   * !  เเก้ลิงค์
                   */
-        //url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
-       url: '/gatAjax',
+        url: '/Hm-7UQjf9.r18Z/public/gatAjax', 
+       //url: '/gatAjax',
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -149,8 +149,8 @@ $( "#destroyId" ).click(function() {
                 /**
                   * !  เเก้ลิงค์
                   */
-        //url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
-        url: `/gatDestroy/${id}`,  
+        url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
+        //url: `/gatDestroy/${id}`,  
         method: 'get',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -174,8 +174,8 @@ console.log('locationLogin',locationLogin);
                /**
                   * !  เเก้ลิงค์
                   */
-             //if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
-             if (currentLocation === '/login') { 
+             if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
+             //if (currentLocation === '/login') { 
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -198,8 +198,8 @@ var currentLocation = window.location.pathname;
                 /**
                   * !  เเก้ลิงค์
                   */
-    //if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {  
-    if (currentLocation === '/user') {  
+    if (currentLocation === '/Hm-7UQjf9.r18Z/public/user') {  
+   // if (currentLocation === '/user') {  
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -213,8 +213,8 @@ var currentLocation = window.location.pathname;
                 /**
                   * !  เเก้ลิงค์
                   */
-   //if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  
-    if (currentLocation === '/shop') {  
+   if (currentLocation === '/Hm-7UQjf9.r18Z/public/shop') {  
+    //if (currentLocation === '/shop') {  
         window.onload = (event) => {
             $("#location").addClass("active");
             $("#business-none").show();
@@ -229,8 +229,8 @@ var currentLocation = window.location.pathname;
                 /**
                   * !  เเก้ลิงค์
                   */
-  //if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {   
-  if (currentLocation === '/set-up') {   
+  if (currentLocation === '/Hm-7UQjf9.r18Z/public/set-up') {   
+  //if (currentLocation === '/set-up') {   
         window.onload = (event) => {
                     $("#user").addClass("active");
                     $("#user-none").show();
@@ -253,8 +253,8 @@ function reloadMoney() {
                 /**
                   * !  เเก้ลิงค์
                   */
-         //url: "/Hm-7UQjf9.r18Z/public/reload-money",
-         url: "/reload-money",
+         url: "/Hm-7UQjf9.r18Z/public/reload-money",
+         //url: "/reload-money",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -308,8 +308,8 @@ function getConutNumber() {
                 /**
                   * !  เเก้ลิงค์ ดึง หรัสสินค้า กับ ผล ผลทายรอบก่อนหน้า
                   */
-               //url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
-               url: `/getConutNumber`,
+               url: `/Hm-7UQjf9.r18Z/public/getConutNumber`, 
+               //url: `/getConutNumber`,
               
                 method: 'post',
                 data: {
@@ -343,8 +343,8 @@ function getConutNumber() {
                     /**
                   * !  เเก้ลิงค์   add ผล user   เเละเเสดงจำนวนเงิน
                   */
-                //url: "/Hm-7UQjf9.r18Z/public/byeConun", 
-                 url: "/byeConun", 
+                url: "/Hm-7UQjf9.r18Z/public/byeConun", 
+                // url: "/byeConun", 
                     method: 'post',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -398,8 +398,8 @@ $( "#buy-shop" ).click(function() {
                         /**
                          * !  เเก้ลิงค์
                          */
-                        //url: "/Hm-7UQjf9.r18Z/public/buy",  
-                       url: "/buy",   
+                     url: "/Hm-7UQjf9.r18Z/public/buy",  
+                       //url: "/buy",   
                         method: 'post',
                     data: {
                         "_token": "{{ csrf_token() }}",
@@ -463,8 +463,8 @@ function dataJoin() {
                  /**
                   * !  เเก้ลิงค์
                   */
-                //url: "/Hm-7UQjf9.r18Z/public/dataJoin", 
-               url: "/dataJoin",  
+                url: "/Hm-7UQjf9.r18Z/public/dataJoin", 
+               //url: "/dataJoin",  
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
@@ -490,9 +490,8 @@ setInterval(() => {
       /**
     * !  เเสดงจำนวนเงิน
     */
-  //url: "/Hm-7UQjf9.r18Z/public/getMoney", 
-
-  url: "/getMoney", 
+  url: "/Hm-7UQjf9.r18Z/public/getMoney", 
+  //url: "/getMoney", 
       method: 'get',
       data: {
           "_token": "{{ csrf_token() }}",
@@ -510,13 +509,12 @@ setInterval(() => {
  
 $("#add-bonuses").click(function() {
 
-    console.log("5555");
 jQuery.ajax({
     /**
     * !  เเสดงจำนวนเงิน
     */
-  //url: "/Hm-7UQjf9.r18Z/public/add_bonuses", 
-  url: "/add_bonuses", 
+  url: "/Hm-7UQjf9.r18Z/public/add_bonuses", 
+  //url: "/add_bonuses", 
       method: 'get',
       data: {
           "_token": "{{ csrf_token() }}",

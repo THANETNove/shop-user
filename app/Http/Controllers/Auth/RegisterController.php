@@ -103,10 +103,30 @@ class RegisterController extends Controller
         ->where('idUser',  $id)
         ->count();
 
-        $moneyUser = new CommissionsPoint();
-        $moneyUser->idUser = $id;
-        $moneyUser->commissions_points =   $commissions*($comm/100);
-        $moneyUser->save();
+        $commiss_points = DB::table('commissions_points')
+        ->where('idUser',  $id)
+        ->count();
+
+   
+     
+        if ($commiss_points === 0) {
+
+            $moneyUser = new CommissionsPoint();
+            $moneyUser->idUser = $id;
+            $moneyUser->commissions_points =   $commissions*($comm/100);
+            $moneyUser->save();
+        }else{
+
+            $commissionsId = DB::table('commissions_points')
+                ->where('idUser',  $id)
+                ->get();
+            $pointId = $commissionsId[0]->id;
+
+            $moneyUser =  CommissionsPoint::find($pointId);
+            $moneyUser->commissions_points =   $commissions*($comm/100);
+            $moneyUser->save();
+        }
+        
 
 
 

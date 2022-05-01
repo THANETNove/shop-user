@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
-use App\Models\bonus;
+use App\Models\Bonus;
 
 class BonusController extends Controller
 {

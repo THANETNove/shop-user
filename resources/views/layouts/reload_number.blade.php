@@ -16,8 +16,8 @@ $(document).ready(function(){
                    /**
                   * !  เเก้ลิงค์
                   */
-                //url: "/Hm-7UQjf9.r18Z/public/timeNumberCount",  
-                url: "/timeNumberCount", 
+                url: "/Hm-7UQjf9.r18Z/public/timeNumberCount",  
+                //url: "/timeNumberCount", 
                 method: 'post',
                 data: {
                     "_token": "{{ csrf_token() }}",
