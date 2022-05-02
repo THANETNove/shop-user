@@ -9,7 +9,7 @@
                     <div class="card-header">แก้ไขข้อมูล  &nbsp;&nbsp;&nbsp;
                         การคูณโบนัสที่เลือกไว้
                         &nbsp;&nbsp;&nbsp;
-                        @if($user1[0]->percent === '1')
+                        @if($user[0]->percent === '1')
                                 เลือกเป็นเปอร์เช็น
                         @else
                                 เลือกเป็นเงินบาท
@@ -22,7 +22,7 @@
                     </div>
                     <div class="card-body">
                         
-                        <form  method="post"  action="{{route('bonus.update',$user1[0]->id)}}">
+                        <form  method="post"  action="{{route('bonus.update',$user[0]->id)}}">
                             @method('PUT')
                             @csrf
 
@@ -30,9 +30,9 @@
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('คุณเปอร์เช็น') }}</label>
                                  <div class="col-md-6">
-                                    <input id="challenge" type="number" min="0"
-                                    class="form-control @error('challenge') is-invalid @enderror" name="challenge"
-                                    value="{{$user1[0]->bonus}}" required placeholder="รอบผลทาย" autofocus>     
+                                    <input id="bonus" type="number" min="0"
+                                    class="form-control @error('bonus') is-invalid @enderror" name="bonus"
+                                    value="{{$user[0]->bonus}}" required placeholder="รอบผลทาย" autofocus>     
                                 </div>
                             </div> 
 
@@ -40,7 +40,7 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('โบนัส') }}</label>
                                  <div class="col-md-6">
                                     <select class="form-select" aria-label="Default select example" name="percent">
-                                        <option selected>เลือกวิธีคิดโบนัส</option>
+                                        
                                         <option value="1">เป็นเปอร์เช็น</option>
                                         <option value="2">เป็นเงิน</option>
                                       </select>

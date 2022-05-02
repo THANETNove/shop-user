@@ -103,6 +103,9 @@
                       <li class="nav-item">
                           <a class="nav-link" href="{{ URL::to('com_miss')}}"  >ค่าคอมมิชชั่น</a>
                       </li> 
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('priceCom')}}"  >แก้ไขโบนัส</a>
+                      </li> 
                      @endif
                             
                       </ul>

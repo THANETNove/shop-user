@@ -19,17 +19,9 @@ class BonusController extends Controller
     {
         $user = DB::table('bonuses')
         ->count();
-        if ($user === 0){
-            
-            return view('main.bonus');                     
-        }else{
-            $user1 = DB::table('bonuses')
-                ->where('id',1)    
-                ->get(); 
-
-          return view('main.editBonus' ,['user1'=>$user1]);
-            
-        }
+        
+        return view('main.bonus');
+    
 
     }
 
@@ -80,7 +72,12 @@ class BonusController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        $user = DB::table('bonuses')
+        ->where('id',$id)
+        ->get(); 
+
+        return view('main.editBonus' ,['user'=> $user]);
     }
 
     /**
@@ -94,7 +91,7 @@ class BonusController extends Controller
     {
         
         $data = Bonus::find($id);
-        $data->bonus = $request->challenge;
+        $data->bonus = $request->bonus;
         $data->percent = $request->percent;
         $data->save();
         
@@ -110,6 +107,27 @@ class BonusController extends Controller
      */
     public function destroy($id)
     {
-        //
+       /*  $user = DB::table('bonuses')
+        ->count();
+        if ($user === 0){
+            
+            return view('main.bonus');                     
+        }else{
+            $user1 = DB::table('bonuses')
+                ->where('id',1)    
+                ->get(); 
+
+          return view('main.editBonus' ,['user1'=>$user1]);
+            
+        } */
     }
+    public function priceCom()
+    {
+        
+        $user = DB::table('bonuses')
+        ->get();
+        
+        return view('main.priceCom',['user'=>$user]);
+    }
+
 }

@@ -9,11 +9,6 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
       @if (session('status'))
           <strong style="color: #0d6efd">{{ session('status') }}</strong>
@@ -25,11 +20,9 @@
     <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">ชื่อ</th>
-          <th scope="col">รหัสคำเชิญ</th>
-          <th scope="col">จำนวนเงิน</th>
-          <th scope="col">ค่าคอมมิชชั่น</th>
-          <th scope="col">แก้ไขข้อมูล</th>
+          <th scope="col">จำนวน</th>
+          <th scope="col">โบนัส</th>
+          
         </tr>
       </thead>
     <tbody>
@@ -43,22 +36,20 @@
                        {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                     </td>
                     <td class="col-3 col-sm-3 col-md-2">
-                      {{ $user->username }} 
+                      {{ $user->bonus }} 
                     </td>
                     <td class="col-3 col-sm-3 col-md-2 ">
-                      {{ $user->invitation }} 
+                        @if ( $user->percent === '1')
+                            เปอร์เช็น
+                        @else
+                            เป็นเงิน
+                        @endif
+                      
                     </td>
-                <td class="col-3 col-sm-3 col-md-2" >
-                  @php
-                  $money =  number_format($user->money,2)
-                 @endphp
-                   {{ $money }}  บาท
-                </td>
-                <td class="col-3 col-sm-3 col-md-2 ">
-                  {{ $user->commissions_points }} 
-                </td>
+                
+        
                 <td class="col-3 col-sm-3 col-md-1 ">
-                  <a href="{{route('edit_admin.edit',$user->id)}}" class="btn btn-primary">แก้ไขข้อมูล</a> 
+                  <a href="{{route('bonus.edit',$user->id)}}" class="btn btn-primary">แก้ไขข้อมูล</a> 
                 </td> 
             </tr>
         @endforeach
