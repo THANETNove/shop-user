@@ -40,11 +40,11 @@ class BuyOutController extends Controller
                 
                 /*  โบนัสที่ได้ */
 
-                $sumBonus = DB::table('buy_outs')
-                    ->where('userId', Auth::user()->id)
+                $sumBonus = DB::table('add_money_users')
+                    ->where('id_user', Auth::user()->id)
                     ->whereDate('created_at', $date)
                     ->orderBy('id','ASC')
-                    ->sum('get_paid');
+                    ->sum('bonus');
 
             /*  ยอดที่ค้าง */
                 $sumLoss = DB::table('buy_outs')
