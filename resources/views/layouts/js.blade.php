@@ -514,14 +514,14 @@ jQuery.ajax({
     * !  เเสดงจำนวนเงิน
     */
   //url: "/Hm-7UQjf9.r18Z/public/add_bonuses", 
-  url: "/add_bonuses", 
+  url: "/get_bonuses", 
       method: 'get',
       data: {
           "_token": "{{ csrf_token() }}",
           },
       success: function(result){
-
-          document.getElementById('bonus').innerHTML = result;
+    console.log(result);
+        /*   document.getElementById('bonus').innerHTML = result; */
           },
       error: function(result){
       }       

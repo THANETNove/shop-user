@@ -95,7 +95,7 @@ Route::get('/newAdmin', [App\Http\Controllers\GetPageController::class, 'newAdmi
 Route::post('/registerAdmin', [App\Http\Controllers\GetPageController::class, 'registerAdmin']);
 Route::post('/new-user', [App\Http\Controllers\GetPageController::class, 'newUser']);
 Route::get('/add-money/{id}', [App\Http\Controllers\GetPageController::class, 'addMoney']);
-Route::get('/add_bonuses', [App\Http\Controllers\GetPageController::class, 'addBonuses']);
+Route::get('/get_bonuses', [App\Http\Controllers\GetPageController::class, 'getBonuses']);
 Route::get('/money-user', [App\Http\Controllers\GetPageController::class, 'moneyUser']);
 Route::get('/getMoney', [App\Http\Controllers\GetPageController::class, 'getMoney']);
 Route::get('/admin', [App\Http\Controllers\GetPageController::class, 'admin']);

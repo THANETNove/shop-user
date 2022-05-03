@@ -252,7 +252,32 @@ public function getMoney()
         return response()->json($usersMoney);
 }
 
-public function addBonuses()
+public function getBonuses()
+{
+    
+
+
+    
+    $usersMoney = DB::table('add_money_users')
+         ->where('id_user',Auth::user()->id)
+         ->whereNull('status_bonus')
+         ->count();
+
+
+         if ($usersMoney != "0") {
+            $users_bonus = DB::table('bonuses')
+            ->get();
+
+         }else{
+            $users_bonus = 0;
+         }
+
+dd($users_bonus);
+    return response()->json($users_bonus);
+}
+
+
+/* public function addBonuses()
 {
     
     $usersMoney = DB::table('add_money_users')
@@ -282,7 +307,6 @@ public function addBonuses()
 
     return response()->json($usersMoney);
 }
-
-  
+   */
 
 }
