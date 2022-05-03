@@ -96,38 +96,10 @@
       </div>
       <div class="modal-body ">
         <div class="container">
-            <div class="row row-cols-3">
-              <div class="box1 head-center">
-                <h6>โบนัส 10%</h6>
-                <button type="button" class="btn btn-outline-info">รับ</button>
-              </div>
-              <div class="box2 head-center">
-                <h6>โบนัส 25%</h6>
-                <button type="button" class="btn btn-outline-info">รับ</button>
-              </div>
-              <div class="box3 head-center">
-                <h6>โบนัส 30%</h6>
-                <button type="button" class="btn btn-outline-info">รับ</button>
-              </div>
+            <div class="row row-cols-3" id="bonuses-box">
             </div>
         </div>
         <br>
-        <div class="container">
-            <div class="row row-cols-3">
-              <div class="box1 head-center">
-                <h6>โบนัส 40%</h6>
-                <button type="button" class="btn btn-outline-info">รับ</button>
-              </div>
-              <div class="box2 head-center">
-                <h6>โบนัส 50%</h6>
-                <button type="button" class="btn btn-outline-info">รับ</button>
-              </div>
-              <div class="box3 head-center">
-                <h6>โบนัส 60%</h6>
-                <button type="button" class="btn btn-outline-info">รับ</button>
-              </div>
-            </div>
-        </div>
       </div>
       <div class="modal-footer">
         <button type="button" data-bs-dismiss="modal" class="btn btn-outline-light">ok</button>

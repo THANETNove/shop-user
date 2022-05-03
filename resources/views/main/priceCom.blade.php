@@ -39,11 +39,7 @@
                       {{ $user->bonus }} 
                     </td>
                     <td class="col-3 col-sm-3 col-md-2 ">
-                        @if ( $user->percent === '1')
-                            เปอร์เช็น
-                        @else
-                            เป็นเงิน
-                        @endif
+                      {{ $user->percent }}
                       
                     </td>
                 

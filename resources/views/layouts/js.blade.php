@@ -520,13 +520,42 @@ jQuery.ajax({
           "_token": "{{ csrf_token() }}",
           },
       success: function(result){
-    console.log(result);
-        /*   document.getElementById('bonus').innerHTML = result; */
+   
+        let bonus = [];
+        for (let i = 0; i < result.length; i++) {
+            bonus +=  `
+            <div class="box1 head-center head-top">
+                <h6>${result[i].bonus} ${result[i].percent}</h6>
+                <button type="button" class="btn btn-outline-info" onclick="addBonuses(${result[i].id})">รับ</button>
+              </div>`;
+        }
+         document.getElementById('bonuses-box').innerHTML = bonus;
           },
       error: function(result){
       }       
   });
 });
+
+function addBonuses(e) {
+    jQuery.ajax({
+    /**
+    * !  เเสดงจำนวนเงิน
+    */
+    //url: "/Hm-7UQjf9.r18Z/public/add_bonuses", 
+    url: "/add_bonuses", 
+        method: 'get',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            id: e,
+            },
+        success: function(result){
+
+          /*   document.getElementById('bonuses-box').innerHTML = bonus; */
+            },
+        error: function(result){
+        }       
+    });
+}
 
 
 </script>

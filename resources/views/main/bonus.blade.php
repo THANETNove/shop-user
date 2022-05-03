@@ -30,8 +30,8 @@
                                  <div class="col-md-6">
                                     <select class="form-select" aria-label="Default select example" name="percent">
                                         
-                                        <option value="1">เป็นเปอร์เช็น</option>
-                                        <option value="2">เป็นเงิน</option>
+                                        <option value="%">เป็นเปอร์เช็น</option>
+                                        <option value="บาท">เป็นเงิน</option>
                                       </select>
                                 </div>
                             </div>              

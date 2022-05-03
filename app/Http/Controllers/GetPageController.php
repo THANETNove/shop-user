@@ -272,7 +272,6 @@ public function getBonuses()
             $users_bonus = 0;
          }
 
-dd($users_bonus);
     return response()->json($users_bonus);
 }
 

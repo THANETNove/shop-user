@@ -76,7 +76,9 @@ class HomeController extends Controller
                         ->leftJoin('bank_accounts', 'users.id', '=', 'bank_accounts.id_user')
                         ->where('users.is_idadmin', '0')  
                         ->select('bank_accounts.*','users.*')
-                        ->get(); 
+                        ->get();
+                        
+                
                 return view('home',['user'=> $user]);
     
                } 
