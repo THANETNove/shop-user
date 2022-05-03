@@ -256,8 +256,6 @@ public function getBonuses()
 {
     
 
-
-    
     $usersMoney = DB::table('add_money_users')
          ->where('id_user',Auth::user()->id)
          ->whereNull('status_bonus')
@@ -276,36 +274,55 @@ public function getBonuses()
 }
 
 
-/* public function addBonuses()
+ public function addBonuses(Request $request)
 {
-    
+        
+    $id = $request->id;
+
+    /* โบนัส */
+
+    $bonusUsers = DB::table('bonuses')
+            ->where('id',$id)
+            ->get();
+    $bonus =  $bonusUsers[0]->bonus;
+    $percent =  $bonusUsers[0]->percent;
+
+    /* เงินเติม */
+
     $usersMoney = DB::table('add_money_users')
             ->where('id_user',Auth::user()->id)
             ->whereNull('status_bonus')
-            ->sum('bonus');
-
-    $users_bonus = DB::table('add_money_users')
-            ->where('id_user',Auth::user()->id)
-            ->whereNull('status_bonus')
             ->get();
+   $idUser =   $usersMoney[0]->id;
+   $moneyUser =   $usersMoney[0]->money;
 
-    $user = DB::table('users')
-            ->where('id',Auth::user()->id)
-            ->get();
-    $money = $user[0]->money;
-        foreach ($users_bonus as $bonus) {
-            $Withdraw = AddMoneyUsers::find($bonus->id);
-            $Withdraw->status_bonus = "1"; 
-            $Withdraw->save();
-        
-        }
+   if ($percent  === 'บาท') {
+        $money = $bonus;
+   }else{
+        $money = $moneyUser*($bonus/100);
+   }
+   $Withdraw = AddMoneyUsers::find($idUser);
+   $Withdraw->status_bonus = "1"; 
+   $Withdraw->bonus = $money; 
+  $Withdraw->save(); 
+
+    /* เงินที่อยู่ของ user */
+
+   $user = DB::table('users')
+        ->where('id',Auth::user()->id)
+        ->get();
+
+    $money_User = $user[0]->money;
 
     $moneyUser = User::find(Auth::user()->id);
-    $moneyUser->money = $money+$usersMoney; 
+
+    $moneyUser->money = $money_User+$money; 
     $moneyUser->save();
 
-    return response()->json($usersMoney);
+    $messege = 'รับโบนัสเรียบร้อย';
+
+    return response()->json($messege);
 }
-   */
+   
 
 }

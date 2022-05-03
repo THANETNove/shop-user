@@ -75,19 +75,7 @@ class addMonetUserController extends Controller
                     ->where('id',$id)                
                     ->get();
 
-        $bonuses = DB::table('bonuses')
-                    ->where('id', '1')  
-                    ->get();
-        $bonuse_user = $bonuses[0]->bonus;
-        $percent_user = $bonuses[0]->percent;
-        if ($percent_user === '1') {
-            $bon_user  = (int)$request->money*((int)$bonuse_user/100);
-        }else {
-            $bon_user  = $bonuse_user;
-            
-        }
-        
-
+    
 
         $money  =  (int)$users[0]->money;
         $withdrawMoney = (int)$request->money;
@@ -99,7 +87,7 @@ class addMonetUserController extends Controller
         $data = new AddMoneyUsers;
         $data->id_user = $id;
         $data->money= $withdrawMoney;
-        $data->bonus	= $bon_user;
+        $data->bonus	= null;
         $data->status_bonus = null;
         $data->save();
 

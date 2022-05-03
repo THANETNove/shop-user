@@ -520,16 +520,22 @@ jQuery.ajax({
           "_token": "{{ csrf_token() }}",
           },
       success: function(result){
+       
+            if (result != "0") {
+                let bonus = [];
+                for (let i = 0; i < result.length; i++) {
+                    bonus +=  `
+                    <div class="box1 head-center head-top">
+                        <h6>${result[i].bonus} ${result[i].percent}</h6>
+                        <button type="button" class="btn btn-outline-info" onclick="addBonuses(${result[i].id})">รับ</button>
+                    </div>`;
+                    }
+                document.getElementById('bonuses-box').innerHTML = bonus;
+                
+            }else{
+                document.getElementById('bonuses-box').innerHTML = "รับโบนัสหมดเเล้ว";
+            }
    
-        let bonus = [];
-        for (let i = 0; i < result.length; i++) {
-            bonus +=  `
-            <div class="box1 head-center head-top">
-                <h6>${result[i].bonus} ${result[i].percent}</h6>
-                <button type="button" class="btn btn-outline-info" onclick="addBonuses(${result[i].id})">รับ</button>
-              </div>`;
-        }
-         document.getElementById('bonuses-box').innerHTML = bonus;
           },
       error: function(result){
       }       
@@ -543,13 +549,13 @@ function addBonuses(e) {
     */
     //url: "/Hm-7UQjf9.r18Z/public/add_bonuses", 
     url: "/add_bonuses", 
-        method: 'get',
+        method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
             id: e,
             },
         success: function(result){
-
+            $('#add-bonuses').trigger('click');
           /*   document.getElementById('bonuses-box').innerHTML = bonus; */
             },
         error: function(result){
