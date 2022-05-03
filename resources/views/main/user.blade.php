@@ -95,7 +95,22 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        คุณได้รับโบนัสพิเศษ <span  id="bonus"></span> ฿
+        <div class="container">
+            <div class="row row-cols-3">
+              <div class="box1 head-center">
+                <h4>โบนัส 10%</h4>
+                <button type="button" class="btn btn-primary">รับ</button>
+              </div>
+              <div class="box2 head-center">
+                <h4>โบนัส 30%</h4>
+                <button type="button" class="btn btn-primary">รับ</button>
+              </div>
+              <div class="box3 head-center">
+                <h4>โบนัส 50%</h4>
+                <button type="button" class="btn btn-primary">รับ</button>
+              </div>
+            </div>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" data-bs-dismiss="modal" class="btn btn-outline-light">ok</button>
