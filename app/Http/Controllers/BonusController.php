@@ -96,7 +96,7 @@ class BonusController extends Controller
         $data->save();
         
 
-        return redirect('/bonus')->with('status',"บันทึกข้อมูล");
+        return redirect('/priceCom')->with('status',"บันทึกข้อมูล");
     }
 
     /**
