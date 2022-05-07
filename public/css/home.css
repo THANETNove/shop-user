@@ -816,7 +816,7 @@
     }
     
     .icon-center {
-        margin-left: 20px;
+        margin-left: 10%;
         padding-top: 8px;
         margin-top: -30px;
         background-color:   #E64A19 !important;
@@ -833,6 +833,6 @@
    }
     
     .text-color {
-        padding-top: 20px;
+        padding-top: 23px;
         color: #E64A19 !important;
     }
