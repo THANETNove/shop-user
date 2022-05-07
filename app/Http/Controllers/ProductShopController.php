@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use DB;
+use App\Models\ProductShop;
 
 class ProductShopController extends Controller
 {
@@ -13,7 +16,10 @@ class ProductShopController extends Controller
      */
     public function index()
     {
-        //
+        $user = DB::table('product_shops')
+        ->get();
+        
+        return view('main.stock',['user'=> $user]);
     }
 
     /**
@@ -23,7 +29,9 @@ class ProductShopController extends Controller
      */
     public function create()
     {
-        //
+
+       
+        return view('main.add_product');
     }
 
     /**
@@ -34,7 +42,16 @@ class ProductShopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new ProductShop;
+        $data->store = $request->store;
+        $data->picture = $request->picture;
+        $data->Product_code = $request->Product_code;
+        $data->price = $request->price;
+        $data->percent = $request->percent;
+        $data->income = $request->income;
+        $data->save();
+
+        return redirect('/stock')->with('status',"เพิ่มสำเร็จเเล้ว");
     }
 
     /**
@@ -56,7 +73,10 @@ class ProductShopController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = DB::table('product_shops')
+        ->where('id',$id)
+        ->get(); 
+        return view('main.editStock' ,['user'=> $user]);
     }
 
     /**
@@ -68,7 +88,16 @@ class ProductShopController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = ProductShop::find($id);
+        $data->store = $request->store;
+        $data->picture = $request->picture;
+        $data->Product_code = $request->Product_code;
+        $data->price = $request->price;
+        $data->percent = $request->percent;
+        $data->income = $request->income;
+        $data->save();
+
+        return redirect('/stock')->with('status',"เพิ่มสำเร็จเเล้ว");
     }
 
     /**
@@ -81,4 +110,7 @@ class ProductShopController extends Controller
     {
         //
     }
+
+
+  
 }

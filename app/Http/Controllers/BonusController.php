@@ -20,7 +20,7 @@ class BonusController extends Controller
         $user = DB::table('bonuses')
         ->count();
         
-        return view('main.bonus');
+        return view('main.bonus',);
     
 
     }

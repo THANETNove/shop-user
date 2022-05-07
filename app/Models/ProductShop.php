@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class ProductShop extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'store',
+        'picture',
+        'Product code',      
+        'price',
+        'Warranty',      
+        'total amount',
+        'percent',      
+        'income',
+        'payment status',      
+        'status user',
+        'Out of stock user'      
+    ];
 }
+

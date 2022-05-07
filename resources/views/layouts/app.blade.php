@@ -109,6 +109,9 @@
                       <li class="nav-item">
                           <a class="nav-link" href="{{ URL::to('priceCom')}}"  >แก้ไขโบนัส</a>
                       </li> 
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ URL::to('stock')}}"  >สิ้นค้า</a>
+                      </li> 
                      @endif
                             
                       </ul>
