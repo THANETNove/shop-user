@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('checkLogin');
+    }
+
     /**
      * Display a listing of the resource.
      *

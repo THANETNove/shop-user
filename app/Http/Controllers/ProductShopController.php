@@ -43,6 +43,12 @@ class ProductShopController extends Controller
     public function store(Request $request)
     {
     
+        $str= '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
+        //คำสั่งจัดเรียงลำดับตัวอักษรในข้อความแบบสุ่ม
+        $str = str_shuffle($str);
+        //ทำการตัด string ตามจำนวนที่ใส่เข้ามา
+        $resultChar = substr($str, 0, $length_of_string); 
+            dd( $resultChar);
 
      $service_image = $request->file('picture');
 
@@ -57,6 +63,8 @@ class ProductShopController extends Controller
       $upload_location = 'image/stock/';
       $full_path = $upload_location.$img_name;
       $service_image->move($upload_location,$img_name);
+
+
 
        $data = new ProductShop;
        $data->store = $request->store;

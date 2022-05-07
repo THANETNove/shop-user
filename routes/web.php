@@ -25,14 +25,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+Auth::routes();
+
+
+Route::group(['middleware'=>'checkLogin'],function () {
+    
+    Route::get('registerAdmin', function () {
+        return view('/auth/registerAdmin');
+    });
+
 Route::get('index', function () {
     $line = DB::table('link_lines')
             ->get();
     $line = $line[0]->link; 
     Session::put('link', $line);
-
     return view('welcome');
 })->name('/');
+
 
 Route::get('user', function () {
     $line = DB::table('link_lines')
@@ -60,16 +72,6 @@ Route::get('set-up', function () {
     
     return view('welcome');
 })->name('index');
-
-
-Route::get('registerAdmin', function () {
-    return view('/auth/registerAdmin');
-});
-
-
-
-Auth::routes();
-
 
 Route::get('/getInvitation', [App\Http\Controllers\InvitationController::class, 'index']);
 Route::get('/createCode', [App\Http\Controllers\InvitationController::class, 'create']);
@@ -120,7 +122,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/topping/{name}', [App\Http\Controllers\ToppingController::class, 'index']);
 Route::get('/shop_index', [App\Http\Controllers\IndexController::class, 'index']);
 Route::get('/account', [App\Http\Controllers\IndexController::class, 'account']);
-
+});
 /* admin */
 
 Route::group(['middleware'=>'check'],function () {
@@ -141,6 +143,3 @@ Route::group(['middleware'=>'check'],function () {
     Route::get('/priceCom', [App\Http\Controllers\BonusController::class, 'priceCom']);
     Route::resource('/stock', App\Http\Controllers\ProductShopController::class);
 });
-
-
-
