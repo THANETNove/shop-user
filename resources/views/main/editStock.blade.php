@@ -33,14 +33,6 @@
                                 </div>
                             </div> 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('รหัสสินค้า') }}</label>
-                                 <div class="col-md-6">
-                                    <input id="Product_code" type="text" 
-                                    class="form-control @error('Product_code') is-invalid @enderror" name="Product_code"
-                                    value="" required  autofocus>     
-                                </div>
-                            </div> 
-                            <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('ราคาสินค้า') }}</label>
                                  <div class="col-md-6">
                                     <input id="price" type="text"
