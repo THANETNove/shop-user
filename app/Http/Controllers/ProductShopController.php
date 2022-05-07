@@ -44,7 +44,7 @@ class ProductShopController extends Controller
     {
     
 
-        $service_image = $request->file('picture');
+        /* $service_image = $request->file('picture');
          //Generate ชื่อภาพ
        $name_gen=hexdec(uniqid());
 
@@ -55,7 +55,7 @@ class ProductShopController extends Controller
        //อัพโลหดและบันทึกข้อมูล
        $upload_location = 'image/stock/';
        $full_path = $upload_location.$img_name;
-       $service_image->move($upload_location,$img_name);
+       $service_image->move($upload_location,$img_name); */
 
        $data = new ProductShop;
        $data->store = $request->store;
