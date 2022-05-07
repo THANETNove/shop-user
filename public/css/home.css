@@ -164,21 +164,21 @@
         padding: 10px;
         text-align: center;
         width: 100%;
-        color: #FFFFFF;
-        background-color: #9d5618;
+        color: #E64A19;
+        background-color: #ffffff;
     }
     
     .icon-text {
         font-size: 12px;
-        color: #fff;
+        color: #E64A19;
     }
     
     .fa-solid {
-        color: #ffffff61;
+        color: #E64A19;
     }
     
     .active {
-        color: #fff;
+        color: #E64A19;
         outline: none;
         display: block;
     }
@@ -813,4 +813,19 @@
     .head-top {
         padding-top: 10px;
     }
-    /* gGML */
+    
+    .icon-center {
+        /*  padding-top: 10px;
+        margin-top: -30px;
+        background-color: #cca0a0 !important;
+        width: 90px;
+        height: 80px;
+        border-radius: 50%;
+        outline: 0;
+        color: #E64A19 !important;
+        box-shadow: 0 0 0 .25rem rgba(255, 255, 255) */
+    }
+    
+    .text-color {
+        color: #E64A19 !important;
+    }
