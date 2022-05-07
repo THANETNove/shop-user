@@ -67,7 +67,7 @@
       $money =  number_format(Auth::user()->money,2)
      @endphp
       <div class="border-th ">
-        <p  class="text span color1"  id="modeyUser" >{{$money}} </p>
+        <p  class="text span color1"  id="modeyUser" > จำนวนเงินคงเหลือ  {{$money}} ฿</p>
         <p class="set-money text color2">ยอดเงิน ฿ &nbsp;<i class="fa-solid fa-arrow-rotate-right" id="reload"></i>&nbsp;&nbsp;</p>
       </div>
       <br>

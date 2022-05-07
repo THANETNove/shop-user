@@ -249,6 +249,8 @@ public function getMoney()
     $usersMoney = DB::table('users')
             ->where('id',Auth::user()->id)
             ->get();
+            $usersMoney =  number_format($usersMoney[0]->money,2);
+           
         return response()->json($usersMoney);
 }
 
