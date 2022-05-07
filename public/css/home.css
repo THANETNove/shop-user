@@ -836,3 +836,12 @@
         padding-top: 23px;
         color: #E64A19 !important;
     }
+    .width-height {
+        margin-top: 30px;
+        width: 60% !important;
+        
+    }
+.center-shop {
+    display: flex;
+    justify-content: center;
+}

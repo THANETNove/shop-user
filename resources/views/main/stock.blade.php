@@ -42,7 +42,7 @@
                       {{ $user->store }} 
                     </td>
                     <td class="col-3 col-sm-3 col-md-2 ">
-                       <img src=" ../assets/image/{{$user->picture}}" alt="" width="100" height="70">
+                      <img src="{{asset($user->picture)}}" alt="" width="100" height="70"> 
                     </td>
                     <td class="col-3 col-sm-3 col-md-2 ">
                       {{ $user->Product_code }} 

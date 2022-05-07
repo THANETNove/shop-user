@@ -1,10 +1,43 @@
 <div class="head">
   <p class="center text-head">รายชื่อธุระกิจ</p>
 </div>
+<div class="container">
+  <div class="row row-cols-4 center-shop">
+    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+      <a href="{{ URL('topping/180Shopee')}}" class="text-decoration">
+        <img src="{{asset('/image/shop-21.png')}}" class="width-height " alt="..."  >
+        <br>
+         <span class="center-shop">180Shopee</span>
+        </a>
+    </div>
+    <div class="col-6 col-sm-6 col-md-3 col-lg-3" >
+      <a href="{{ URL('topping/300Lazada')}}" class="text-decoration">
+        <img src="{{asset('/image/shop-22.png')}}"  class="width-height" alt="...">
+      <br>
+      <span class="center-shop">300Lazada</span>
+      </a>
+    </div>
+    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+      <a href="{{ URL('topping/60Advice')}}" class="text-decoration">
+        <img src="{{asset('/image/Advice.png')}}"  class="width-height" alt="...">
+      <br>
+      <span class="center-shop">60Advice</span>
+      </a>
+    </div>
+    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+      <a href="{{ URL('topping/60Advice')}}" class="text-decoration">
+        <img src="{{asset('/image/Advice.png')}}"  class="width-height" alt="...">
+      <br>
+      <span class="center-shop">60Advice</span>
+      </a>
+    </div>
+  </div>
+</div>
 
-<table class="table table-bordered down12">
+{{-- 
+<table class="table table-bordered  width-height">
     <tbody>
-      <tr class="img-shop box-shop center ">
+      <tr class="img-shop box-shop center  ">
         <td class="col-3 col-sm-3 col-md-4 " >
            <a href="{{ URL('topping/180Shopee')}}" class="text-decoration">
             <img src="{{asset('/image/shop-21.png')}}" class="img-shop-tb-2 " alt="..."  >
@@ -67,7 +100,7 @@
         </td>
       </tr>
     </tbody>
-  </table>
+  </table> --}}
   <br>
   <br>
   <br>  

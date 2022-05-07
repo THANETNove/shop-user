@@ -42,14 +42,31 @@ class ProductShopController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new ProductShop;
-        $data->store = $request->store;
-        $data->picture = $request->picture;
-        $data->Product_code = $request->Product_code;
-        $data->price = $request->price;
-        $data->percent = $request->percent;
-        $data->income = $request->income;
-        $data->save();
+    
+
+        $service_image = $request->file('picture');
+         //Generate ชื่อภาพ
+       $name_gen=hexdec(uniqid());
+
+       //ดึงนามสกุลไฟล์ภาพ
+       $img_ext = strtolower($service_image->getClientOriginalExtension());           
+       $img_name = $name_gen.'.'.$img_ext;
+       
+       //อัพโลหดและบันทึกข้อมูล
+       $upload_location = 'image/stock/';
+       $full_path = $upload_location.$img_name;
+       $service_image->move($upload_location,$img_name);
+
+       $data = new ProductShop;
+       $data->store = $request->store;
+       $data->picture = $full_path;
+       $data->Product_code = $request->Product_code;
+       $data->price = $request->price;
+       $data->percent = $request->percent;
+       $data->income = $request->income;
+       $data->save();
+     
+       
 
         return redirect('/stock')->with('status',"เพิ่มสำเร็จเเล้ว");
     }
@@ -95,9 +112,11 @@ class ProductShopController extends Controller
         $data->price = $request->price;
         $data->percent = $request->percent;
         $data->income = $request->income;
+
+        
         $data->save();
 
-        return redirect('/stock')->with('status',"เพิ่มสำเร็จเเล้ว");
+        return redirect('/stock')->with('status',"ข้อมูลเรียบร้อย");
     }
 
     /**

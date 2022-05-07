@@ -13,7 +13,7 @@
                     <img src="{{asset('/image/A-1.png')}}" >
                     <br>
                     <br>
-                    <span class="fs-4">180Shopee</span>
+                    <span class="fs-4 ">180Shopee</span>
                    </a>
                 </td>
                 <td class="col-3 col-sm-3 col-md-4 " >
