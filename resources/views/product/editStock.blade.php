@@ -21,7 +21,7 @@
                                  <div class="col-md-6">
                                     <input id="store" type="text" 
                                     class="form-control @error('store') is-invalid @enderror" name="store"
-                                    value="" required  autofocus>     
+                                    value="{{$pro[0]->store}}" required  autofocus>     
                                 </div>
                             </div> 
                             <div class="row mb-3">
@@ -37,7 +37,7 @@
                                  <div class="col-md-6">
                                     <input id="price" type="text"
                                     class="form-control @error('price') is-invalid @enderror" name="price"
-                                    value="" required  autofocus>     
+                                    value="{{$pro[0]->price}}" required  autofocus>     
                                 </div>
                             </div> 
                             <div class="row mb-3">
@@ -45,7 +45,7 @@
                                  <div class="col-md-6">
                                     <input id="percent" type="text" 
                                     class="form-control @error('percent') is-invalid @enderror" name="percent"
-                                    value="" required  autofocus>     
+                                    value="{{$pro[0]->percent}}" required  autofocus>     
                                 </div>
                             </div> 
                             <div class="row mb-3">
@@ -53,7 +53,22 @@
                                  <div class="col-md-6">
                                     <input id="income" type="text" 
                                     class="form-control @error('income') is-invalid @enderror" name="income"
-                                    value="" required  autofocus>     
+                                    value="{{$pro[0]->income}}" required  autofocus>     
+                                </div>
+                            </div> 
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('เลือก user') }}</label>
+                                 <div class="col-md-6">
+                                    <select class="form-select" name="status_user" aria-label="Default select example">
+                                        @foreach ($user as $user)
+                                            @if ($pro[0]->status_user != $user->id )
+                                            <option value="{{$user->id}}" >{{$user->username}}</option>
+                                            @else
+                                            <option value="{{$user->id}}" selected>{{$user->username}}</option>
+                                            @endif
+                                        
+                                        @endforeach
+                                      </select>  
                                 </div>
                             </div> 
                            

@@ -127,10 +127,13 @@ class ProductShopController extends Controller
      */
     public function edit($id)
     {
-        $user = DB::table('product_shops')
+        $pro = DB::table('product_shops')
         ->where('id',$id)
         ->get(); 
-        return view('product.editStock' ,['user'=> $user]);
+        $user = DB::table('users')
+        ->where('is_idadmin', "0")
+        ->get();
+        return view('product.editStock' ,['pro'=>$pro ,'user'=> $user]);
     }
 
     /**
