@@ -29,6 +29,7 @@
 
 @include('main.login')
 @endif
-@include('layouts.navbarFooter')
+@include('layouts.navbarFooter') 
+{{-- @include('index.home')  --}}
 
 @endsection

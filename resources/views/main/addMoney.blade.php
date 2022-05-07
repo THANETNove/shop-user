@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('เติมเงิน') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{route('add-money-user.update',$user->id)}}">
+                        <form method="POST" action="{{route('add-money-user.update',$user->id)}}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row mb-3">

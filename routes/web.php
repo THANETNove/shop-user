@@ -119,6 +119,7 @@ Route::get('/reserve', [App\Http\Controllers\BuyOutController::class ,'index'] )
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/topping/{name}', [App\Http\Controllers\ToppingController::class, 'index']);
 Route::get('/shop_index', [App\Http\Controllers\IndexController::class, 'index']);
+Route::get('/account', [App\Http\Controllers\IndexController::class, 'account']);
 
 /* admin */
 

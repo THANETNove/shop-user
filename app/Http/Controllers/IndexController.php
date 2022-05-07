@@ -17,6 +17,11 @@ class IndexController extends Controller
         return view ('index.shop_index');
     }
 
+    public function account()
+    {
+        return view ('index.account_user');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
