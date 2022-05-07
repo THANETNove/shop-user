@@ -785,26 +785,27 @@
     .font-size15 {
         font-size: 15px;
     }
+    
     .violation {
         margin-top: 20px;
         margin-left: 8%;
         text-align: center;
+    }
     
-
-    }
-
     .margin-img {
-       width: 60% !important; 
+        width: 60% !important;
     }
+    
     .margin-left1 {
         margin-right: 50px;
     }
+    
     .bgm-color {
-        background-color:#e96a03;
+        background-color: #e96a03;
         color: #fff;
-        font-size:20px;
-
+        font-size: 20px;
     }
+    
     .size-bonus {
         font-size: 16px;
     }
@@ -812,3 +813,4 @@
     .head-top {
         padding-top: 10px;
     }
+    /* gGML */
