@@ -22,6 +22,7 @@ class ProductShopController extends Controller
         return view('main.stock',['user'=> $user]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -30,8 +31,11 @@ class ProductShopController extends Controller
     public function create()
     {
 
-       
-        return view('main.add_product');
+        $user = DB::table('users')
+        ->where('is_idadmin', "0")
+        ->get();
+
+        return view('main.add_product',['user' => $user]);
     }
  
     
@@ -77,6 +81,7 @@ class ProductShopController extends Controller
 
 
        $data = new ProductShop;
+       $data->status_user = $request->status_user;
        $data->store = $request->store;
        $data->picture = $full_path;
        $data->Product_code = $Product_code;

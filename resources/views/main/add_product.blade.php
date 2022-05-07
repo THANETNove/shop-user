@@ -59,6 +59,16 @@
                                     value="" required  autofocus>     
                                 </div>
                             </div> 
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('เลือก user') }}</label>
+                                 <div class="col-md-6">
+                                    <select class="form-select" name="status_user" aria-label="Default select example">
+                                        @foreach ($user as $user)
+                                        <option value="{{$user->id}}" >{{$user->username}}</option>
+                                        @endforeach
+                                      </select>  
+                                </div>
+                            </div> 
                            
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4" id="submit_from">
