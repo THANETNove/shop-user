@@ -17,10 +17,23 @@ class ProductShopController extends Controller
     public function index()
     {
         $user = DB::table('product_shops')
+        ->where('payment_status', null)
+        ->orderBy('id', 'DESC')
         ->get();
         
-        return view('main.stock',['user'=> $user]);
+        return view('product.stock',['user'=> $user]);
     }
+
+    public function index_buy()
+    {
+        $user = DB::table('product_shops')
+        ->orderBy('id', 'DESC')
+        ->where('payment_status','!=', null)
+        ->get();
+        
+        return view('product.stock_Buy',['user'=> $user]);
+    }
+
 
 
     /**
@@ -35,7 +48,7 @@ class ProductShopController extends Controller
         ->where('is_idadmin', "0")
         ->get();
 
-        return view('main.add_product',['user' => $user]);
+        return view('product.add_product',['user' => $user]);
     }
  
     
@@ -117,7 +130,7 @@ class ProductShopController extends Controller
         $user = DB::table('product_shops')
         ->where('id',$id)
         ->get(); 
-        return view('main.editStock' ,['user'=> $user]);
+        return view('product.editStock' ,['user'=> $user]);
     }
 
     /**

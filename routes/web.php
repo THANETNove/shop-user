@@ -142,4 +142,5 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/com_miss', App\Http\Controllers\CommissionController::class);
     Route::get('/priceCom', [App\Http\Controllers\BonusController::class, 'priceCom']);
     Route::resource('/stock', App\Http\Controllers\ProductShopController::class);
+    Route::get('/index_buy',[ App\Http\Controllers\ProductShopController::class,'index_buy']);
 });

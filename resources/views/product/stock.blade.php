@@ -6,8 +6,12 @@
     <div class="container-fluid">
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="btn btn-success"  href="{{route('stock.create')}}"">เพิ่มสินค้า</a>
+          <a class="btn btn-success"  href="{{route('stock.create')}}">เพิ่มสินค้า</a> &nbsp; &nbsp; 
+  
+          <a class="btn btn-success"  href="{{route('stock.index')}}">สินค้าเเล้ว</a> &nbsp; &nbsp; 
+          <a class="btn btn-success"  href="{{ URL::to('index_buy')}}">สินค้ายังไม่ได้</a>
       </div>
+      
       @if (session('status'))
           <strong style="color: #0d6efd">{{ session('status') }}</strong>
        @endif
@@ -25,7 +29,8 @@
           <th scope="col">เปอร์เช็นต์</th>
           <th scope="col">รายได้</th>
           <th scope="col">สถานะชำระ</th> 
-          <th scope="col">แก้ไขข้อมูล</th> 
+          <th scope="col">แก้ไขข้อมูล</th>
+           
         </tr>
       </thead>
     <tbody>
@@ -56,8 +61,15 @@
                     <td class="col-3 col-sm-3 col-md-1 ">
                       {{ $user->income}} 
                     </td>
-                    <td class="col-3 col-sm-3 col-md-1 ">
+                   {{--  <td class="col-3 col-sm-3 col-md-1 ">
                       {{ $user->payment_status}} 
+                    </td> --}}
+                    <td class="col-3 col-sm-3 col-md-1 ">
+                      @if ($user->payment_status != null)
+                          <p>ซื้อเเล้ว</p>
+                      @else
+                      <p>ยังไม่ได้ซื้อ</p>
+                      @endif
                     </td>
                 <td class="col-3 col-sm-3 col-md-1 ">
                   <a href="{{route('stock.edit',$user->id)}}" class="btn btn-primary">แก้ไขข้อมูล</a> 
