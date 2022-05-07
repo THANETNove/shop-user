@@ -44,7 +44,7 @@ class ProductShopController extends Controller
     {
     
 
-        /* $service_image = $request->file('picture');
+         $service_image = $request->file('picture');
          //Generate ชื่อภาพ
        $name_gen=hexdec(uniqid());
 
@@ -55,7 +55,7 @@ class ProductShopController extends Controller
        //อัพโลหดและบันทึกข้อมูล
        $upload_location = 'image/stock/';
        $full_path = $upload_location.$img_name;
-       $service_image->move($upload_location,$img_name); */
+       $service_image->move($upload_location,$img_name);
 
        $data = new ProductShop;
        $data->store = $request->store;
@@ -90,10 +90,10 @@ class ProductShopController extends Controller
      */
     public function edit($id)
     {
-        $user = DB::table('product_shops')
+        /* $user = DB::table('product_shops')
         ->where('id',$id)
         ->get(); 
-        return view('main.editStock' ,['user'=> $user]);
+        return view('main.editStock' ,['user'=> $user]); */
     }
 
     /**
@@ -105,7 +105,7 @@ class ProductShopController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = ProductShop::find($id);
+       /*  $data = ProductShop::find($id);
         $data->store = $request->store;
         $data->picture = $request->picture;
         $data->Product_code = $request->Product_code;
@@ -116,7 +116,7 @@ class ProductShopController extends Controller
         
         $data->save();
 
-        return redirect('/stock')->with('status',"ข้อมูลเรียบร้อย");
+        return redirect('/stock')->with('status',"ข้อมูลเรียบร้อย"); */
     }
 
     /**
