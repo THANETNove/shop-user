@@ -90,10 +90,10 @@ class ProductShopController extends Controller
      */
     public function edit($id)
     {
-        /* $user = DB::table('product_shops')
+        $user = DB::table('product_shops')
         ->where('id',$id)
         ->get(); 
-        return view('main.editStock' ,['user'=> $user]); */
+        return view('main.editStock' ,['user'=> $user]);
     }
 
     /**
@@ -104,10 +104,27 @@ class ProductShopController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
+    
     {
-       /*  $data = ProductShop::find($id);
+
+
+        
+        $service_image = $request->file('picture');
+        //Generate ชื่อภาพ
+      $name_gen=hexdec(uniqid());
+
+      //ดึงนามสกุลไฟล์ภาพ
+      $img_ext = strtolower($service_image->getClientOriginalExtension());           
+      $img_name = $name_gen.'.'.$img_ext;
+      
+      //อัพโลหดและบันทึกข้อมูล
+      $upload_location = 'image/stock/';
+      $full_path = $upload_location.$img_name;
+      $service_image->move($upload_location,$img_name);
+
+        $data = ProductShop::find($id);
         $data->store = $request->store;
-        $data->picture = $request->picture;
+        $data->picture = $full_path;
         $data->Product_code = $request->Product_code;
         $data->price = $request->price;
         $data->percent = $request->percent;
@@ -116,7 +133,7 @@ class ProductShopController extends Controller
         
         $data->save();
 
-        return redirect('/stock')->with('status',"ข้อมูลเรียบร้อย"); */
+        return redirect('/stock')->with('status',"ข้อมูลเรียบร้อย");
     }
 
     /**

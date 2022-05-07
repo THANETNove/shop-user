@@ -13,7 +13,7 @@
                         @endif
                     </div>
                     <div class="card-body">
-                        <form  method="post"  action="{{route('stock.update',$user[0]->id)}}">
+                        <form  method="post"  action="{{route('stock.update',$user[0]->id)}}" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
                             <div class="row mb-3">
