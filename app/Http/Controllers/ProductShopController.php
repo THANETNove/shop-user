@@ -33,7 +33,8 @@ class ProductShopController extends Controller
        
         return view('main.add_product');
     }
-
+ 
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -43,13 +44,22 @@ class ProductShopController extends Controller
     public function store(Request $request)
     {
     
-        $str= '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'; 
-        //คำสั่งจัดเรียงลำดับตัวอักษรในข้อความแบบสุ่ม
-        $str = str_shuffle($str);
-        //ทำการตัด string ตามจำนวนที่ใส่เข้ามา
-        $resultChar = substr($str, 0, $length_of_string); 
-            dd( $resultChar);
 
+       $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            // generate a pin based on 2 * 7 digits + a random character
+            $pin = mt_rand(1000000, 9999999)
+                . mt_rand(1000000, 9999999)
+                .$characters[rand(0, strlen($characters))];
+          $text =  $characters[rand(0, strlen($characters))];
+
+        $string = str_shuffle($pin);
+
+
+        //ทำการตัด string ตามจำนวนที่ใส่เข้ามา
+       /*  $resultChar = substr($str);  */
+    
+    $Product_code = $text.''.$string;
      $service_image = $request->file('picture');
 
         //Generate ชื่อภาพ
@@ -69,7 +79,7 @@ class ProductShopController extends Controller
        $data = new ProductShop;
        $data->store = $request->store;
        $data->picture = $full_path;
-       $data->Product_code = $request->Product_code;
+       $data->Product_code = $Product_code;
        $data->price = $request->price;
        $data->percent = $request->percent;
        $data->income = $request->income;
