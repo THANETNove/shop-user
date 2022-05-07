@@ -323,6 +323,45 @@ public function getBonuses()
 
     return response()->json($messege);
 }
+
+public function edit_user_0(Request $request)
+{
+
+    $name = $request->search;
+
+
+        $user = DB::table('users')
+                ->leftJoin('commissions_points', 'users.id', '=', 'commissions_points.idUser')
+                ->where('users.is_idadmin', '=','0')  
+                ->select('commissions_points.*', 'users.*')
+                ->get();
+                
+ 
+
+
+
+            if ($name !== null) {
+                    $user = DB::table('users')
+                        ->leftJoin('commissions_points', 'users.id', '=', 'commissions_points.idUser')
+                        ->where('users.is_idadmin', '=','0')  
+                        ->where('username', 'LIKE', '%' . $name . '%')
+                        ->select('commissions_points.*', 'users.*')
+                        ->get();
+                        return view('admin.admin' ,['user'=> $user]);
+            }else{
+
+                 $user = DB::table('users')
+                        ->leftJoin('commissions_points', 'users.id', '=', 'commissions_points.idUser')
+                        ->where('users.is_idadmin', '=','0')  
+                        ->select('commissions_points.*', 'users.*')
+                        ->get();
+
+                  return view('admin.admin' ,['user'=> $user]);
+
+            } 
+
+    return view('main.edit_User_0.blade',['user'=> $user]);
+}
    
 
 }

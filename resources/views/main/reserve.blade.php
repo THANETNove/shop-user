@@ -62,7 +62,7 @@
             <div class="container head-center">
                 <div class="row">
                     <div class="col-4 col-sm-4 col-md-4 head-center ">
-                        <p class="date">0.00 <br> <span class="font-16">ค่าคอมมิชชั่น</span></p>
+                        <p class="date"> {{ number_format($priceUser[6],2)}} <br> <span class="font-16">ค่าคอมมิชชั่น</span></p>
                     </div>
                     <div class="col-4 col-sm-4 col-md-4">
                         <p class="date">

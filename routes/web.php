@@ -94,6 +94,7 @@ Route::get('/Kyoto', [App\Http\Controllers\GetPageController::class, 'Kyoto']);
 Route::get('/newAdmin', [App\Http\Controllers\GetPageController::class, 'newAdmin']);
 Route::post('/registerAdmin', [App\Http\Controllers\GetPageController::class, 'registerAdmin']);
 Route::post('/new-user', [App\Http\Controllers\GetPageController::class, 'newUser']);
+Route::get('/edit_user_0', [App\Http\Controllers\GetPageController::class, 'edit_user_0']);
 Route::get('/add-money/{id}', [App\Http\Controllers\GetPageController::class, 'addMoney']);
 Route::get('/get_bonuses', [App\Http\Controllers\GetPageController::class, 'getBonuses']);
 Route::post('/add_bonuses', [App\Http\Controllers\GetPageController::class, 'addBonuses']);

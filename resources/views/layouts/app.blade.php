@@ -82,6 +82,9 @@
                           <a class="nav-link" href="{{ URL::to('admin')}}" >Admin</a>
                       </li>
                       <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('edit_user_0')}}" >User</a>
+                    </li>
+                      <li class="nav-item">
                           <a class="nav-link" href="{{ URL::to('link-line')}}"  >Link-Line</a>
                       </li>       
                       <li class="nav-item">

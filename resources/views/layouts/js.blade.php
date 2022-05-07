@@ -174,8 +174,8 @@ console.log('locationLogin',locationLogin);
                /**
                   * !  เเก้ลิงค์
                   */
-             if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
-             //if (currentLocation === '/login') { 
+             //if (currentLocation === '/Hm-7UQjf9.r18Z/public/login') {   
+            if (currentLocation === '/login') { 
                 
                    $('#onClickRegister').trigger('click');
                     $("#home").addClass("active");
@@ -254,7 +254,7 @@ function reloadMoney() {
                   * !  เเก้ลิงค์
                   */
          //url: "/Hm-7UQjf9.r18Z/public/reload-money",
-         url: "/reload-money",
+        url: "/reload-money",
         method: 'post',
         data: {
             "_token": "{{ csrf_token() }}",
@@ -513,7 +513,7 @@ jQuery.ajax({
     /**
     * !  เเสดงจำนวนเงิน
     */
-  //url: "/Hm-7UQjf9.r18Z/public/add_bonuses", 
+  //url: "/Hm-7UQjf9.r18Z/public/get_bonuses", 
   url: "/get_bonuses", 
       method: 'get',
       data: {

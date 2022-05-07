@@ -78,10 +78,19 @@ class BuyOutController extends Controller
                 /*  ยอดรวมได้เสีย */
 
                  $withdrawMoneyArrears =    $withdrawMoney + $sumAddMoney ; 
+                 $withdrawMoneyArrears1 =  $withdrawMoneyArrears;
+
+                    if ($withdrawMoneyArrears1 >= "1000000"  && $withdrawMoneyArrears1 < "2000000" ) {
+                        $commission = $withdrawMoneyArrears1*(5/100);
+                    }elseif ($withdrawMoneyArrears1 >= "2000000") {
+                        $commission = $withdrawMoneyArrears1*(10/100);
+                    }else {
+                        $commission = "0.00";
+                    }
 
         
 
-        $priceUser = [$sumPrice , $sumBonus ,$sumLoss, $sumAddMoney, $withdrawMoney ,$withdrawMoneyArrears];
+        $priceUser = [$sumPrice , $sumBonus ,$sumLoss, $sumAddMoney, $withdrawMoney ,$withdrawMoneyArrears,$commission];
         return view('main.reserve',
         [
           'dataJoin'=> $dataJoin, 'priceUser'=>$priceUser,
