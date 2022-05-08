@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use Auth;
+use Session;
 use App\Models\PasswordMoney;
 
 class PasswordMoneyController extends Controller
@@ -44,13 +45,19 @@ class PasswordMoneyController extends Controller
         $data = new PasswordMoney;
         $data->password_modey = $request->password;
         $data->idUser = Auth::user()->id;
-        $data->save();
+         $data->save();   
 
-        $passwordMoney = DB::table('password_money')
-            ->where('idUser',Auth::user()->id)  
-            ->get();
- 
-    Session::put('pass_money', $passwordMoney[0]->password_money);
+        $passwordcount = DB::table('password_money')
+            ->where('idUser','=',Auth::user()->id)  
+            ->count();
+
+            if ($passwordcount != "0") {
+                $passwordMoney = DB::table('password_money')
+                ->where('idUser','=',Auth::user()->id)  
+                ->get();
+                Session::put('passMoney', $passwordMoney[0]->id); 
+            }
+    
 
         return redirect('/set-up')->with('status',"ตั้ง Password เรียบร้อย");
     }
@@ -74,7 +81,8 @@ class PasswordMoneyController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        return view('password_money.edit',['id' => $id]);
     }
 
     /**
@@ -86,7 +94,28 @@ class PasswordMoneyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'password' => 'required|max:6|min:6',
+        ]);
+       
+
+        $data = PasswordMoney::find($id);
+        $data->password_modey = $request->password;
+        $data->save();
+        
+        $passwordcount = DB::table('password_money')
+        ->where('idUser','=',Auth::user()->id)  
+        ->count();
+
+        if ($passwordcount != "0") {
+            $passwordMoney = DB::table('password_money')
+            ->where('idUser','=',Auth::user()->id)  
+            ->get();
+            Session::put('passMoney', $passwordMoney[0]->id); 
+        }
+
+
+    return redirect('/set-up')->with('status',"ตั้ง Password เรียบร้อย");
     }
 
     /**

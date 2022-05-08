@@ -39,11 +39,15 @@ class HomeController extends Controller
       
 
     
-        $passwordMoney = DB::table('password_money')
-            ->where('idUser',Auth::user()->id)  
-            ->get();
-            if (empty($passwordMoney)) {
-                Session::put('pass_money', $passwordMoney[0]->password_money);
+            $passwordcount = DB::table('password_money')
+            ->where('idUser','=',Auth::user()->id)  
+            ->count();
+
+            if ($passwordcount != "0") {
+                $passwordMoney = DB::table('password_money')
+                ->where('idUser','=',Auth::user()->id)  
+                ->get();
+                Session::put('passMoney', $passwordMoney[0]->id); 
             }
       
 

@@ -224,14 +224,26 @@
              </div>
              <br>
              <div class="border-th">
-          
-                    <a  href="{{ URL::to('pass_money')}}"  class="text span text-decoration">รหัสถอนเงิน<span>    
-                        @if(Session::has('pass_money'))
+                @if(Session::has('passMoney'))
+                    <a  href="{{route('pass_money.edit',Session::get('passMoney'))}}"  class="text span text-decoration">รหัสถอนเงิน<span>    
+                        @if(Session::has('passMoney'))
                         ตัวค่าเเล้ว
                         @else
-                        ยังไม่ตัวค่าเเล้ว
+                        ยังไม่ตังค่าเเล้ว
                         @endif
-                     &nbsp;&nbsp;&nbsp;</span></a>
+                    &nbsp;&nbsp;&nbsp;</span>
+                    </a>
+                @else
+                    <a  href="{{ URL::to('pass_money')}}"  class="text span text-decoration">รหัสถอนเงิน<span>    
+                        @if(Session::has('passMoney'))
+                        ตัวค่าเเล้ว
+                        @else
+                        ยังไม่ตังค่าเเล้ว
+                        @endif
+                    &nbsp;&nbsp;&nbsp;</span>
+                    </a>
+                @endif
+                  
              </div>
              <br>
              <div class="border-th">
