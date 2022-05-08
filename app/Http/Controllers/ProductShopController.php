@@ -165,7 +165,6 @@ class ProductShopController extends Controller
         $data = ProductShop::find($id);
         $data->store = $request->store;
         $data->picture = $full_path;
-        $data->Product_code = $request->Product_code;
         $data->price = $request->price;
         $data->percent = $request->percent;
         $data->income = $request->income;

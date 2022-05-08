@@ -144,7 +144,7 @@
         background-color: var(--bs-body-bg);
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        background-color: #e96a03;
+        background-color: #e5eaf1d7;
     }
     
     html {
@@ -887,6 +887,52 @@
         background-color:#ff2442
     }
     .buy_shop {
-        color: #000000;
         background-color:rgb(237, 243, 251)
+    }
+    .buy_shop2 {
+        color: #000000 !important;
+    }
+
+    .padding1 {
+       padding:10px; 
+    }
+    .bold11 {
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .ex1 {
+        margin-top:  0px;
+         background-color: #000000!important;
+      }
+
+      .box-2 {
+          margin-top:20px;
+          width: 100%;
+          background-color: #fff;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 10px;
+          padding-bottom: 1px;
+          border-radius: 10px;
+      }
+
+    .box-shopHad{
+        position: relative;
+        width: 100vw;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgb(237, 243, 251);
+        text-align: center;
+    }
+    .box-shopBody {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin-top: 0px;
+        padding: 20px;
+    
+    }
+
+    .navbar-Footer2 {
+        padding-bottom: 100px;
     }
