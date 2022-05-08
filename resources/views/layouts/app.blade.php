@@ -113,8 +113,11 @@
                           <a class="nav-link" href="{{ URL::to('stock')}}"  >สิ้นค้า</a>
                       </li> 
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ URL::to('level')}}"  >Level</a>
-                    </li> 
+                        <a class="nav-link" href="{{ URL::to('level')}}"  >Level VIP</a>
+                      </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('top_up_amount')}}"  >จำนวนเงินเติม</a>
+                     </li> 
                      @endif
                             
                       </ul>

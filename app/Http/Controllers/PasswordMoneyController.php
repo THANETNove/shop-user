@@ -98,11 +98,10 @@ class PasswordMoneyController extends Controller
             'password' => 'required|max:6|min:6',
         ]);
        
-
         $data = PasswordMoney::find($id);
         $data->password_modey = $request->password;
         $data->save();
-        
+
         $passwordcount = DB::table('password_money')
         ->where('idUser','=',Auth::user()->id)  
         ->count();

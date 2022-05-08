@@ -131,6 +131,7 @@ Route::get('/topping/{name}', [App\Http\Controllers\ToppingController::class, 'i
 Route::resource('/shop_index', App\Http\Controllers\IndexController::class,);
 Route::get('/topUp', [App\Http\Controllers\IndexController::class, 'topUp']);
 Route::resource('/pass_money', App\Http\Controllers\PasswordMoneyController::class);
+
 });
 /* admin */
 
@@ -154,4 +155,6 @@ Route::group(['middleware'=>'check'],function () {
     Route::get('/index_buy',[ App\Http\Controllers\ProductShopController::class,'index_buy']);
     Route::resource('/level', App\Http\Controllers\LevelController::class);
     Route::resource('/level_user', App\Http\Controllers\Level_UserController::class);
+    Route::resource('/top_up_amount', App\Http\Controllers\Top_Up_AmountController::class);
+ Route::get('/amount_destroy/{id}', [App\Http\Controllers\Top_Up_AmountController::class,'destroy']); 
 });
