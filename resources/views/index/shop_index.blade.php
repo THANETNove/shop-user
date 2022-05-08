@@ -11,7 +11,7 @@
         <p  class="text">บันทึก</p>
     </div>
     <div class="container">
-        <div class="row row-cols-4">
+        <div class="row">
           <div class="col-12">
             <button type="button" class="btn btn-light bottom1">รอดำเนินการ</button>
           </div>
@@ -20,11 +20,11 @@
       
         <div class="row">
             <div class="box1">
-               <div>
+               <div align="left">
                    <span>วันเดือนปี</span>
                </div>
-               <div class="imgas">
-                    <img src="{{asset('/image/shop-21.png')}}">
+               <div align="left">
+                    <img class="imgas" src="{{asset('/image/A-1.png')}}">
                </div>
 
                 
