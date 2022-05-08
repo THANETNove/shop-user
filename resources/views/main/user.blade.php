@@ -59,7 +59,14 @@
   <br>
 <div class="margin-user">
     <div class="border-th">
-        <p  class="text color2">เป๋าตังของฉัน</p>
+        <p  class="text color2">เป๋าตังของฉัน
+           <span> 
+            @if(Session::has('vip'))
+            {{Session::get('vip')}}
+            @else
+            VIP
+            @endif
+        </span></p>
         <p class="set-money text color2 margin-left1" data-bs-toggle="modal" data-bs-target="#exampleModal" id="add-bonuses">โบนัส </p>
       </div>
       <br>

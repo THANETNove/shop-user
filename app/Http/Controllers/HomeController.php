@@ -28,6 +28,14 @@ class HomeController extends Controller
     {   
   
 
+        $leave = DB::table('users')
+            ->leftJoin('level__users', 'users.id', '=', 'level__users.user')
+            ->where('users.id',Auth::user()->id)  
+            ->get();
+
+        Session::put('vip', $leave[0]->vip);
+
+
         $line = DB::table('link_lines')
                     ->get();
                     $line = $line[0]->link; 

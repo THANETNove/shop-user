@@ -31,7 +31,7 @@
               </i>
             </div>
             <div class="col-3 col-sm-3 col-md-2"> 
-                <i class="fa-solid fa-user navbarFooter" id="user"  value="user" style='font-size:28px'>
+                <i class="fa-solid fa-user navbarFooter" id="user"  value="{{$name}}" style='font-size:28px'>
                   <br>
                   <span class="icon-text">บัญชี</span>
                 </i>
