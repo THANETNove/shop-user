@@ -841,10 +841,7 @@
         width: 60% !important;
         
     }
-    .center-shop {
-        display: flex;
-        justify-content: center;
-    }
+
     .bottom1 {
         border-radius: 20px;
     }
@@ -853,11 +850,11 @@
         background-color: rgb(240, 44, 44)           
     }
     .box1 {
-        width: 1540px;
+        width: 90%;
         height: 180PX;
         background-color: rgb(255, 255, 255);
         margin-top: 30px;
-        margin-left: 20px;
+       margin-left: 5%;
         border-radius: 10px;
     }
     .imgas {
