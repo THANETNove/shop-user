@@ -862,4 +862,17 @@
         width: 120px;
         height: 120px;
     }
+
+/* อันใหม่ */
     
+    .box_buy {
+        position: relative;
+        background-color: #E64A19;
+        height: 1000px;
+    }
+
+    .box_buyIn {
+ 
+        background-color: #fff;
+        height: 500px;
+    }
