@@ -30,9 +30,9 @@ class IndexController extends Controller
 
     }
 
-    public function account()
+    public function topUp()
     {
-        return view ('index.account_user');
+        return view ('top_up.topUp');
     }
 
     /**
