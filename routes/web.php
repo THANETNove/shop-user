@@ -40,35 +40,43 @@ Route::group(['middleware'=>'checkLogin'],function () {
 Route::get('index', function () {
     $line = DB::table('link_lines')
             ->get();
-    $line = $line[0]->link; 
-    Session::put('link', $line);
+    $line1 = $line[0]->link; 
+    if (empty($line)) {
+        Session::put('link', $line1);
+    }
+   
     return view('welcome');
 })->name('/');
 
 
 Route::get('user', function () {
     $line = DB::table('link_lines')
-            ->get();
-    $line = $line[0]->link; 
-    Session::put('link', $line);
+    ->get();
+        $line1 = $line[0]->link; 
+        if (empty($line)) {
+         Session::put('link', $line1);
+        }
 
     return view('welcome');
 })->name('index');
 
 Route::get('/shop', function () {
     $line = DB::table('link_lines')
-            ->get();
-    $line = $line[0]->link; 
-    Session::put('link', $line);
-
+        ->get();
+    $line1 = $line[0]->link; 
+    if (empty($line)) {
+         Session::put('link', $line1);
+    }
     return view('welcome');
 })->name('index');
 
 Route::get('set-up', function () {
     $line = DB::table('link_lines')
          ->get();
-    $line = $line[0]->link; 
-    Session::put('link', $line);
+    $line1 = $line[0]->link; 
+    if (empty($line)) {
+        Session::put('link', $line1);
+    }
     
     return view('welcome');
 })->name('index');

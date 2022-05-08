@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('password_money', function (Blueprint $table) {
             $table->id();
+            $table->string('password_modey')->nullable();
+            $table->string('idUser')->nullable();
             $table->timestamps();
         });
     }

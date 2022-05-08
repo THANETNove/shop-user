@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Auth;
+use App\Models\PasswordMoney;
 
 class PasswordMoneyController extends Controller
 {
@@ -13,7 +16,7 @@ class PasswordMoneyController extends Controller
      */
     public function index()
     {
-        //
+       return view('password_money.index');
     }
 
     /**
@@ -34,7 +37,22 @@ class PasswordMoneyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'password' => 'required|max:6|min:6',
+        ]);
+       
+        $data = new PasswordMoney;
+        $data->password_modey = $request->password;
+        $data->idUser = Auth::user()->id;
+        $data->save();
+
+        $passwordMoney = DB::table('password_money')
+            ->where('idUser',Auth::user()->id)  
+            ->get();
+ 
+    Session::put('pass_money', $passwordMoney[0]->password_money);
+
+        return redirect('/set-up')->with('status',"ตั้ง Password เรียบร้อย");
     }
 
     /**

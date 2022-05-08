@@ -33,14 +33,28 @@ class HomeController extends Controller
             ->where('users.id',Auth::user()->id)  
             ->get();
 
-        Session::put('vip', $leave[0]->vip);
+            if (empty($leave)) {
+                Session::put('vip', $leave[0]->vip);
+            }
+      
+
+    
+        $passwordMoney = DB::table('password_money')
+            ->where('idUser',Auth::user()->id)  
+            ->get();
+            if (empty($passwordMoney)) {
+                Session::put('pass_money', $passwordMoney[0]->password_money);
+            }
+      
 
 
         $line = DB::table('link_lines')
                     ->get();
-                    $line = $line[0]->link; 
-                    Session::put('link', $line);
-
+                    $line1 = $line[0]->link; 
+            if (empty($line)) {
+                Session::put('link', $line1);
+            }
+                 
   
 
       $idStatus =  Auth::user()->is_idadmin;

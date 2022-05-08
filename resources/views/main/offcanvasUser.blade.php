@@ -224,7 +224,14 @@
              </div>
              <br>
              <div class="border-th">
-                    <p  class="text span">รหัสถอนเงิน<span>ตั้งค่าแล้ว &nbsp;&nbsp;&nbsp;</span></p>
+          
+                    <a  href="{{ URL::to('pass_money')}}"  class="text span text-decoration">รหัสถอนเงิน<span>    
+                        @if(Session::has('pass_money'))
+                        ตัวค่าเเล้ว
+                        @else
+                        ยังไม่ตัวค่าเเล้ว
+                        @endif
+                     &nbsp;&nbsp;&nbsp;</span></a>
              </div>
              <br>
              <div class="border-th">
