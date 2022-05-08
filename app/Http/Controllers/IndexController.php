@@ -24,6 +24,7 @@ class IndexController extends Controller
     public function index()
     {
         $user = DB::table('product_shops')
+        ->where('status_user', Auth::user()->id)
         ->get();
         
         return view('index.shop_index',['user'=> $user]);
@@ -64,7 +65,11 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = DB::table('product_shops')
+        ->where('status_user', Auth::user()->id)
+        ->get();
+        
+        return view('index.buy_shop',['user'=> $user]);
     }
 
     /**
