@@ -847,11 +847,11 @@
     }
     .active1 {
         height: 120px;
-        background-color:#E64A19           
+        background-color:#E64A19;       
     }
     .box1 {
         width: 90%;
-        height: 180PX;
+        height: 100%;
         background-color: rgb(255, 255, 255);
         margin-top: 30px;
         margin-left: 5%;
@@ -875,4 +875,18 @@
  
         background-color: #fff;
         height: 500px;
+    }
+    .top112 {
+        padding-top: 20px;
+    }
+    .top113 {
+        margin-top: -15px;
+    }
+    .color1111 {
+        color: #ffffff;
+        background-color:#ff2442
+    }
+    .buy_shop {
+        color: #000000;
+        background-color:rgb(237, 243, 251)
     }

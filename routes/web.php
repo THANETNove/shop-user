@@ -120,7 +120,7 @@ Route::post('/buy', [App\Http\Controllers\BuyOutController::class ,'store'] );
 Route::get('/reserve', [App\Http\Controllers\BuyOutController::class ,'index'] );
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/topping/{name}', [App\Http\Controllers\ToppingController::class, 'index']);
-Route::get('/shop_index', [App\Http\Controllers\IndexController::class, 'index']);
+Route::resource('/shop_index', App\Http\Controllers\IndexController::class,);
 Route::get('/topUp', [App\Http\Controllers\IndexController::class, 'topUp']);
 });
 /* admin */
