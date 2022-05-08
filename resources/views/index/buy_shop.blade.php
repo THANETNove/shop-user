@@ -55,12 +55,14 @@
  
             <nav class="navbar fixed-bottom navbar-light bg-light nav-bottom">
                 <div class="container-fluid">
-                  <a class="navbar-brand" href="#">Fixed bottom</a>
+                    <p class="bold11">฿&nbsp;{{ number_format($user[0]->price,2)}}</p>
+                    <a href="#" type="button" class="btn btn-light color1111" >จ่าย</a>
+                  
                 </div>
-              </nav>
-      
-        <div class="navbar-Footer2">
+            </nav> 
+            <div class="navbar-Footer2">
             @include('layouts.navbarFooter2')
+        </div>
         </div>
     </div>
 </div>

@@ -357,7 +357,7 @@
     .username {
         padding: 50px;
         font-size: 24px;
-        color: #ffff;
+        color: rgb(0, 0, 0);
     }
     
     .avatar {
@@ -703,12 +703,12 @@
     }
     
     .color1 {
-        color: rgb(255, 255, 255) !important;
+        color: rgb(6, 6, 6) !important;
         font-size: 35px;
     }
     
     .color2 {
-        color: rgba(240, 235, 235, 0.82) !important;
+        color: rgba(6, 6, 6, 0.82) !important;
     }
     
     .color55 {
