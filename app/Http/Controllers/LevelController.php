@@ -23,7 +23,7 @@ class LevelController extends Controller
      */
     public function create()
     {
-        //
+        return view('level.create');
     }
 
     /**

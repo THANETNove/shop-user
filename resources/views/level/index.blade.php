@@ -6,7 +6,7 @@
     <div class="container-fluid">
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="btn btn-success"  href="{{route('stock.create')}}">เพิ่ม Level</a> &nbsp; &nbsp; 
+          <a class="btn btn-success"  href="{{route('level.create')}}">เพิ่ม Level</a> &nbsp; &nbsp; 
   
           <a class="btn btn-success"  href="{{route('stock.index')}}">เพิ่ม Level User</a> &nbsp; &nbsp; 
       </div>

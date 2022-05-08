@@ -486,6 +486,7 @@ function locationReload() {
 }
 
 setInterval(() => {
+console.log('asdasdas');
   jQuery.ajax({
       /**
     * !  เเสดงจำนวนเงิน
@@ -497,8 +498,9 @@ setInterval(() => {
           "_token": "{{ csrf_token() }}",
           },
       success: function(result){
-          let money =  `จำนวนเงินคงเหลือ  ${result} ฿`;
-          document.getElementById('modeyUser').innerHTML = money;
+    
+       /*    let money =  `จำนวนเงินคงเหลือ  ${result} ฿`;
+          document.getElementById('modeyUser').innerHTML = money; */
           },
       error: function(result){
       }       
