@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Auth;
+use DB;
+use App\Models\ProductShop;
 
 class IndexController extends Controller
 {
@@ -20,7 +23,11 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view ('index.shop_index');
+        $user = DB::table('product_shops')
+        ->get();
+        
+        return view('index.shop_index',['user'=> $user]);
+
     }
 
     public function account()

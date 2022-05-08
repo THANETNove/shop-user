@@ -14,11 +14,11 @@
               </i>
             </div>
             <div class="col-3 col-sm-3 col-md-2">
-                <a href="{{ URL::to('shop_index')}}" class="text-decoration">
-                  <div class="icon-center ">
-                    <i class="fas fa-bolt icon-wi" style='font-size:32px'></i>
-                    <p class="text-color">คว้า</p>
-                   </div> 
+                <a href="{{ URL::to('shop_index')}}">
+                   <div class="icon-center ">
+                  <i class="fas fa-bolt  icon-wi"  style='font-size:32px'></i>
+                  <p class="text-color">คว้า</p>
+                 </div> 
                 </a>
                
             </div>
