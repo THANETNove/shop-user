@@ -21,7 +21,7 @@ return array(
     'App\\Http\\Controllers\\CommissionController' => $baseDir . '/app/Http/Controllers/CommissionController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\EditAdminController' => $baseDir . '/app/Http/Controllers/EditAdminController.php',
-    'App\\Http\\Controllers\\GetPageController' => $baseDir . '/app/Http/Controllers/GetPageController copy.php',
+    'App\\Http\\Controllers\\GetPageController' => $baseDir . '/app/Http/Controllers/GetPageController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\IndexController' => $baseDir . '/app/Http/Controllers/IndexController.php',
     'App\\Http\\Controllers\\InvitationController' => $baseDir . '/app/Http/Controllers/InvitationController.php',

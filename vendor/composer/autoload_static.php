@@ -530,7 +530,7 @@ class ComposerStaticInitb7c495ddcc9d9d119bcfc4948683dc77
         'App\\Http\\Controllers\\CommissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommissionController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\EditAdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/EditAdminController.php',
-        'App\\Http\\Controllers\\GetPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/GetPageController copy.php',
+        'App\\Http\\Controllers\\GetPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/GetPageController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/IndexController.php',
         'App\\Http\\Controllers\\InvitationController' => __DIR__ . '/../..' . '/app/Http/Controllers/InvitationController.php',

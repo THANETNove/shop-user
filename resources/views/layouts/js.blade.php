@@ -486,7 +486,7 @@ function locationReload() {
 }
 
 setInterval(() => {
-console.log('asdasdas');
+
   jQuery.ajax({
       /**
     * !  เเสดงจำนวนเงิน
