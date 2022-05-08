@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('levels', function (Blueprint $table) {
+        Schema::create('level__users', function (Blueprint $table) {
             $table->id();
-            $table->string('vip')->nullable();    
+            $table->string('vip')->nullable();   
+            $table->string('user')->nullable();     
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('levels');
+        Schema::dropIfExists('level__users');
     }
 };

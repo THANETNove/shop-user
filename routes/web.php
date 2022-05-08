@@ -144,4 +144,5 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/stock', App\Http\Controllers\ProductShopController::class);
     Route::get('/index_buy',[ App\Http\Controllers\ProductShopController::class,'index_buy']);
     Route::resource('/level', App\Http\Controllers\LevelController::class);
+    Route::resource('/level_user', App\Http\Controllers\Level_UserController::class);
 });

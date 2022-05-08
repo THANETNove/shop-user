@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Level;
+use DB;
 
 class LevelController extends Controller
 {
@@ -13,7 +15,9 @@ class LevelController extends Controller
      */
     public function index()
     {
-        return view('level.index');
+        $level = DB::table('levels')  
+        ->get();  
+        return view('level.index',['level' => $level]);
     }
 
     /**
@@ -34,7 +38,13 @@ class LevelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $vip = "VIP " .''.$request->vip;
+        $data = new Level;
+        $data->vip =  $vip;
+        
+        $data->save();
+        return redirect('/level')->with('status',"เพิ่ม  $vip สำเร็จเเล้ว ");
     }
 
     /**
@@ -56,7 +66,10 @@ class LevelController extends Controller
      */
     public function edit($id)
     {
-        //
+        $level = DB::table('levels')
+        ->where('id',$id)
+        ->get(); 
+        return view('level.edit',['level' => $level]);
     }
 
     /**
@@ -68,7 +81,11 @@ class LevelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $data = Level::find($id);
+        $data->vip =  $request->vip;
+        $data->save();
+        return redirect('/level')->with('status'," เเก้ไข   $request->vip สำเร็จเเล้ว ");
     }
 
     /**

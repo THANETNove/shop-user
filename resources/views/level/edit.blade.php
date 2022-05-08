@@ -6,24 +6,23 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">เพิ่มสินค้า</div>
+                    <div class="card-header">แก้ไขข้อมูล</div>
                     <div style="text-align: center">
                         @if (session('status'))
                             <strong style="color: #0d6efd">{{ session('status') }}</strong>
                         @endif
                     </div>
                     <div class="card-body">
-                        
-                        <form  method="post"  action="{{route('level.store' )}}"  enctype="multipart/form-data">
-                            
-                            @csrf     
+                        <form  method="post"  action="{{route('level.update',$level[0]->id)}}" enctype="multipart/form-data">
+                            @method('PUT')
+                            @csrf
                             <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('ระดับ VIP') }}</label>
-                                 <div class="col-md-6">
-                                    <input id="store" type="text" 
-                                    class="form-control @error('store') is-invalid @enderror" name="vip"
-                                    value="" required placeholder="1"  autofocus>     
-                                </div>
+                                <div class="col-md-6">
+                                   <input id="store" type="text" 
+                                   class="form-control @error('store') is-invalid @enderror" name="vip"
+                                   value="{{$level[0]->vip}}" required placeholder="1"  autofocus>     
+                               </div>
                             </div> 
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4" id="submit_from">
