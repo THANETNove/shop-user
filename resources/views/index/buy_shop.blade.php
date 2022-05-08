@@ -38,7 +38,7 @@
                 <br clear=left>
             </div>
         </div>
-        <div class="box-2">
+        <div class="box-2 margin-bottom2">
             <p class="span">จำนวนเงินทั้งหมด  <span>฿&nbsp;{{ number_format($user[0]->price,2)}} </span> 
                 
             </p>
@@ -52,6 +52,13 @@
                 {{ $user[0]->payment_status}}
             </p>
         </div>
+ 
+            <nav class="navbar fixed-bottom navbar-light bg-light nav-bottom">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Fixed bottom</a>
+                </div>
+              </nav>
+      
         <div class="navbar-Footer2">
             @include('layouts.navbarFooter2')
         </div>

@@ -169,9 +169,8 @@ class ProductShopController extends Controller
         $data->percent = $request->percent;
         $data->income = $request->income;
 
-        
-        $data->save();
 
+        $data->save();
         return redirect('/stock')->with('status',"ข้อมูลเรียบร้อย");
     }
 
