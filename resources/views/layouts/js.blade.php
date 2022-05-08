@@ -520,8 +520,8 @@ jQuery.ajax({
           "_token": "{{ csrf_token() }}",
           },
       success: function(result){
-       
-            if (result != "0") {
+            console.log(result);
+            if (result[0] != "0") {
                 let bonus = [];
                 for (let i = 0; i < result.length; i++) {
                    
@@ -565,6 +565,7 @@ function addBonuses(e) {
             id: e,
             },
         success: function(result){
+
             $('#add-bonuses').trigger('click');
           /*   document.getElementById('bonuses-box').innerHTML = bonus; */
             },

@@ -267,18 +267,18 @@ public function getBonuses()
 
     if ($usersMoney != "0") {
        $users_bonus = DB::table('bonuses')
-       ->where('percent',Auth::user()->id)
-       ->get();
+            ->where('percent',Auth::user()->id)
+            ->get();
 
-   $usersMoney1 = DB::table('add_money_users')
-       ->where('id_user',Auth::user()->id)
-       ->whereNull('status_bonus')
-       ->get();
-  $usersMoney1 =  $usersMoney1[0]->money;
+        $usersMoney1 = DB::table('add_money_users')
+            ->where('id_user',Auth::user()->id)
+            ->whereNull('status_bonus')
+            ->get();
+        $usersMoney1 =  $usersMoney1[0]->money;
 
     }else{
-       $users_bonus = 0;
-       $usersMoney1 = 0;
+       $users_bonus = "0";
+       $usersMoney1 = "0";
     }
 
 return response()->json([$users_bonus,$usersMoney1]);
