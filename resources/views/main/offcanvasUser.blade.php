@@ -90,9 +90,10 @@
                         <div class="col-auto col-sm-auto col-md-4">
                             <p class="font-size top">zipmax789 (ฝ่ายบริการ)</p>
                         </div>
-                        <div class="col-auto col-sm-auto col-md-4">
-                            <button type="button" class="btn btn-outline-light  top contact ">ติดต่อ</button>
-                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <button type="button" class="btn btn-outline  top contact ">ติดต่อ</button>
+                            </div>    
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 serve ">
                         ทางเรายินดีให้บริการตลอด 24 ชั่วโมง

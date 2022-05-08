@@ -76,7 +76,7 @@
         .center-shop {
             position: relative;
             text-align: center;
-            color: #fff;
+            color: #000000;
             font-size: 40px;
         }
         .img-shop-tb-2 {
@@ -211,20 +211,20 @@
     }
     
     .img-shop {
-        background-color: #b34c11bf;
+        background-color: rgb(237, 243, 251);
         max-width: 100%;
         height: 60px;
         max-width: 100%;
-        border-color: #b34c11bf;
+        border-color: #ffffff;
     }
     
     .img-report {
-        background-color: #b34c11bf;
+        background-color: rgb(237, 243, 251);;
         max-width: 100%;
         height: 60px;
         max-width: 100%;
-        border-color: #b34c11bf;
-    }
+        border-color: #ffffff;
+    }s
     
     .img-shop td {
         padding: 10px 0px 10px 5%;
@@ -243,7 +243,7 @@
         margin-bottom: 1rem;
         color: #212529;
         vertical-align: top;
-        border-color: #b34c11bf;
+        border-color: #ffffffbf;
     }
     
     .center {
@@ -255,7 +255,7 @@
         display: flex;
         justify-content: space-between;
         margin-right: 50px;
-        color: #ffff;
+        color: #000000;
     }
     
     .income-baht {
@@ -299,7 +299,7 @@
         top: 0;
         right: 0;
         width: 100%;
-        border-left: 1px solid rgba(0, 0, 0, .2);
+        border-left: 1px solid rgb(0, 0, 0);
         transform: translateX(100%);
     }
     
@@ -307,7 +307,7 @@
         width: 100%;
         height: 70px;
         padding: 10px;
-        background-color: #e78e46;
+        background-color: rgb(237, 243, 251);
     }
     
     .text-head {
@@ -345,7 +345,7 @@
     }
     
     .colorText {
-        color: #fff;
+        color: #E64A19;
     }
     
     .set {
@@ -357,7 +357,7 @@
     .username {
         padding: 50px;
         font-size: 24px;
-        color: rgb(0, 0, 0);
+        color: #000000;
     }
     
     .avatar {
@@ -384,11 +384,11 @@
     
     .text {
         font-size: 24px;
-        color: #ffff !important;
+        color: #000000 !important;
     }
     
     .color-fff {
-        color: #ffff !important;
+        color: #000000 !important;
     }
     
     .span {
@@ -426,7 +426,7 @@
     }
     
     .offcanvas-color {
-        background-color: #e96a03;
+        background-color: #ffff;
     }
     
     .margin-user {
@@ -450,7 +450,7 @@
     
     .text-table {
         font-size: 14px !important;
-        color: #fff;
+        color: #000000;
     }
     
     .set-back {
@@ -462,16 +462,16 @@
     .text-code {
         margin-top: 6px;
         font-size: 18px;
-        color: #ffff !important;
+        color: #000000 !important;
     }
     
     .text-offcanvas {
         font-size: 18px;
-        color: #ffff !important;
+        color: #000000 !important;
     }
     
     .offcanvas-bottom {
-        background-color: #b34c11bf;
+        background-color:rgb(237 243 251);
         height: 400px;
     }
     
@@ -493,7 +493,7 @@
         width: 100%;
         border-radius: 25px;
         border: rgb(155, 30, 20);
-        background-color: #b34c11bf;
+        background-color: #f9fafb;
     }
     
     .border-red {
@@ -502,31 +502,31 @@
         height: 50px;
         width: 100%;
         border-radius: 25px;
-        border: #b34c11bf;
-        background-color: #b34c11bf;
-        color: #fff;
+        border: #c4c4c4;
+        background-color: #ffffff;
+        color: #000000;
     }
     
     .data-text {
         margin: 30px 0px 0px 0px;
         font-size: 18px;
-        color: #fff;
+        color: #000000;
     }
     
     .date {
         font-size: 18px;
-        color: #fff;
+        color: #000000;
     }
     
     .radio {
         margin: 30px 0px 0px 0px;
         font-size: 16px;
-        color: #fff;
+        color: #000000;
     }
     
     .font-16 {
         font-size: 16px !important;
-        color: #979799 !important;
+        color: #000000 !important;
     }
     
     .font-secc-16 {
@@ -541,12 +541,12 @@
     
     .font-size {
         font-size: 16px;
-        color: #fff !important;
+        color: #000000 !important;
     }
     
     .font-size-18 {
         font-size: 18px !important;
-        color: #fff !important;
+        color: #000000 !important;
     }
     
     .font-fff {
@@ -561,14 +561,14 @@
     }
     
     .background-color {
-        background-color: #b34c11bf;
+        background-color: rgb(237 243 251);;
         border: #b34c11bf;
         border-bottom: 1px solid #b34c11bf;
     }
     
     .modal-header2 {
         margin-top: 20px;
-        color: #fff;
+        color: #000000;
     }
     
     .modal-footer2 {
@@ -587,7 +587,7 @@
         text-align: center;
         width: 100%;
         height: 60px;
-        background-color: #865414;
+        background-color: rgb(237, 243, 251);
     }
     
     .inpput-text {
@@ -606,7 +606,7 @@
     }
     
     .text-decoration:hover {
-        color: #fff !important;
+        color: #000000 !important;
     }
     
     .imge-qrcode {
@@ -625,14 +625,14 @@
     
     .font-size-14 {
         font-size: 14px;
-        color: #fff;
+        color: #000000;
     }
     
     .bgm {
         width: 100%;
         height: 150px;
         border-radius: 20px;
-        background-color: #e96a03;
+        background-color: rgb(237, 243, 251);
         padding-top: 20px;
     }
     
@@ -655,10 +655,10 @@
         margin-top: 5px;
         padding-top: 5px;
         height: 35px;
-        color: #fff;
+        color: #000000;
         font-size: 16px;
         margin-left: 20px;
-        background-color: #e96a03;
+        background-color: rgb(237, 243, 251);
         border-radius: 30px;
     }
     
@@ -696,19 +696,19 @@
     }
     
     .input-back {
-        background-color: #e96a03;
+        background-color:rgb(255, 255, 255);;
         color: #fff;
-        border: #e96a03;
-        border-bottom: 1px solid #e96a03;
+        border: rgb(255, 255, 255);;
+        border-bottom: 1px solid rgb(255, 255, 255);;
     }
     
     .color1 {
-        color: rgb(6, 6, 6) !important;
+        color: #000000 !important;
         font-size: 35px;
     }
     
     .color2 {
-        color: rgba(6, 6, 6, 0.82) !important;
+        color: #000000 !important;
     }
     
     .color55 {
@@ -754,8 +754,8 @@
     }
     
     .overflowTest-ll {
-        background: #b34c11bf;
-        color: white;
+        background: #dee2e6;
+        color: #000000;
         padding: 15px;
         width: 100%;
         height: 350px;
@@ -802,8 +802,8 @@
     }
     
     .bgm-color {
-        background-color: #e96a03;
-        color: #fff;
+        background-color: rgb(237 243 251);;
+        color: #000000;
         font-size: 20px;
     }
     
@@ -834,7 +834,7 @@
     
     .text-color {
         padding-top: 23px;
-        color: #E64A19 !important;
+        color: #000000 !important;
     }
     .width-height {
         margin-top: 30px;
@@ -937,9 +937,32 @@
         padding-bottom: 100px;
     }
     .margin-bottom2 {
-        margin-bottom: 40px;
+        margin-bottom: 50px
     } 
     .nav-bottom {
         margin-bottom: 70px;
         z-index: 0;
+    }
+    .btn-outline-light {
+        color: #000000;
+        border-color: #000000;
+    }
+    .btn-outline-light:hover {
+        color: #000000;
+        border-color: #000000;
+    }
+    .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+        color: #000000;
+        background-color: #ffffff;
+        border-color: #000000 #000000 #000000;
+    }
+    .btn-success {
+        color: #000000;
+        background-color: rgb(237 243 251);
+        border-color: #000000;
+    }
+    .btn-success:hover {
+        color: #000000;
+        background-color: rgb(237 243 251);
+        border-color: #000000;
     }
