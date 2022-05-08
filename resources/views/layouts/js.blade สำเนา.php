@@ -497,7 +497,7 @@ setInterval(() => {
           "_token": "{{ csrf_token() }}",
           },
       success: function(result){
-          let money =  `จำนวนเงินคงเหลือ  ${result} ฿`;
+          let money =  `จำนวนเงินคงเหลือ  ${result[0].money} ฿`;
           document.getElementById('modeyUser').innerHTML = money;
           },
       error: function(result){
@@ -523,9 +523,10 @@ jQuery.ajax({
        
             if (result != "0") {
                 let bonus = [];
-                for (let i = 0; i < result.length; i++) {
-                   
-                    if (result[1] >= result[0][i].percentUser) {
+                for (let i = 0; i < result[0].length; i++) {
+                        console.log(result);
+
+                        if (result[1] >= result[0][i].percentUser) {
                             bonus +=  `
                                 <div class="box1 head-center head-top">
                                     <h6>เติม${result[0][i].percentUser} ได้รับโบนัส${result[0][i].bonus}</h6>

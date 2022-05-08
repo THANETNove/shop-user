@@ -9,11 +9,6 @@
                     <div class="card-header">แก้ไขข้อมูล  &nbsp;&nbsp;&nbsp;
                         การคูณโบนัสที่เลือกไว้
                         &nbsp;&nbsp;&nbsp;
-                        @if($user[0]->percent === '1')
-                                เลือกเป็นเปอร์เช็น
-                        @else
-                                เลือกเป็นเงินบาท
-                        @endif
                     </div>
                     <div style="text-align: center">
                         @if (session('status'))
@@ -28,24 +23,33 @@
 
                          
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('คุณเปอร์เช็น') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('จำนวนขันต่ำที่เติม') }}</label>
+                                 <div class="col-md-6">
+                                    <input id="bonus" type="number" min="0"
+                                    class="form-control @error('bonus') is-invalid @enderror" name="percentUser"
+                                    value="{{$bonus[0]->percentUser}}" required placeholder="จำนวน" autofocus>
+                                    
+                                </div>
+                            </div>     
+                            <div class="row mb-3">
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('จำนวนที่จะได้') }}</label>
                                  <div class="col-md-6">
                                     <input id="bonus" type="number" min="0"
                                     class="form-control @error('bonus') is-invalid @enderror" name="bonus"
-                                    value="{{$user[0]->bonus}}" required placeholder="รอบผลทาย" autofocus>     
+                                    value="{{$bonus[0]->bonus}}" required placeholder="จำนวน" autofocus>
+                                    
                                 </div>
-                            </div> 
-
-                             <div class="row mb-3">
+                            </div>               
+                            <div class="row mb-3">
                                 <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('โบนัส') }}</label>
                                  <div class="col-md-6">
                                     <select class="form-select" aria-label="Default select example" name="percent">
-                                        
-                                        <option value="%">เป็นเปอร์เช็น</option>
-                                        <option value="บาท">เป็นเงิน</option>
+                                        @foreach ($user as $line)
+                                        <option value="{{ $line->id }}">{{ $line->username }} </option>
+                                        @endforeach
                                       </select>
                                 </div>
-                            </div> 
+                            </div>    
                                                       
                             <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4" id="submit_from">

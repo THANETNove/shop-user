@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('bonus');
             $table->string('percent');
+            $table->string('percentUser');
             $table->timestamps();
         });
     }

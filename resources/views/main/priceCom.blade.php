@@ -20,7 +20,8 @@
     <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">จำนวน</th>
+          <th scope="col">จำนวนขันต่ำที่เติม</th>
+          <th scope="col">จำนวนโบนัสที่ได้</th>
           <th scope="col">โบนัส</th>
           
         </tr>
@@ -36,10 +37,13 @@
                        {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                     </td>
                     <td class="col-3 col-sm-3 col-md-2">
+                      {{ $user->percentUser }} 
+                    </td>
+                    <td class="col-3 col-sm-3 col-md-2">
                       {{ $user->bonus }} 
                     </td>
                     <td class="col-3 col-sm-3 col-md-2 ">
-                      {{ $user->percent }}
+                      {{ $user->username }}
                       
                     </td>
                 

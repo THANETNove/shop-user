@@ -249,8 +249,6 @@ public function getMoney()
     $usersMoney = DB::table('users')
             ->where('id',Auth::user()->id)
             ->get();
-            $usersMoney =  number_format($usersMoney[0]->money,2);
-           
         return response()->json($usersMoney);
 }
 
@@ -259,35 +257,36 @@ public function getBonuses()
     
 
     $usersMoney = DB::table('add_money_users')
-    ->where('id_user',Auth::user()->id)
-    ->whereNull('status_bonus')
-    ->count();
+         ->where('id_user',Auth::user()->id)
+         ->whereNull('status_bonus')
+         ->count();
 
 
 
-    if ($usersMoney != "0") {
-       $users_bonus = DB::table('bonuses')
-       ->where('percent',Auth::user()->id)
-       ->get();
+         if ($usersMoney != "0") {
+            $users_bonus = DB::table('bonuses')
+            ->where('percent',Auth::user()->id)
+            ->get();
 
-   $usersMoney1 = DB::table('add_money_users')
-       ->where('id_user',Auth::user()->id)
-       ->whereNull('status_bonus')
-       ->get();
-  $usersMoney1 =  $usersMoney1[0]->money;
+        $usersMoney1 = DB::table('add_money_users')
+            ->where('id_user',Auth::user()->id)
+            ->whereNull('status_bonus')
+            ->get();
+       $usersMoney1 =  $usersMoney1[0]->money;
 
-    }else{
-       $users_bonus = 0;
-       $usersMoney1 = 0;
-    }
+         }else{
+            $users_bonus = 0;
+            $usersMoney1 = 0;
+         }
 
-return response()->json([$users_bonus,$usersMoney1]);
+    return response()->json([$users_bonus,$usersMoney1]);
 }
 
 
  public function addBonuses(Request $request)
 {
-        
+
+
     $id = $request->id;
 
     /* โบนัส */

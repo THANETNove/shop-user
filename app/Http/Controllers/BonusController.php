@@ -17,10 +17,12 @@ class BonusController extends Controller
      */
     public function index()
     {
-        $user = DB::table('bonuses')
-        ->count();
+      
+        $user = DB::table('users')
+        ->where('is_idadmin' , "0")
+        ->get();
         
-        return view('main.bonus',);
+        return view('main.bonus', ['user' =>$user]);
     
 
     }
@@ -47,6 +49,7 @@ class BonusController extends Controller
         $data = new Bonus;
         $data->bonus = $request->bonus;
         $data->percent = $request->percent;
+        $data->percentUser = $request->percentUser;
        
         $data->save();
 
@@ -73,11 +76,15 @@ class BonusController extends Controller
     public function edit($id)
     {
         
-        $user = DB::table('bonuses')
+        $bonuses = DB::table('bonuses')
         ->where('id',$id)
         ->get(); 
 
-        return view('main.editBonus' ,['user'=> $user]);
+        $user = DB::table('users')
+        ->where('is_idadmin' , "0")
+        ->get();
+
+        return view('main.editBonus' ,['bonus'=> $bonuses ,"user"=>$user]);
     }
 
     /**
@@ -93,6 +100,7 @@ class BonusController extends Controller
         $data = Bonus::find($id);
         $data->bonus = $request->bonus;
         $data->percent = $request->percent;
+        $data->percentUser = $request->percentUser;
         $data->save();
         
 
@@ -124,9 +132,11 @@ class BonusController extends Controller
     public function priceCom()
     {
         
-        $user = DB::table('bonuses')
+        $user = DB::table('users')
+        ->rightJoin('bonuses', 'users.id', '=', 'bonuses.percent')
+        ->select('users.username', 'bonuses.*')
         ->get();
-        
+  
         return view('main.priceCom',['user'=>$user]);
     }
 
