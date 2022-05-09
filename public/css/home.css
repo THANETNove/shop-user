@@ -1050,17 +1050,29 @@
         background-color:#E64A19;
     }
     .box-3 {
-        width: 80%;
-        height: 100%;
         background-color: rgb(154, 164, 248);
-        padding-top: 5px;
+        padding-top: 10px;
         margin-top: 100px;
-        margin-left: 10%;
     }
     .box-4 {
         margin-top: 20px;
         height: 280px;
         margin-left: 10px;
         margin-right: 20px;
+    }
+    .bank1 {
+        margin-top: -50px;
+    }
+    .bank2 {
+        text-align: center !important;
+    }
+    .bank3 {
+        line-height: 50px;
+        font-size: 20px;
+        color: #6b6b6b;
+        background: #efefef;
+        border-radius: 8px;
+        margin-top: 10px;
+        font-weight: bold;
     }
 
