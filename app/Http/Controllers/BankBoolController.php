@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
-use App\Models\ฺBankBook;
+use App\Models\BankBook;
 
 class BankBoolController extends Controller
 {
@@ -17,10 +17,11 @@ class BankBoolController extends Controller
      */
     public function index()
     {
-        return view('index.bank_book')
-        /* $user = DB::table('bank_books')
-        ->where('status_user', Auth::user()->id)
+        $bank_books = DB::table('bank_books')
         ->get();
+
+        return view('bankbook.index', ['bank_books' => $bank_books])
+        /* 
         return view('index.bank_book',['user'=> $user]) */;
     }
 
@@ -31,7 +32,7 @@ class BankBoolController extends Controller
      */
     public function create()
     {
-        //
+        return view('bankbook.create');
     }
 
     /**
@@ -42,7 +43,15 @@ class BankBoolController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+ 
+        $data = new BankBook;
+        $data->book_bank =  $request->book_bank;
+        $data->name_bank =  $request->name_bank;
+        $data->number_bank =  $request->number_bank;
+        $data->save();
+        return redirect('/bank_book')->with('status',"เพิ่ม บัญชี $request->book_bank สำเร็จเเล้ว ");
     }
 
     /**
@@ -64,7 +73,11 @@ class BankBoolController extends Controller
      */
     public function edit($id)
     {
-        //
+        $bank_books = DB::table('bank_books')
+        ->where('id', $id)
+        ->get();
+
+        return view('bankbook.edit', ['bank_books' => $bank_books]);
     }
 
     /**
@@ -76,7 +89,12 @@ class BankBoolController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = BankBook::find($id);
+        $data->book_bank =  $request->book_bank;
+        $data->name_bank =  $request->name_bank;
+        $data->number_bank =  $request->number_bank;
+        $data->save();
+        return redirect('/bank_book')->with('status',"เเก้ไข บัญชี $request->book_bank สำเร็จเเล้ว ");
     }
 
     /**
