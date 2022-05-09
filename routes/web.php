@@ -132,7 +132,7 @@ Route::resource('/shop_index', App\Http\Controllers\IndexController::class,);
 Route::get('/topUp', [App\Http\Controllers\IndexController::class, 'topUp']);
 Route::get('/buyShop/{id}', [App\Http\Controllers\IndexController::class, 'buyShop']);
 Route::resource('/pass_money', App\Http\Controllers\PasswordMoneyController::class);
-
+Route::get('/save_about/{id}', [App\Http\Controllers\IndexController::class, 'save']);
 });
 /* admin */
 

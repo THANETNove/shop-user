@@ -34,8 +34,28 @@ class IndexController extends Controller
 
     public function topUp()
     {
-        return view ('top_up.topUp');
+        $amounts = DB::table('top__up__amounts')
+        ->get();
+        return view ('top_up.topUp',['amounts'=>$amounts]);
     }
+    
+    public function save($id)
+    {
+        $withdrawMoney = $id;
+        $data = new AddMoneyUsers;
+        $data->id_user =  Auth::user()->id;
+        $data->money= $withdrawMoney;
+        $data->bonus	= null;
+        $data->status_bonus = null;
+        $data->save();
+
+       
+ 
+     
+        return view ('index.up_Image',['idAmounts'=> $data->id]); 
+     
+    }
+
 
     /**
      * Show the form for creating a new resource.

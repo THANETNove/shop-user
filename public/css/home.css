@@ -878,9 +878,10 @@
     }
 
     .box_buyIn {
- 
+        margin-top: 30px;
         background-color: #fff;
-        height: 500px;
+        height: 650px;
+        border-radius: 20px;
     }
     .top112 {
         padding-top: 20px;
@@ -984,17 +985,59 @@
         display: inline-block;
         margin-left: -50px;
     }
-    /* .box-3{
-        width: 95%;
-        height: 350px;
-        background-color: rgb(161, 190, 210);
-        margin-top: 150px;
-        margin-left: 4%; 
+    .recharge1  {
+        width: 30%;
+        height: 48px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 18px;
+        color: #6b6b6b;
+        background: #efefef;
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-left: 10px;
+        font-weight: bold;
     }
-    .box-4{
-        width: 94%;
-        height: 280px;
-        background-color: rgb(244, 244, 245);
-        padding-top: 20px;
-        margin-left: 3%;
-    } */
+    .recharge2  {
+        width: 90%;
+        height: 48px;
+        background: #efefef;
+        line-height: 30px;
+        font-size: 18px;
+        color: #6b6b6b;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 30px;
+    }
+    .recharge3  {
+        width: 90%;
+        height: 48px;
+        background: #E64A19;
+        line-height: 30px;
+        font-size: 18px;
+        color: #efefef;
+        text-align: center;
+        border-radius: 20px;
+        margin-top: 30px;
+    }
+    .money1  {
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 50px;
+        margin-right: 20%;
+    }
+    .money2 {
+        margin-left: 50px;
+    }
+    .money3 {
+        height: 150px;
+        background-color:#E64A19; 
+    }
+    .money4 {
+        font-weight: bold;
+        font-size: 16px;
+        margin-right: 70%;
+    }
+    .btn-light:hover {
+        background-color:#E64A19;
+    }
