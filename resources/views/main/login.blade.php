@@ -32,15 +32,14 @@
                                             @csrf
                                             <div class="row mb-3">
                                                 <div class="col-md-12 " >
-                                                    <input id="username" type="text" class="form-control color55 color56 contact @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
-                    
+                                                    <input id="username" type="text" class="form-control contact @error('username') is-invalid @enderror" name="username" value="{{ old('email') }}" required placeholder="กรุณากรอกชื่อผู้ใช้" autofocus>
                                                     <span id="messageError"    class="colorText"></span>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                     
                                                 <div class="col-md-12">
-                                                    <input id="password" type="password" class="form-control color55 color56 contact
+                                                    <input id="password" type="password" class="form-control  contact
                                                      @error('password') is-invalid @enderror"  name="password" required placeholder="กรุณากรอกpassword" autocomplete="current-password">
                     
                                                     @error('password')

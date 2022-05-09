@@ -587,8 +587,14 @@
         text-align: center;
         width: 100%;
         height: 60px;
+        color: #000000;
         background-color: rgb(237, 243, 251);
     }
+
+     input:focus {
+        color: #000000;
+        background-color: rgb(237, 243, 251);
+     } 
     
     .inpput-text {
         width: 100%;
@@ -710,10 +716,10 @@
     .color2 {
         color: #000000 !important;
     }
-    
+
     .color55 {
         background-color: rgb(237 243 251);
-        color: rgb(253, 251, 251);
+        color: #000000;
         border: rgb(237 243 251);
     }
     
