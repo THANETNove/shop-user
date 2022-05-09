@@ -48,7 +48,34 @@ class addMonetUserController extends Controller
      */
     public function show($id)
     {
-        dd($request->all());
+/** 
+ * !    อนุมัติการเติมเงิน
+  */
+        $add_money = DB::table('add_money_users')
+                ->where('id',$id)                
+                ->get();
+
+        $money = $add_money[0]->money;
+        $id_user = $add_money[0]->id_user;  
+
+        $data = AddMoneyUsers::find($id);
+        $data->status_upImage	= "1";
+        $data->save();
+        
+        $users = DB::table('users')
+                ->where('id',$id_user)                
+                ->get();
+        $moneyUser = $users[0]->money;
+        $username = $users[0]->username;
+
+        $moneyPlus   =  $moneyUser + $money;
+        $data = User::find($id_user);
+        $data->money = $moneyPlus;
+        $data->save();
+
+
+        return redirect('/money-user')->with('status',"เติมเงิน ให้ $username  จำนวน $money  บาท เเล้ว");
+
     }
 
     /**
@@ -71,6 +98,8 @@ class addMonetUserController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
       $users = DB::table('users')
                     ->where('id',$id)                
                     ->get();

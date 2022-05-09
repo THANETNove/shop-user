@@ -147,7 +147,7 @@ class GetPageController extends Controller
         $user = DB::table('users')
         ->rightJoin('add_money_users', 'users.id', '=', 'add_money_users.id_user')
         ->leftJoin('up__image__moueys', 'add_money_users.id', '=', 'up__image__moueys.idMoney')
-        ->select('users.username', 'add_money_users.*', 'up__image__moueys.*')
+        ->select('users.username', 'up__image__moueys.*', 'add_money_users.*')
         ->whereNull('status_upImage')
         ->get();
         return view('main.money_user',['user' => $user]);
