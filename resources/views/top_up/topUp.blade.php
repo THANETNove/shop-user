@@ -49,7 +49,7 @@
             $(".amount").click(function(){
                 let id =  $(this).attr('id');
                 let text = `<p>฿  ${id}</p>`;
-                let a = ` <a href="{{ URL::to('save_about/${id}')}}" class="btn btn-light recharge3" >ยืนยัน</a>`;
+                let a = ` <a href="{{ URL::to('save_about/${id}')}}" class="btn btn-light recharge3" >ยืนยัน </a>`;
                 document.getElementById('amount-text').innerHTML = text;
                 document.getElementById('save-amount').innerHTML = a;
                 console.log ( id );

@@ -8,6 +8,7 @@ use Auth;
 use DB;
 use App\Models\ProductShop;
 use App\Models\User;
+use App\Models\AddMoneyUsers;
 
 class IndexController extends Controller
 {

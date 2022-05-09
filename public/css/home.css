@@ -986,7 +986,7 @@
         margin-left: -50px;
     }
     .recharge1  {
-        width: 30%;
+        width: 28%;
         height: 48px;
         line-height: 30px;
         text-align: center;
@@ -1027,7 +1027,7 @@
         margin-right: 20%;
     }
     .money2 {
-        margin-left: 50px;
+        margin-left: 5px;
     }
     .money3 {
         height: 150px;
@@ -1035,9 +1035,14 @@
     }
     .money4 {
         font-weight: bold;
-        font-size: 16px;
-        margin-right: 70%;
+        font-size: 15px;
+        margin-right: 75%;
     }
     .btn-light:hover {
+        background: #efefef;
+        color: #6b6b6b;
+    }
+    .btn-light:focus {
         background-color:#E64A19;
     }
+   
