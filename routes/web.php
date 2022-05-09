@@ -156,5 +156,6 @@ Route::group(['middleware'=>'check'],function () {
     Route::resource('/level', App\Http\Controllers\LevelController::class);
     Route::resource('/level_user', App\Http\Controllers\Level_UserController::class);
     Route::resource('/top_up_amount', App\Http\Controllers\Top_Up_AmountController::class);
- Route::get('/amount_destroy/{id}', [App\Http\Controllers\Top_Up_AmountController::class,'destroy']); 
+    Route::get('/amount_destroy/{id}', [App\Http\Controllers\Top_Up_AmountController::class,'destroy']);
+    Route::resource('/bank_book', App\Http\Controllers\BankBoolController::class); 
 });

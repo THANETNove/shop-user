@@ -118,6 +118,9 @@
                       <li class="nav-item">
                         <a class="nav-link" href="{{ URL::to('top_up_amount')}}"  >จำนวนเงินเติม</a>
                      </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('bank_book')}}"  >เพิ่นบํญชีธนาคาร</a>
+                     </li> 
                      @endif
                             
                       </ul>
