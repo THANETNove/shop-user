@@ -975,6 +975,15 @@
     .btn-primary {
         color: #000000;
     }
+    .positionCenter {
+        position: relative;
+    }
+    .statusMessge {
+        position: absolute;
+        text-align: center;
+        display: inline-block;
+        margin-left: -50px;
+    }
     /* .box-3{
         width: 95%;
         height: 350px;

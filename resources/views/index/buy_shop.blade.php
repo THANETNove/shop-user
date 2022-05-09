@@ -16,6 +16,9 @@
     <div class="box-shopBody">
         <div class="box-2">
             <p>อยู่ระหว่างการสั่งชื้อ</p>
+            @if (session('status'))
+                <strong style="color: #fd0d0d">{{ session('status') }}</strong>
+            @endif
         </div>
         <div class="box-2">
             <p>รอผู้ชื้อยืนยัน คำสั่งชื้อของคุณจะถุกวาง<br>NaN:NaN:ไปแช่แข็ง</p>
@@ -56,7 +59,7 @@
             <nav class="navbar fixed-bottom navbar-light bg-light nav-bottom">
                 <div class="container-fluid">
                     <p class="bold11">฿&nbsp;{{ number_format($user[0]->price,2)}}</p>
-                    <a href="#" type="button" class="btn btn-light color1111" >จ่าย</a>
+                    <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111" >จ่าย</a>
                   
                 </div>
             </nav> 

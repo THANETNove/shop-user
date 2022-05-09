@@ -130,6 +130,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/topping/{name}', [App\Http\Controllers\ToppingController::class, 'index']);
 Route::resource('/shop_index', App\Http\Controllers\IndexController::class,);
 Route::get('/topUp', [App\Http\Controllers\IndexController::class, 'topUp']);
+Route::get('/buyShop/{id}', [App\Http\Controllers\IndexController::class, 'buyShop']);
 Route::resource('/pass_money', App\Http\Controllers\PasswordMoneyController::class);
 
 });

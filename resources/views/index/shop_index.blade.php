@@ -1,8 +1,15 @@
 @extends('layouts.home')
 @section('content')
     <div class="head logo-center active1">
-        <div class="set-head ">
-            <p class="text">บันทึก</p>
+        <div class="positionCenter">
+            <div class="set-head ">
+                <p class="text">บันทึก</p>
+            </div>
+            <div class="statusMessge">
+                @if (session('status'))
+                    <strong style="color: #ffffff">{{ session('status') }}</strong>
+                @endif
+            </div>
         </div>
         <div class="col-12 col-md-12 col=lg-12" align="left">
             <button type="button" class="btn btn-light bottom1">รอดำเนินการ</button>

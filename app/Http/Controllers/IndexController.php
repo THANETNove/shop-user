@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 use App\Models\ProductShop;
+use App\Models\User;
 
 class IndexController extends Controller
 {
@@ -25,6 +26,7 @@ class IndexController extends Controller
     {
         $user = DB::table('product_shops')
         ->where('status_user', Auth::user()->id)
+        ->whereNull('payment_status')
         ->get();
         return view('index.shop_index',['user'=> $user]);
 
@@ -43,6 +45,48 @@ class IndexController extends Controller
     public function create()
     {
         //
+    }
+
+    public function buyShop($id)
+    {
+
+        $product_shops = DB::table('product_shops')
+            ->where('id', $id)
+            ->get();
+         $price = $product_shops[0]->price;
+         $income = $product_shops[0]->income;
+         $Product_code = $product_shops[0]->Product_code;
+
+        $user = DB::table('users')
+        ->where('id', Auth::user()->id)
+        ->get();
+        $money = $user[0]->money;
+
+
+        if ($money >=  $price) {
+
+            /* ลบ จำนวนการเงิน ที่ชื้อไป */
+            $moneyAll  = $money - $price;
+
+            $moneyAll =   $moneyAll+$income;
+
+            $user = User::find(Auth::user()->id);
+            $user->money = $moneyAll;
+            $user->save();
+
+
+            $data = ProductShop::find($id);
+            $data->payment_status = "ซื้อเเล้ว";
+            $data->save();
+
+        return redirect('/shop_index')->with('status'," ซื้อ สินค้า รหัส $Product_code สำเร็จเเล้ว ");
+
+        }else {
+            return back()->with('status',"จำนวนเงินไม่พอ กรุณาเติมเงินก่อน");
+        }
+
+
+        dd($product_shops);
     }
 
     /**
@@ -67,6 +111,8 @@ class IndexController extends Controller
         $user = DB::table('product_shops')
         ->where('id', $id)
         ->get();
+
+      
         
         return view('index.buy_shop',['user'=> $user]);
     }
