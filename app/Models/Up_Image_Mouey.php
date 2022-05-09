@@ -5,12 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Top_Up_Amount extends Model
+class Up_Image_Mouey extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'idMoney',
-        'idUser',
-        'up_image',
+        'number_count',
+        'number_count',
+        'number_count',
     ];
+    
 }
