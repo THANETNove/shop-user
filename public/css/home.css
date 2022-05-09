@@ -324,7 +324,7 @@
     }
     
     .login {
-        background-image: url("../image/login-bg5.png") !important;
+        background-image: linear-gradient(180deg,#E64A19,#FF8A65) !important;
     }
     
     .logo-center {
@@ -345,7 +345,7 @@
     }
     
     .colorText {
-        color: #E64A19;
+        color: #ffffff;
     }
     
     .set {
@@ -712,19 +712,19 @@
     }
     
     .color55 {
-        background-color: rgb(129, 192, 192);
+        background-color: rgb(237 243 251);
         color: rgb(253, 251, 251);
-        border: rgb(129, 192, 192);
+        border: rgb(237 243 251);
     }
     
     .color56:focus {
-        background-color: rgb(129, 192, 192);
+        background-color: rgb(237 243 251);
         color: rgb(253, 251, 251);
-        border: rgb(129, 192, 192);
+        border: rgb(237 243 251);
     }
     
     .color57 {
-        background-color: #cacacc;
+        background-color: rgb(237 243 251);
         border: rgb(106, 35, 36);
     }
     /* เเก้ แ   แcss */
@@ -965,4 +965,7 @@
         color: #000000;
         background-color: rgb(237 243 251);
         border-color: #000000;
+    }
+    .btn-primary {
+        color: #000000;
     }
