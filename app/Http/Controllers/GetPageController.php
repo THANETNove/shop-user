@@ -128,7 +128,7 @@ class GetPageController extends Controller
     {
       $name = $request->search;
 
-             if ($name !== null) {
+         /*     if ($name !== null) {
                     $user = DB::table('users')
                         ->where('is_idadmin', 0) 
                         ->where('username', 'LIKE', '%' . $name . '%')
@@ -142,8 +142,15 @@ class GetPageController extends Controller
 
             return view('main.money_user',['user' => $user]);
 
-            } 
-   
+            }  */
+
+        $user = DB::table('users')
+        ->rightJoin('add_money_users', 'users.id', '=', 'add_money_users.id_user')
+        ->leftJoin('up__image__moueys', 'add_money_users.id', '=', 'up__image__moueys.idMoney')
+        ->select('users.username', 'add_money_users.*', 'up__image__moueys.*')
+        ->whereNull('status_upImage')
+        ->get();
+        return view('main.money_user',['user' => $user]);
     }
 
 

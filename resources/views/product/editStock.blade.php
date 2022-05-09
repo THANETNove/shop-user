@@ -49,7 +49,7 @@
                                 </div>
                             </div> 
                             <div class="row mb-3">
-                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('รายได้') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('รายได้ที่ได้') }}</label>
                                  <div class="col-md-6">
                                     <input id="income" type="text" 
                                     class="form-control @error('income') is-invalid @enderror" name="income"

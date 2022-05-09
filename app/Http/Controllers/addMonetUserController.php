@@ -88,6 +88,7 @@ class addMonetUserController extends Controller
         $data->id_user = $id;
         $data->money= $withdrawMoney;
         $data->bonus	= null;
+        $data->status_upImage	= null;
         $data->status_bonus = null;
         $data->save();
 

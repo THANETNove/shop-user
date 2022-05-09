@@ -30,3 +30,32 @@
     </div>
     @endsection
     {{$idAmounts}}
+
+    <form  method="post"  action="{{('/upImage')}}"  enctype="multipart/form-data">
+                            
+        @csrf
+        <div class="row mb-3">
+            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('รูปภาพ') }}</label>
+             <div class="col-md-6">
+                <input id="picture" type="file" 
+                class="form-control @error('upImage') is-invalid @enderror" name="upImage"
+                value="" required  autofocus>     
+            </div>
+        </div> 
+        <div class="row mb-3" style="display:none">
+            <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('ราคาสินค้า') }}</label>
+             <div class="col-md-6">
+                <input id="price" type="text"
+                class="form-control" name="id"
+                value="{{$idAmounts}}" >     
+            </div>
+        </div> 
+       
+        <div class="row mb-0">
+            <div class="col-md-6 offset-md-4" id="submit_from">
+                <button type="submit"  class="btn btn-primary">
+                    {{ __('บันทึกข้อมูล') }}
+                </button>
+            </div>
+        </div>
+    </form>

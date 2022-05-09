@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
     <div style="text-align: center">
         @if (session('status'))
@@ -27,9 +28,10 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">ชื่อ</th>
-              <th scope="col">รหัสคำเชิญ</th>
               <th scope="col">จำนวนเงิน</th>
-              <th scope="col">เติมเงิน</th>
+              <th scope="col">สลิป</th>
+              <th scope="col">วันที่เติม</th>
+              <th scope="col">อนุมัติ</th>
             </tr>
           </thead>
         <tbody>
@@ -38,26 +40,30 @@
             @endphp
             @foreach ($user as $user)
                 <tr class="onClickBtn" >
-                        <td class="col-3 col-sm-3 col-md-3" >
+                        <td class="col-3 col-sm-3 col-md-1" >
                             {{ $idUser++ }} 
                            {{--  <span class="tooltiptext" id="{{$user->code}}" onclick="functionCopy({{$user->code}})">คัดลอก</span> --}}
                         </td>
-                        <td class="col-3 col-sm-3 col-md-3">
+                        <td class="col-3 col-sm-3 col-md-2">
                           {{ $user->username }} 
                         </td>
-                        <td class="col-3 col-sm-3 col-md-3 ">
-                          {{ $user->invitation }} 
+                        <td class="col-3 col-sm-3 col-md-2" >
+                          @php
+                          $moneyAll =  number_format( $user->money,2)
+                        @endphp
+                          {{ $moneyAll }} 
                         </td>
-                    <td class="col-3 col-sm-3 col-md-2" >
-                      @php
-                      $moneyAll =  number_format( $user->money,2)
-                     @endphp
-                       {{ $moneyAll }} 
-                    </td>
-                    <td class="col-3 col-sm-3 col-md-2" >
-                        <a   href="{{ URL::to('add-money',$user->id)}}" class="btn btn-outline-info">เติมเงิน</a>
-                     </td>
+                        <td class="col-3 col-sm-3 col-md-2">
+                          <img src="{{asset($user->up_image)}}" alt="" width="80" height="100" class="up_image">  
+                        </td>
+                        <td class="col-3 col-sm-3 col-md-2">
+                          {{ $user->created_at }} 
+                        </td>
+                        <td class="col-3 col-sm-3 col-md-2" >
+                            <a   href="{{ URL::to('add-money',$user->id)}}" class="btn btn-outline-info">เติมเงิน</a>
+                        </td>
                 </tr>
+                
             @endforeach
         </tbody>
     </table>

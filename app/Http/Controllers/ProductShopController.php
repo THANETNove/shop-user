@@ -77,6 +77,7 @@ class ProductShopController extends Controller
        /*  $resultChar = substr($str);  */
     
     $Product_code = $text.''.$string;
+    
      $service_image = $request->file('picture');
 
         //Generate ชื่อภาพ

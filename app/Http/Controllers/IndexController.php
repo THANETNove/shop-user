@@ -9,6 +9,7 @@ use DB;
 use App\Models\ProductShop;
 use App\Models\User;
 use App\Models\AddMoneyUsers;
+use App\Models\Up_Image_Mouey;
 
 class IndexController extends Controller
 {
@@ -40,6 +41,7 @@ class IndexController extends Controller
         return view ('top_up.topUp',['amounts'=>$amounts]);
     }
     
+    
     public function save($id)
     {
         $withdrawMoney = $id;
@@ -57,6 +59,39 @@ class IndexController extends Controller
      
     }
 
+
+    public function upImage(Request $request)
+    {
+
+
+
+
+    $service_image = $request->file('upImage');
+        //Generate ชื่อภาพ
+      $name_gen=hexdec(uniqid());
+
+      //ดึงนามสกุลไฟล์ภาพ
+      $img_ext = strtolower($service_image->getClientOriginalExtension());           
+      $img_name = $name_gen.'.'.$img_ext;
+      
+      //อัพโลหดและบันทึกข้อมูล
+      $upload_location = 'image/slip/';
+      $full_path = $upload_location.$img_name;
+      $service_image->move($upload_location,$img_name);
+
+
+        $data = new Up_Image_Mouey;
+        $data->idMoney	= $request->id;
+        $data->idUser	= Auth::user()->id;
+        $data->up_image	= $full_path;
+        $data->save();
+
+
+ 
+     
+        return redirect ('topUp')->with('status',"อัพ ภาพสำเร็จ");; 
+   
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -13,5 +13,6 @@ class AddMoneyUsers extends Model
         'money',
         'bonus',
         'status_bonus',
+        'status_upImage',
     ];
 }

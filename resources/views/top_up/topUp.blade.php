@@ -3,6 +3,9 @@
     <div class="head logo-center money3">
         <div class="set-head ">
             <p class="text font-fff">เติมเงิน</p>
+            @if (session('status'))
+            <strong style="color: #ffffff">{{ session('status') }}</strong>
+         @endif
         </div>
         <div class="bold11 font-fff">
             <p class="span money2 ">฿ 33006.00 <span class="margin-left1"> สมดุล </span></p>
