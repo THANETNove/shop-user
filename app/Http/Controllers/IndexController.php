@@ -65,7 +65,6 @@ class IndexController extends Controller
 
 
 
-
     $service_image = $request->file('upImage');
         //Generate ชื่อภาพ
       $name_gen=hexdec(uniqid());
