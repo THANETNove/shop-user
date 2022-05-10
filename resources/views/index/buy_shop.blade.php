@@ -51,9 +51,7 @@
             <p class="span">รายได้  <span>฿&nbsp;{{ number_format($user[0]->income,2)}}</span> 
                 
             </p>
-            <p class="span">สถานะการชำระ  <span> จ่าย </span> 
-                {{ $user[0]->payment_status}}
-            </p>
+            <p class="span">สถานะการชำระ  <span> จ่าย </span> </p>
         </div>
  
             <nav class="navbar fixed-bottom navbar-light bg-light nav-bottom">
