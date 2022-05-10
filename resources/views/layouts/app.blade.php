@@ -110,7 +110,7 @@
                           <a class="nav-link" href="{{ URL::to('priceCom')}}"  >แก้ไขโบนัส</a>
                       </li> 
                       <li class="nav-item">
-                          <a class="nav-link" href="{{ URL::to('stock')}}"  >สิ้นค้า</a>
+                          <a class="nav-link" href="{{ URL::to('stock')}}"  >สินค้า</a>
                       </li> 
                       <li class="nav-item">
                         <a class="nav-link" href="{{ URL::to('level')}}"  >Level VIP</a>
