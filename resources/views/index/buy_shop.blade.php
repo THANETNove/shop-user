@@ -130,30 +130,54 @@
         $(document).ready(function(){
                 let count =  0;
             $(".calc_btn").click(function(){
-               
+            
                 let text = $(this).text();
                 let id = $(this).attr('id');
+                let pass = "";
+
+       
              if (id != undefined) {
                     if (count > 0) {
                         count = count-1;
+                        let idVar =   'a'+ (count+1);
+                        document.getElementById(idVar).value = '';
                     }
              }else{
-                 if (count < 7) {
+                 if (count < 6) {
                     count = count+1;
+                    pass = pass.''.text);
                      let idVar =   'a'+ count;
+                     document.getElementById(idVar).value = "*";
                  }
-                  
-           
-                     /*  document.getElementById(idVar).value = "*"; */
+                      
              }
 
+             console.log(text,pass);
+/*              jQuery.ajax({
+                       
+                    //url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
+                    url: `/get-pass`,  
+                    method: 'get',
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        },
+                    success: function(result){
+                       if (result != "null") {
+                           
+                       }
+                               
+                        },
+                    error: function(result){      
+                    }      
+                }); 
+ */
              
                 /* let id =  $(this).attr('id');
                 let text = `<p>฿  ${id}</p>`;
                 let a = ` <a href="{{ URL::to('save_about/${id}')}}" class="btn btn-light recharge3" >ยืนยัน </a>`;
                 document.getElementById('amount-text').innerHTML = text;
                 document.getElementById('save-amount').innerHTML = a; */
-                console.log ( text,count,id);
+             /*    console.log ( text,count,id); */
             });
         });
     </script>

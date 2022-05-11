@@ -134,6 +134,7 @@ Route::get('/buyShop/{id}', [App\Http\Controllers\IndexController::class, 'buySh
 Route::resource('/pass_money', App\Http\Controllers\PasswordMoneyController::class);
 Route::get('/save_about/{id}', [App\Http\Controllers\IndexController::class, 'save']);
 Route::post('/upImage', [App\Http\Controllers\IndexController::class, 'upImage']);
+Route::get('/get-pass', [App\Http\Controllers\IndexController::class, 'get_password']);
 
 });
 /* admin */

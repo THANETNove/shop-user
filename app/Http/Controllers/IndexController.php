@@ -140,8 +140,6 @@ class IndexController extends Controller
             return back()->with('status',"จำนวนเงินไม่พอ กรุณาเติมเงินก่อน");
         }
 
-
-        dd($product_shops);
     }
 
     /**
@@ -204,5 +202,24 @@ class IndexController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function get_password()
+    {
+        $user = DB::table('password_money')
+        ->where('idUser', Auth::user()->id)
+        ->count();
+        if ($user != 0) {
+            $user = DB::table('password_money')
+            ->where('idUser', Auth::user()->id)
+            ->get();
+            $pass= $user[0]->password_modey;
+        }
+        else {
+            $pass= "null";
+        }
+       
+
+        return response()->json($pass);
     }
 }
