@@ -115,7 +115,7 @@
                 </div> 
             </div>
               
-                <!--  <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111" >จ่าย</a> -->
+              <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111" id="clickBuy"  >จ่ายเงินชื้อ</a>
             </div>
 
         </nav>
@@ -129,31 +129,41 @@
 <script type="text/JavaScript">
         $(document).ready(function(){
                 let count =  0;
+                let passUser = "";
+
+            /*     let id =  $(this).attr('id');
+                let text = `<p>฿  ${id}</p>`;
+                let a = ` <a href="{{ URL::to('save_about/${id}')}}" class="btn btn-light recharge3" >ยืนยัน </a>`;
+                document.getElementById('amount-text').innerHTML = text;
+                document.getElementById('save-amount').innerHTML = a;  */
+
             $(".calc_btn").click(function(){
             
                 let text = $(this).text();
                 let id = $(this).attr('id');
-                let pass = "";
+                
+           
 
        
              if (id != undefined) {
                     if (count > 0) {
                         count = count-1;
                         let idVar =   'a'+ (count+1);
+                        passUser =  passUser.slice(0,count)
                         document.getElementById(idVar).value = '';
                     }
              }else{
                  if (count < 6) {
                     count = count+1;
-                    pass = pass.''.text);
+                    passUser = passUser+text;
                      let idVar =   'a'+ count;
                      document.getElementById(idVar).value = "*";
                  }
                       
              }
 
-             console.log(text,pass);
-/*              jQuery.ajax({
+             console.log(text,passUser);
+             jQuery.ajax({
                        
                     //url: `/Hm-7UQjf9.r18Z/public/gatDestroy/${id}`, 
                     url: `/get-pass`,  
@@ -163,21 +173,26 @@
                         },
                     success: function(result){
                        if (result != "null") {
-                           
+                             if (passUser.length  >= 6) {
+                                    if (Number(result) === Number(passUser)) {
+                                        console.log('๔ูฏ๖็ฮ.');
+                                      /*   $('#clickBuy').trigger('click'); */
+                                      
+                                    $('a#clickBuy').click(function(){
+                                        $('#clickBuy').trigger('click');
+                                     })
+                                    }else{
+                                        console.log('555');
+                                    } 
+                            }
+                                
                        }
                                
                         },
                     error: function(result){      
                     }      
                 }); 
- */
-             
-                /* let id =  $(this).attr('id');
-                let text = `<p>฿  ${id}</p>`;
-                let a = ` <a href="{{ URL::to('save_about/${id}')}}" class="btn btn-light recharge3" >ยืนยัน </a>`;
-                document.getElementById('amount-text').innerHTML = text;
-                document.getElementById('save-amount').innerHTML = a; */
-             /*    console.log ( text,count,id); */
+
             });
         });
     </script>
