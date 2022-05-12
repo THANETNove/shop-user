@@ -9,19 +9,21 @@
                         <p class="bank3">ชื่อบัญชีธนาคาร</p>
                     </div>
                     <div class="col-6 col-lg-6 ">
-                        <P class="bank3">เกียรตินาคินภัทร</P>
+                        <P class="bank3">
+                            {{$user[0]->book_bank}}
+                        </P>
                     </div>
                     <div class="col-6 col-lg-6 ">
                         <p class="bank3">ชื่อบัญชี</p>
                     </div>
                     <div class="col-6 col-lg-6 ">
-                        <P class="bank3">ศิวพร ฉิมสวัสดิ์</P>
+                        <P class="bank3">{{$user[0]->name_bank}}</P>
                     </div>
                     <div class="col-6 col-lg-6 ">
                         <p class="bank3">เลขบัญชี</p>
                     </div>
                     <div class="col-6 col-lg-6 ">
-                        <P class="bank3">200-618080-5</P>
+                        <P class="bank3">{{$user[0]->number_bank}}</P>
                     </div>
                 </div>
             </div>

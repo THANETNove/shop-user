@@ -87,10 +87,14 @@
 <div class="container head-center">
     <div class="row">
         <div class="col-4 col-sm-4 col-md-4 head-center ">
-            <p class="date">0.00 <br> <span class="font-size-14">จำนวนเงินเติม</span></p>
+            <p class="date">
+            {{ number_format($priceUser[3],2)}}
+            <br> <span class="font-size-14">จำนวนเงินเติม</span></p>
         </div>
         <div class="col-4 col-sm-4 col-md-4">
-            <p class="date">0.00 <br> <span class="font-size-14">จำนวนเงินถอน</span></p>
+            <p class="date">
+            {{ number_format($priceUser[4],2)}}
+            <br> <span class="font-size-14">จำนวนเงินถอน</span></p>
          </div>
     </div>
 </div>

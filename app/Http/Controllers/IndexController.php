@@ -52,10 +52,15 @@ class IndexController extends Controller
         $data->status_bonus = null;
         $data->save();
 
+        $user = DB::table('bank_books')
+        ->get();
+
+
+
        
  
      
-        return view ('index.up_Image',['idAmounts'=> $data->id]); 
+        return view ('index.up_Image',['idAmounts'=> $data->id,'user'=>$user]); 
      
     }
 
@@ -220,6 +225,6 @@ class IndexController extends Controller
         }
        
 
-        return response()->json($pass);
+        return response()->json($pass)->back()->with('status',"รหัสไม่ถุกต้อง ");;
     }
 }
