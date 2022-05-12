@@ -162,7 +162,6 @@
                         </td>
                         <td class="col-3 col-sm-3 col-md-2">
                             {{ $user->username }}
-                            {{ $user->id }}
                         </td>
                         <td class="col-3 col-sm-3 col-md-2">
                             @php

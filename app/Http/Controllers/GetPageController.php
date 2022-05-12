@@ -153,6 +153,37 @@ class GetPageController extends Controller
         return view('main.money_user',['user' => $user]);
     }
 
+    
+
+    public function moneyUserAdmin(Request $request)
+    {
+      $name = $request->search;
+
+             if ($name !== null) {
+                    $user = DB::table('users')
+                        ->where('is_idadmin', 0) 
+                        ->where('username', 'LIKE', '%' . $name . '%')
+                        ->get();
+                return view('main.money_userAdmin',['user' => $user]);
+            }else{
+
+                 $user = DB::table('users')
+                        ->where('is_idadmin', 0)  
+                        ->get();
+
+            return view('main.money_userAdmin',['user' => $user]);
+
+            }  
+
+ /*        $user = DB::table('users')
+        ->rightJoin('add_money_users', 'users.id', '=', 'add_money_users.id_user')
+        ->leftJoin('up__image__moueys', 'add_money_users.id', '=', 'up__image__moueys.idMoney')
+        ->select('users.username', 'up__image__moueys.*', 'add_money_users.*')
+        ->whereNull('status_upImage')
+        ->get();
+        return view('main.money_user',['user' => $user]); */
+    }
+
 
     /* admin */
     

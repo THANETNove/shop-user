@@ -6,7 +6,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('เติมเงิน') }}</div>
                     <div class="card-body">
-                        <form method="POST" action="{{route('add-money-user.update',$user->id)}}" enctype="multipart/form-data">
+                        <form method="POST" action="{{route('add-money-user.update',$user[0]->id)}} " enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row mb-3">
@@ -15,7 +15,7 @@
                                 <div class="col-md-6">
                                     <input id="username" type="text"
                                         class="form-control @error('username') is-invalid @enderror" name="username"
-                                        value="{{$user->username }}" required placeholder="กรุณากรอกชื่อผู้ใช้" readonly>
+                                        value="{{$user[0]->username }}" required placeholder="กรุณากรอกชื่อผู้ใช้" readonly>
                                 </div>
                             </div>
 
@@ -26,7 +26,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="text"
                                         class="form-control" 
-                                        required  value="{{$user->id}}" readonly>
+                                        required  value="{{$user[0]->id}}" readonly>
                                 </div>
                             </div>
 
