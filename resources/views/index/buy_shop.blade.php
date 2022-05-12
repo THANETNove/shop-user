@@ -60,64 +60,9 @@
                 <button class="btn color1111 " type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">จ่าย</button>
 
-                <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom"
-                    aria-labelledby="offcanvasBottomLabel">
-                    <div class="offcanvas-header">
-                        <h6 class="offcanvas-title" id="offcanvasBottomLabel">ใส่รหัสผ่านการชำระเงิน</h6>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="container">
-                        <div class="calc_btn_row" >
-                        <input type="text" name="a1" class="calc1" id="a1" >
-                        <input type="text" name="a2" class="calc1" id="a2" >
-                        <input type="text" name="a3" class="calc1" id="a3" >
-                        <input type="text" name="a4" class="calc1" id="a4" >
-                        <input type="text" name="a5" class="calc1" id="a5" >
-                        <input type="text" name="a6" class="calc1" id="a6" >
-                        </div>
-                    </div>
-                <div class="wrapper top112">
-                    <section class="screen">
-                        <div class="previous" data-operand-current>
-                        </div>   
-                    </section>
-
-                    <section class="calc-btn_row">
-                        <div class="calc_btn_row">
-                            <button class="calc_btn" data-number>1</button>
-                            <button class="calc_btn" data-number>2</button>
-                            <button class="calc_btn" data-number>3</button>
-                        </div>
-
-                        <div class="calc_btn_row">
-                            <button class="calc_btn" data-number>4</button>
-                            <button class="calc_btn" data-number>5</button>
-                            <button class="calc_btn" data-number>6</button>
-                        </div>
-                        <div class="calc_btn_row">
-                            <button class="calc_btn" data-number>7</button>
-                            <button class="calc_btn" data-number>8</button>
-                            <button class="calc_btn" data-number>9</button>
-                        </div>
-
-                        <div class="calc_btn_row">
-                            <button class="calc_btnNull" data-number>
-                            <i class="fa-solid fa-delete-right"></i>
-                            </button>
-                            <button class="calc_btn" data-number>0</button>
-                            <button class="calc_btn" id="click1">
-                            <i class="fa-solid fa-delete-left  icon-color"></i>
-                            </button>
-                        </div>
-
-                    </section>   
-                </div> 
+                <!-- <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111"
+                    id="clickBuy">จ่ายเงินชื้อ</a> -->
             </div>
-              
-              <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111" id="clickBuy"  >จ่ายเงินชื้อ</a>
-            </div>
-
         </nav>
         <div class="navbar-Footer2">
             @include('layouts.navbarFooter2')
@@ -126,8 +71,60 @@
 </div>
 </div>
 
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+        <h6 class="offcanvas-title" id="offcanvasBottomLabel">ใส่รหัสผ่านการชำระเงิน</h6>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="container">
+        <div class="calc_btn_row">
+            <input type="text" name="a1" class="calc1" id="a1">
+            <input type="text" name="a2" class="calc1" id="a2">
+            <input type="text" name="a3" class="calc1" id="a3">
+            <input type="text" name="a4" class="calc1" id="a4">
+            <input type="text" name="a5" class="calc1" id="a5">
+            <input type="text" name="a6" class="calc1" id="a6">
+        </div>
+    </div>
+    <div class="wrapper top112">
+        <section class="screen">
+            <div class="previous" data-operand-current>
+            </div>
+        </section>
+
+        <section class="calc-btn_row">
+            <div class="calc_btn_row">
+                <button class="calc_btn" data-number>1</button>
+                <button class="calc_btn" data-number>2</button>
+                <button class="calc_btn" data-number>3</button>
+            </div>
+
+            <div class="calc_btn_row">
+                <button class="calc_btn" data-number>4</button>
+                <button class="calc_btn" data-number>5</button>
+                <button class="calc_btn" data-number>6</button>
+            </div>
+            <div class="calc_btn_row">
+                <button class="calc_btn" data-number>7</button>
+                <button class="calc_btn" data-number>8</button>
+                <button class="calc_btn" data-number>9</button>
+            </div>
+
+            <div class="calc_btn_row">
+                <button class="calc_btnNull" data-number>
+                    <i class="fa-solid fa-delete-right"></i>
+                </button>
+                <button class="calc_btn" data-number>0</button>
+                <button class="calc_btn" id="click1">
+                    <i class="fa-solid fa-delete-left  icon-color"></i>
+                </button>
+            </div>
+        </section>
+    </div>
+</div>
+
 <script type="text/JavaScript">
-        $(document).ready(function(){
+    $(document).ready(function(){
                 let count =  0;
                 let passUser = "";
 

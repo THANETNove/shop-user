@@ -54,12 +54,6 @@ class IndexController extends Controller
 
         $user = DB::table('bank_books')
         ->get();
-
-
-
-       
- 
-     
         return view ('index.up_Image',['idAmounts'=> $data->id,'user'=>$user]); 
      
     }
