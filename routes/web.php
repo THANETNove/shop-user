@@ -140,8 +140,8 @@ Route::get('/get-pass', [App\Http\Controllers\IndexController::class, 'get_passw
 /* admin */
 
 Route::group(['middleware'=>'check'],function () {
-  
-    Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
+    Route::get('/add-money-admin', [App\Http\Controllers\GetPageController::class, 'moneyUserAdmin']);
+/*     Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class); */
     Route::resource('/link-line', App\Http\Controllers\LinkLineController::class);
     Route::resource('/add-money-user', App\Http\Controllers\addMonetUserController::class);
     Route::resource('/getOutMonetUser', App\Http\Controllers\outMoneyUsersController::class);

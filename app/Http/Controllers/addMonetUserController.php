@@ -26,7 +26,9 @@ class addMonetUserController extends Controller
      */
     public function create()
     {
-        //
+
+  
+        return view('main.add');
     }
 
     /**
@@ -86,7 +88,11 @@ class addMonetUserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = DB::table('users')
+        ->where('id',$id)                
+        ->get();
+
+        return view('main.addMoney',['user'=>$users]);
     }
 
     /**
@@ -122,7 +128,7 @@ class addMonetUserController extends Controller
         $data->save();
 
      
-        return redirect('/money-user')->with('status',"เติมเงิน ให้ $request->username  จำนวน $request->money  บาท เเล้ว");
+        return redirect('/add-money-admin')->with('status',"เติมเงิน ให้ $request->username  จำนวน $request->money  บาท เเล้ว");
     }
 
     /**

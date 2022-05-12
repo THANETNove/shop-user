@@ -70,11 +70,14 @@
                         <a class="nav-link active" aria-current="page" href="{{ URL::to('home')}} ">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ URL::to('money-user')}}">เติมเงิน</a>
+                        <a class="nav-link" href="{{ URL::to('add-money-admin')}}">เติมเงิน</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{ URL::to('getOutMonetUser')}}" >ถอนเงิน</a>
                       </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ URL::to('money-user')}}">ตรวจสลิป</a>
+                      </li>
                       <li class="nav-item">
                           <a class="nav-link" href="{{ URL::to('newAdmin')}}" >เพิ่ม Admin</a>
                       </li>
