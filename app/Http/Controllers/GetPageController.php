@@ -62,7 +62,78 @@ class GetPageController extends Controller
     }
     public function groupReport()
     {
-        return view('main.group_report');
+        $mutable = Carbon::now();
+        $date = $mutable->toDateString('M d Y');
+
+        $dataJoin = DB::table('won_prizes')
+                ->rightJoin('buy_outs', 'won_prizes.time_number', '=', 'buy_outs.numberCount')
+                ->where('buy_outs.userId', Auth::user()->id)
+                ->orderBy('buy_outs.id', 'DESC')
+                ->get();
+
+                  //ยอดสั่งซื้อ 
+                   $sumPrice = DB::table('buy_outs')
+                    ->where('userId', Auth::user()->id)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('price');
+                
+                // โบนัสที่ได้ 
+                    $sumBonus = DB::table('add_money_users')
+                    ->where('id_user', Auth::user()->id)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('bonus'); 
+
+                // ยอดที่ค้าง 
+                     $sumLoss = DB::table('buy_outs')
+                    ->where('userId', Auth::user()->id)
+                    ->whereNull('get_paid')
+                     ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('price'); 
+
+            /*   ค่าคอมมิชชั่น */
+           
+
+            
+
+                // เติมเงิน
+                    $sumAddMoney = DB::table('add_money_users')
+                    ->where('id_user', Auth::user()->id)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('money');
+    
+                    //ถอนเงิน
+                     $withdrawMoney = DB::table('withdraw_moneys')
+                    ->where('idUser', Auth::user()->id)
+                    ->where('statusMoney',1)
+                    ->whereDate('created_at', $date)
+                    ->orderBy('id','ASC')
+                    ->sum('withdrawMoney');
+
+                    //ยอดรวมได้เสีย
+
+                 $withdrawMoneyArrears =    $withdrawMoney + $sumAddMoney ; 
+                 $withdrawMoneyArrears1 =  $withdrawMoneyArrears;
+
+                    if ($withdrawMoneyArrears1 >= "1000000"  && $withdrawMoneyArrears1 < "2000000" ) {
+                        $commission = $withdrawMoneyArrears1*(5/100);
+                    }elseif ($withdrawMoneyArrears1 >= "2000000") {
+                        $commission = $withdrawMoneyArrears1*(10/100);
+                    }else {
+                        $commission = "0";
+                    }
+ 
+        
+
+        $priceUser = [$sumPrice , $sumBonus ,$sumLoss, $sumAddMoney, $withdrawMoney ,$withdrawMoneyArrears,$commission];
+        return view('main.group_report',
+        [
+          'dataJoin'=> $dataJoin, 'priceUser'=>$priceUser,
+         ]);
+
     }
 
     public function dataJoin()

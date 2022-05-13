@@ -48,14 +48,18 @@
 <div class="container head-center">
     <div class="row">
         <div class="col-4 col-sm-4 col-md-4 head-center ">
-            <p class="date">0.00 <br> <span class="font-size-14">ยอดสั่งซื้อ</span></p>
+            <p class="date">
+            {{ number_format($priceUser[0],2)}} 
+            <br> <span class="font-size-14">ยอดสั่งซื้อ</span></p>
         </div>
         <div class="col-4 col-sm-4 col-md-4">
-            <p class="date">0.00 <br> <span class="font-size-14">โบนัสที่ได้</span></p>
+            <p class="date">
+            {{ number_format($priceUser[2],2)}}
+            <br> <span class="font-size-14">โบนัสที่ได้</span></p>
          </div>
-         <div class="col-4 col-sm-4 col-md-4">
-            <p class="date">0.00 <br> <span class="font-size-14">โบนัสที่ได้</span></p>
-         </div>
+         <div class="col-4 col-sm-4 col-md-4 head-center ">
+            <p class="date">0.00 <br> <span class="font-size-14">กำไรอื่น</span></p>
+        </div>
     </div>
 </div>
 <div class="container head-center">
@@ -73,24 +77,23 @@
 </div>
 <div class="container head-center">
     <div class="row">
-        <div class="col-4 col-sm-4 col-md-4 head-center ">
-            <p class="date">0.00 <br> <span class="font-size-14">กำไรอื่น</span></p>
-        </div>
+        
         <div class="col-4 col-sm-4 col-md-4">
             <p class="date">0.00 <br> <span class="font-size-14">เดิมพันอื่น</span></p>
          </div>
          <div class="col-4 col-sm-4 col-md-4">
             <p class="date">0 <br> <span class="font-size-14">บุคคลอื่น</span></p>
          </div>
+         <div class="col-4 col-sm-4 col-md-4 head-center ">
+            <p class="date">
+            {{ number_format($priceUser[5],2)}}
+            <br> <span class="font-size-14">จำนวนเงินเติม</span></p>
+        </div>
     </div>
 </div>
 <div class="container head-center">
     <div class="row">
-        <div class="col-4 col-sm-4 col-md-4 head-center ">
-            <p class="date">
-            {{ number_format($priceUser[3],2)}}
-            <br> <span class="font-size-14">จำนวนเงินเติม</span></p>
-        </div>
+        
         <div class="col-4 col-sm-4 col-md-4">
             <p class="date">
             {{ number_format($priceUser[4],2)}}

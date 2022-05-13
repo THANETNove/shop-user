@@ -1,5 +1,6 @@
 @extends('layouts.home')
 @section('content')
+
 <div class="container">
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 ">
         <div class="box-3">
