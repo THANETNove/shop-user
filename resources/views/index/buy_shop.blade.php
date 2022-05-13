@@ -60,7 +60,7 @@
                 <button class="btn color1111 " type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">จ่าย</button>
 
-          <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111"
+          <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111"  style="display:none"
                     id="clickBuy">จ่ายเงินชื้อ</a> 
             </div>
         </nav>
@@ -175,13 +175,17 @@
                              if (passUser.length  >= 6) {
                                     if (Number(result) === Number(passUser)) {
                                         console.log('๔ูฏ๖็ฮ.');
-                                     /*    $("#clickBuy").click(); */
+                                     /*    $("#clickBuy").click();
+                                       $('.className').trigger('click'); */
                                         window.location.href = $('#clickBuy').attr('href');
                                      /*     document.getElementsByClassName("clickBuy").click(); */
                                
                                     }else{
-                                        console.log('dfgdsfs');
-                                        document.getElementById('pass_error').innerHTML = '`รหัสผ่านไม่ถุกต้อง'; 
+                                    
+                                        document.getElementById('pass_error').innerHTML = `<p class="fa-solid">รหัสผ่านไม่ถูกต้อง</p>`; 
+                                        setTimeout(() => {
+                                            document.getElementById('pass_error').innerHTML = 'ใส่รหัสผ่านการชำระเงิน'; 
+                                        }, 1000);
                                     } 
                             }
                                 
