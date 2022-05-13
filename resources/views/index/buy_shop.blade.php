@@ -60,8 +60,8 @@
                 <button class="btn color1111 " type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">จ่าย</button>
 
-                <!-- <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111"
-                    id="clickBuy">จ่ายเงินชื้อ</a> -->
+          <a href="{{ URL::to('buyShop',$user[0]->id)}}" type="button" class="btn btn-light color1111"
+                    id="clickBuy">จ่ายเงินชื้อ</a> 
             </div>
         </nav>
         <div class="navbar-Footer2">
@@ -175,11 +175,10 @@
                              if (passUser.length  >= 6) {
                                     if (Number(result) === Number(passUser)) {
                                         console.log('๔ูฏ๖็ฮ.');
-                                      /*   $('#clickBuy').trigger('click'); */
-                                      
-                                    $('a#clickBuy').click(function(){
-                                        $('#clickBuy').trigger('click');
-                                     })
+                                     /*    $("#clickBuy").click(); */
+                                        window.location.href = $('#clickBuy').attr('href');
+                                     /*     document.getElementsByClassName("clickBuy").click(); */
+                               
                                     }else{
                                         console.log('dfgdsfs');
                                         document.getElementById('pass_error').innerHTML = '`รหัสผ่านไม่ถุกต้อง'; 
