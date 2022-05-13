@@ -72,10 +72,11 @@
 </div>
 
 <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
-    <div class="offcanvas-header">
-        <h6 class="offcanvas-title" id="offcanvasBottomLabel">ใส่รหัสผ่านการชำระเงิน</h6>
+    <div class="offcanvas-header ">
+        <h6 class="offcanvas-title" id="offcanvasBottomLabel"></h6>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    <p class="bank5" id="pass_error">ใส่รหัสผ่านการชำระเงิน</p>
     <div class="container">
         <div class="calc_btn_row">
             <input type="text" name="a1" class="calc1" id="a1">
@@ -169,6 +170,7 @@
                         "_token": "{{ csrf_token() }}",
                         },
                     success: function(result){
+                     
                        if (result != "null") {
                              if (passUser.length  >= 6) {
                                     if (Number(result) === Number(passUser)) {
@@ -179,10 +181,19 @@
                                         $('#clickBuy').trigger('click');
                                      })
                                     }else{
-                                        console.log('555');
+                                        console.log('dfgdsfs');
+                                        document.getElementById('pass_error').innerHTML = '`รหัสผ่านไม่ถุกต้อง'; 
                                     } 
                             }
                                 
+                       }else{
+                           if (passUser.length  >= 6) {
+                                document.getElementById('pass_error').innerHTML = `<p class="fa-solid">ยังไม่ได้เพิ่มรหัส กรุณาเพิ่มรหัสก่อน</p>`; 
+                                setTimeout(() => {
+                                    document.getElementById('pass_error').innerHTML = 'ใส่รหัสผ่านการชำระเงิน'; 
+                                }, 1000);
+                           }
+                        
                        }
                                
                         },

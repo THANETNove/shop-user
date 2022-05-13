@@ -345,7 +345,7 @@
     }
     
     .colorText {
-        color: #ffffff;
+        color: #E64A19;
     }
     
     .set {
@@ -1140,5 +1140,9 @@
         font-weight: bold;
         border-radius: 10px;
         text-align: center;
+   }
+   .bank5 {
+    text-align: center;
+    display: inline-block;
    }
    

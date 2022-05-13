@@ -208,6 +208,7 @@ class IndexController extends Controller
         $user = DB::table('password_money')
         ->where('idUser', Auth::user()->id)
         ->count();
+  
         if ($user != 0) {
             $user = DB::table('password_money')
             ->where('idUser', Auth::user()->id)
@@ -219,6 +220,6 @@ class IndexController extends Controller
         }
        
 
-        return response()->json($pass)->back()->with('status',"รหัสไม่ถุกต้อง ");;
+        return response()->json($pass);
     }
 }
