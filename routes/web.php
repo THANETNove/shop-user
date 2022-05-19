@@ -27,12 +27,8 @@ Route::get('/', function () {
 
 
 
-
 Auth::routes();
 
-
-Route::group(['middleware'=>'checkLogin'],function () {
-    
     Route::get('registerAdmin', function () {
         return view('/auth/registerAdmin');
     });
@@ -49,16 +45,6 @@ Route::get('index', function () {
 })->name('/');
 
 
-Route::get('user', function () {
-    $line = DB::table('link_lines')
-    ->get();
-        $line1 = $line[0]->link; 
-        if (empty($line)) {
-         Session::put('link', $line1);
-        }
-
-    return view('welcome');
-})->name('index');
 
 Route::get('/shop', function () {
     $line = DB::table('link_lines')
@@ -135,6 +121,21 @@ Route::resource('/pass_money', App\Http\Controllers\PasswordMoneyController::cla
 Route::get('/save_about/{id}', [App\Http\Controllers\IndexController::class, 'save']);
 Route::post('/upImage', [App\Http\Controllers\IndexController::class, 'upImage']);
 Route::get('/get-pass', [App\Http\Controllers\IndexController::class, 'get_password']);
+
+Route::group(['middleware'=>'checkLogin'],function () {
+Route::get('/topUp', [App\Http\Controllers\IndexController::class, 'topUp']);
+Route::resource('/shop_index', App\Http\Controllers\IndexController::class);
+Route::get('user', function () {
+    $line = DB::table('link_lines')
+    ->get();
+        $line1 = $line[0]->link; 
+        if (empty($line)) {
+         Session::put('link', $line1);
+        }
+
+    return view('welcome');
+})->name('index');
+
 
 });
 /* admin */
