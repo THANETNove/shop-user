@@ -16,12 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    
-    $line = DB::table('link_lines')
-            ->get();
-    $line = $line[0]->link; 
-    Session::put('link', $line);
-
     return view('welcome');
 });
 
@@ -34,38 +28,18 @@ Auth::routes();
     });
 
 Route::get('index', function () {
-    $line = DB::table('link_lines')
-            ->get();
-    $line1 = $line[0]->link; 
-    if (empty($line)) {
-        Session::put('link', $line1);
-    }
-   
     return view('welcome');
-})->name('/');
+});
 
 
 
 Route::get('/shop', function () {
-    $line = DB::table('link_lines')
-        ->get();
-    $line1 = $line[0]->link; 
-    if (empty($line)) {
-         Session::put('link', $line1);
-    }
     return view('welcome');
-})->name('index');
+});
 
 Route::get('set-up', function () {
-    $line = DB::table('link_lines')
-         ->get();
-    $line1 = $line[0]->link; 
-    if (empty($line)) {
-        Session::put('link', $line1);
-    }
-    
     return view('welcome');
-})->name('index');
+});
 
 Route::get('/getInvitation', [App\Http\Controllers\InvitationController::class, 'index']);
 Route::get('/createCode', [App\Http\Controllers\InvitationController::class, 'create']);
@@ -126,13 +100,13 @@ Route::group(['middleware'=>'checkLogin'],function () {
 Route::get('/topUp', [App\Http\Controllers\IndexController::class, 'topUp']);
 Route::resource('/shop_index', App\Http\Controllers\IndexController::class);
 Route::get('user', function () {
-    $line = DB::table('link_lines')
+ /*    $line = DB::table('link_lines')
     ->get();
         $line1 = $line[0]->link; 
         if (empty($line)) {
          Session::put('link', $line1);
         }
-
+ */
     return view('welcome');
 })->name('index');
 
