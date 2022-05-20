@@ -72,8 +72,15 @@
         scroll-behavior: smooth;
     }
 }
+@font-face {
+    font-family: 'Light';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../catalyst/FCCatalyst.ttf);
+}    
 
 body {
+    font-family: 'Light' !important;
     margin: 0;
     font-family: var(--bs-body-font-family);
     font-size: var(--bs-body-font-size);
